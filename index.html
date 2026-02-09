@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth scroll-pt-24 md:scroll-pt-32">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Jala Mas Persada - Spesialis AC Semarang</title>
+    <meta name="description" content="Solusi Pendingin Udara Profesional Jawa Tengah. Sales, Projects, Maintenance sejak 1992.">
+    
+    <!-- Google Fonts: Poppins (Professional), Orbitron (Digital), Saira (Tagline) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a3682', /* Deep Blue */
+                            primary: '#2563eb', /* Bright Blue */
+                            light: '#e0f2fe', /* Light Cyan */
+                            accent: '#0ea5e9', /* Cyan Accent */
+                        },
+                        digital: '#00b4d8', /* Digital Blue */
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        digital: ['Orbitron', 'sans-serif'],
+                        saira: ['Saira', 'sans-serif'], /* Added Saira Font */
+                    },
+                    backgroundImage: {
+                        'wave-pattern': "url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1440 320%22%3E%3Cpath fill=%22%23e0f2fe%22 fill-opacity=%221%22 d=%22M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z%22%3E%3C/path%3E%3C/svg%3E')",
+                    },
+                    animation: {
+                        'border-blink': 'borderBlink 1.5s infinite',
+                        'soft-pulse': 'softPulse 2s infinite',
+                    },
+                    keyframes: {
+                        borderBlink: {
+                            '0%, 100%': { borderColor: 'transparent', boxShadow: 'none' },
+                            '50%': { borderColor: '#fbbf24', boxShadow: '0 0 20px 5px rgba(251, 191, 36, 0.8)' }, /* Enhanced Yellow blink */
+                        },
+                        softPulse: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(234, 179, 8, 0.4)' },
+                            '50%': { boxShadow: '0 0 20px 0 rgba(234, 179, 8, 0.2)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles */
+        body { font-family: 'Poppins', sans-serif; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-grid img, .brand-grid span {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+        .brand-grid img:hover, .brand-grid span:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @keyframes pulse-custom {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-custom 2s infinite;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white pt-[110px]">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
+                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
+                <!-- WhatsApp Link in Header -->
+                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
+                    <i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537
+                </a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-accent transition">Karir</a>
+                <a href="#" class="hover:text-brand-accent transition">Berita</a>
+                <span class="text-gray-400">|</span>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <!-- NEW LOGO IMPLEMENTATION (Logo Only) -->
+                <img src="JMP NEW LONG 650.png" alt="Logo CV Jala Mas Persada" class="h-16 w-auto object-contain">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-700">
+                <a href="index.html" class="text-brand-primary font-bold border-b-2 border-brand-primary py-2">Beranda</a>
+                <a href="#about" class="hover:text-brand-primary transition py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
+                <a href="#services" class="hover:text-brand-primary transition py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
+                <a href="#products" class="hover:text-brand-primary transition py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
+                <!-- Updated Navigation Link - Removed Icon -->
+                <a href="projects.html" class="hover:text-brand-primary transition py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="#contact" class="px-6 py-2.5 bg-brand-primary text-white font-semibold rounded-md hover:bg-brand-dark transition shadow-lg shadow-blue-500/30">
+                    Hubungi Kami
+                </a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2">
+                <i class="ri-menu-4-line text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden">
+        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="#about" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
+        <a href="#services" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
+        <a href="#products" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
+        <a href="projects.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
+        <a href="#contact" class="mobile-link text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
+    </div>
+
+    <!-- ================= HEADLINE SECTION ================= -->
+    <section class="bg-white pt-10 pb-6 text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-4 tracking-tight leading-tight">
+                Spesialis AC di Jawa Tengah
+            </h1>
+            <!-- Updated Tagline 1: Single line, 70% black -->
+            <p class="font-saira text-xs sm:text-sm md:text-2xl font-semibold text-black/70 tracking-widest uppercase whitespace-nowrap mb-2">
+                Air Conditioner Sales - Projects - Maintenance
+            </p>
+            <!-- New Sub-Tagline 2: Updated as requested -->
+            <p class="font-sans text-sm md:text-xl text-gray-600 tracking-wide font-medium italic mt-2">
+                "Solusi pendingin ruang dan tata udara sejak 1992"
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCT SEARCH ENGINE ================= -->
+    <div class="bg-white border-b border-gray-200 pb-8 pt-2 relative z-40 shadow-sm">
+        <div class="container mx-auto px-6">
+            <form class="flex flex-col md:flex-row gap-4 items-center justify-between bg-gray-50 p-2 md:p-4 rounded-xl border border-gray-200">
+                <div class="w-full md:w-auto flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Capacity Select -->
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-dashboard-line"></i>
+                        </div>
+                        <select class="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand-primary text-gray-700 appearance-none cursor-pointer">
+                            <option value="">Pilih Kapasitas (PK)</option>
+                            <option value="0.5">1/2 PK</option>
+                            <option value="0.75">3/4 PK</option>
+                            <option value="1">1 PK</option>
+                            <option value="1.5">1.5 PK</option>
+                            <option value="2">2 PK</option>
+                            <option value="2.5">2.5 PK</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </div>
+
+                    <!-- Type Select -->
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-list-settings-line"></i>
+                        </div>
+                        <select class="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand-primary text-gray-700 appearance-none cursor-pointer">
+                            <option value="">Tipe Produk</option>
+                            <option value="inverter">Inverter (Hemat Listrik)</option>
+                            <option value="standard">Standard</option>
+                            <option value="low_watt">Low Watt</option>
+                            <option value="cassette">Cassette / Ceiling</option>
+                            <option value="standing">Floor Standing</option>
+                        </select>
+                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </div>
+
+                    <!-- Brand Select -->
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-price-tag-3-line"></i>
+                        </div>
+                        <select class="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:border-brand-primary text-gray-700 appearance-none cursor-pointer">
+                            <option value="">Pilih Merk</option>
+                            <option value="daikin">Daikin</option>
+                            <option value="panasonic">Panasonic</option>
+                            <option value="gree">Gree</option>
+                            <option value="midea">Midea</option>
+                            <option value="sharp">Sharp</option>
+                            <option value="toshiba">Toshiba</option>
+                        </select>
+                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-gray-400">
+                            <i class="ri-arrow-down-s-line"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Button -->
+                <button type="button" class="w-full md:w-auto px-8 py-3 bg-brand-dark text-white font-bold rounded-lg hover:bg-brand-primary transition flex items-center justify-center gap-2 shadow-lg">
+                    <i class="ri-search-2-line"></i> Cari AC
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= HERO CAROUSEL BANNER ================= -->
+    <section id="home" class="relative w-full h-[200px] md:h-[300px] lg:h-[400px] overflow-hidden group bg-gray-100">
+        <div class="carousel-track h-full" id="track">
+            <!-- SLIDE 1 (Eager Load) -->
+            <div class="carousel-slide h-full">
+                <img src="https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?auto=format&fit=crop&q=80&w=2000" alt="Banner 1" class="w-full h-full object-cover">
+            </div>
+            <!-- SLIDE 2 (Lazy Load) -->
+            <div class="carousel-slide h-full">
+                 <img src="FLYER JMP NIAGA.jpg" loading="lazy" alt="Banner 2" class="w-full h-full object-cover object-top"> 
+            </div>
+            <!-- SLIDE 3 (Lazy Load) -->
+            <div class="carousel-slide h-full">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1600" loading="lazy" alt="Banner 3" class="w-full h-full object-cover">
+            </div>
+            <!-- SLIDE 4 (Lazy Load) -->
+            <div class="carousel-slide h-full">
+                <img src="https://images.unsplash.com/photo-1614631446506-692556272584?auto=format&fit=crop&q=80&w=1600" loading="lazy" alt="Banner 4" class="w-full h-full object-cover">
+            </div>
+             <!-- SLIDE 5 (Lazy Load) -->
+             <div class="carousel-slide h-full">
+                <img src="Homepage.jpg" loading="lazy" alt="Banner 5" class="w-full h-full object-cover">
+            </div>
+        </div>
+        <!-- Navigation Buttons -->
+        <button id="prevBtn" class="absolute top-1/2 left-4 md:left-8 transform -translate-y-1/2 bg-black/30 hover:bg-brand-primary text-white p-2 md:p-3 rounded-full backdrop-blur-sm transition z-20">
+            <i class="ri-arrow-left-s-line text-xl md:text-2xl"></i>
+        </button>
+        <button id="nextBtn" class="absolute top-1/2 right-4 md:right-8 transform -translate-y-1/2 bg-black/30 hover:bg-brand-primary text-white p-2 md:p-3 rounded-full backdrop-blur-sm transition z-20">
+            <i class="ri-arrow-right-s-line text-xl md:text-2xl"></i>
+        </button>
+        <!-- Indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20" id="indicators"></div>
+    </section>
+
+    <!-- ================= CALCULATOR CTA (Below Banner) ================= -->
+    <section class="bg-brand-primary text-white py-8 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-dark opacity-50 z-0"></div>
+        <div class="absolute right-0 top-0 w-64 h-64 bg-white opacity-10 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-6">
+                <!-- Improved Icon Container -->
+                <div class="shrink-0">
+                    <i class="ri-calculator-fill text-6xl text-amber-400 drop-shadow-lg"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-3xl font-bold uppercase tracking-wide leading-tight mb-2 whitespace-nowrap text-white">Bingung Pilih Kapasitas AC?</h3>
+                    <!-- Updated Description Text -->
+                    <p class="text-blue-100 text-base md:text-lg">Hitung kebutuhan PK ruangan Anda dengan klik kotak kuning di sisi kanan.</p>
+                </div>
+            </div>
+            <!-- Updated Button: Reduced size and proportional one-line text, uppercase -->
+            <a href="calculator.html" class="px-6 py-2.5 md:px-8 md:py-3 bg-gradient-to-b from-amber-400 to-amber-500 border border-amber-300 text-brand-dark font-bold text-sm md:text-base rounded-full shadow-lg shadow-amber-500/50 hover:shadow-amber-400/50 hover:from-amber-300 hover:to-amber-400 transition transform hover:scale-105 flex items-center justify-center whitespace-nowrap uppercase">
+                Kalkulator PK AC
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT & STATS (Updated & Centered) ================= -->
+    <section id="about" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 leading-tight">Tentang <span class="text-brand-dark">CV. Jala Mas Persada</span></h2>
+            <!-- Updated Description -->
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+                Toko kami telah berdiri sejak 1992. Dengan pengalaman panjang di bidang tata udara, kami berkomitmen memberikan Solusi pendingin terbaik untuk setiap kebutuhan Anda.
+            </p>
+            
+            <!-- Added Below Center Text -->
+            <div class="mt-8 pt-4 border-t border-gray-100">
+                <p class="font-saira text-2xl font-bold text-brand-primary tracking-wide">
+                    Berpengalaman lebih dari 30 tahun.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-6 pt-8 mt-8">
+                <div>
+                    <h4 class="text-3xl font-bold text-brand-primary">30+</h4>
+                    <p class="text-xs text-gray-500 font-bold uppercase mt-1 tracking-wider">Tahun Pengalaman</p>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-bold text-brand-primary">100%</h4>
+                    <p class="text-xs text-gray-500 font-bold uppercase mt-1 tracking-wider">Teknisi Ahli</p>
+                </div>
+                <div>
+                    <h4 class="text-3xl font-bold text-brand-primary">24/7</h4>
+                    <p class="text-xs text-gray-500 font-bold uppercase mt-1 tracking-wider">Respon Cepat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SHOWROOM LOCATIONS (Updated Design) ================= -->
+    <section class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Decorative background element (subtle gradient) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <!-- Title Design Upgrade -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-6">KUNJUNGI SHOWROOM TERDEKAT</h2>
+                <div class="w-24 h-1 bg-yellow-400 mx-auto rounded-full"></div> <!-- Gold Accent -->
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Showroom 1: Cendrawasih -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center group hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-64 overflow-hidden rounded-xl mb-6">
+                        <img src="Homepage.jpg" alt="Showroom Cendrawasih" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Showroom Cendrawasih</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Jl. Cendrawasih Selatan Kav. 15<br>
+                        Semarang, Jawa Tengah
+                    </p>
+                    <a href="https://maps.app.goo.gl/FFNz4D3JDrmoQzBf8" target="_blank" class="px-10 py-3 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto hover:shadow-lg transform active:scale-95">
+                        <i class="ri-map-pin-2-line mr-2"></i> Rute
+                    </a>
+                </div>
+
+                <!-- Showroom 2: Anjasmoro -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center text-center group hover:-translate-y-1 transition duration-300">
+                    <div class="w-full h-64 overflow-hidden rounded-xl mb-6">
+                        <!-- Used a different image placeholder if available, otherwise reused for demo -->
+                        <img src="FLYER JMP NIAGA.jpg" alt="Showroom Anjasmoro" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500 object-top">
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Showroom Puri Anjasmoro</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Jl. Puri Anjasmoro Blok B1 No. 1<br>
+                        Semarang, Jawa Tengah
+                    </p>
+                    <a href="https://maps.app.goo.gl/GuFxDqVnwjMHq5N57" target="_blank" class="px-10 py-3 bg-brand-primary text-white font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto hover:shadow-lg transform active:scale-95">
+                        <i class="ri-map-pin-2-line mr-2"></i> Rute
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BRANDS SECTION ================= -->
+    <section class="py-10 bg-white border-t border-b border-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="brand-grid flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#009acf] transition cursor-pointer">DAIKIN</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#3e409a] transition cursor-pointer">PANASONIC</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#2399d5] transition cursor-pointer">MIDEA</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#01449f] transition cursor-pointer">GREE</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#e31736] transition cursor-pointer">SHARP</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#ce000c] transition cursor-pointer">TOSHIBA</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#1a55a3] transition cursor-pointer">BESTLIFE</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#263997] transition cursor-pointer">FLIFE</span>
+                <span class="text-2xl font-bold text-gray-400 hover:text-[#ff2fd1] transition cursor-pointer">REIWA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES (Cards) ================= -->
+    <section id="services" class="py-20 bg-brand-light relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <!-- REPLACED TITLE HERE -->
+                <h2 class="text-3xl md:text-5xl font-extrabold text-brand-dark mt-2 tracking-tight uppercase">SOLUSI YANG KAMI TAWARKAN.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1: Sales -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+                        <i class="ri-shopping-cart-2-fill text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sales (Penjualan)</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Menyediakan berbagai merk AC ternama dengan harga grosir. Split Wall, Cassette, Floor Standing, hingga VRV/VRF untuk kebutuhan hunian dan bisnis.
+                    </p>
+                    <!-- REMOVED LINK HERE -->
+                </div>
+
+                <!-- Service 2: Projects -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+                        <i class="ri-building-2-fill text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Projects (Instalasi)</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Pemasangan instalasi pipa dan unit AC untuk proyek perumahan, perkantoran, pabrik, dan gedung komersial dengan standar keamanan tinggi.
+                    </p>
+                    <!-- REMOVED LINK HERE -->
+                </div>
+
+                <!-- Service 3: Maintenance -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-brand-primary mb-6 group-hover:bg-brand-primary group-hover:text-white transition duration-300">
+                        <i class="ri-tools-fill text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance (Servis)</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">
+                        Cuci AC berkala, perbaikan kerusakan, isi freon, dan kontrak maintenance tahunan untuk menjaga performa unit tetap optimal dan awet.
+                    </p>
+                    <!-- REMOVED LINK HERE -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCTS GRID ================= -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <span class="text-brand-primary font-bold uppercase tracking-wider text-sm">Katalog Pilihan</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2">Produk Unggulan</h2>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="group border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-gray-50 h-64 flex items-center justify-center p-6 relative overflow-hidden">
+                        <img src="Midea Msafe 05crn2x.png" alt="AC Midea" class="max-h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-gray-500 shadow-sm">1/2 PK</div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded mb-2 inline-block">MIDEA</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-brand-primary transition">Midea Msafe 05CRN2X</h3>
+                        <p class="text-sm text-gray-500 mb-4">AC Standard Hemat Energi dengan pendinginan cepat.</p>
+                        <a href="https://wa.me/6281215000537?text=Tanya%20Midea%20Msafe" class="block text-center py-2.5 bg-brand-dark text-white rounded-lg hover:bg-brand-primary transition font-medium text-sm">Tanya Harga</a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group border border-gray-100 rounded-2xl overflow-hidden hover:shadow-xl transition duration-300">
+                    <div class="bg-gray-50 h-64 flex items-center justify-center p-6 relative overflow-hidden">
+                        <img src="Gree 0.5 pk GWC05N1A.png" alt="AC Gree" class="max-h-full object-contain mix-blend-multiply transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-2 py-1 rounded text-xs font-bold text-gray-500 shadow-sm">1/2 PK</div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded mb-2 inline-block">GREE</span>
+                        <h3 class="text-lg font-bold text-gray-900 mb-1 group-hover:text-brand-primary transition">Gree GWC-05N1A</h3>
+                        <p class="text-sm text-gray-500 mb-4">AC Standard dengan teknologi anti karat dan low watt.</p>
+                        <a href="https://wa.me/6281215000537?text=Tanya%20Gree%200.5PK" class="block text-center py-2.5 bg-brand-dark text-white rounded-lg hover:bg-brand-primary transition font-medium text-sm">Tanya Harga</a>
+                    </div>
+                </div>
+
+                <!-- REMOVED THE 3RD PLACEHOLDER CARD AS REQUESTED -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="col-span-1 md:col-span-2">
+    <div class="flex items-center gap-3 mb-4">
+        <img src="JMP NEW LONG white footer 390.png" alt="CV. Jala Mas Persada Logo" class="h-10 w-auto rounded-lg">
+        <span class="text-white font-bold text-lg"></span>
+    </div>
+    <p class="max-w-sm">Solusi pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah.</p>
+</div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="#products" class="hover:text-white transition">Produk</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-white transition">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition bg-gray-800 p-2 rounded-full"><i class="ri-instagram-line text-lg"></i></a>
+                    <a href="#" class="hover:text-white transition bg-gray-800 p-2 rounded-full"><i class="ri-facebook-circle-fill text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
+    <a href="https://wa.me/6281215000537" target="_blank" class="fixed bottom-6 right-6 z-50 whatsapp-pulse group">
+        <div class="bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition transform hover:-translate-y-1">
+            <i class="ri-whatsapp-fill text-4xl text-white"></i>
+        </div>
+        <div class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full border-2 border-white">1</div>
+    </a>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // --- Mobile Menu ---
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        if (menuBtn && mobileMenu && closeMenu) {
+            function toggleMenu() { mobileMenu.classList.toggle('translate-x-full'); }
+            menuBtn.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); }); });
+        }
+
+        // --- Navbar Scroll ---
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) navbar.classList.add('shadow-md');
+            else navbar.classList.remove('shadow-md');
+        });
+
+        // --- Carousel Logic ---
+        const track = document.getElementById('track');
+        if (track) {
+            const slides = Array.from(track.children);
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const dotsContainer = document.getElementById('indicators');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-all', 'bg-white/50');
+                if (index === 0) dot.classList.add('bg-white', 'w-8');
+                dot.addEventListener('click', () => moveToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+            const dots = Array.from(dotsContainer.children);
+
+            function updateDots(index) {
+                dots.forEach(dot => { dot.classList.remove('bg-white', 'w-8'); dot.classList.add('bg-white/50'); });
+                dots[index].classList.remove('bg-white/50'); dots[index].classList.add('bg-white', 'w-8');
+            }
+
+            function moveToSlide(index) {
+                currentSlide = index;
+                if (currentSlide < 0) currentSlide = totalSlides - 1;
+                if (currentSlide >= totalSlides) currentSlide = 0;
+                track.style.transform = `translateX(${-100 * currentSlide}%)`;
+                updateDots(currentSlide);
+            }
+
+            if (nextBtn) nextBtn.addEventListener('click', () => moveToSlide(currentSlide + 1));
+            if (prevBtn) prevBtn.addEventListener('click', () => moveToSlide(currentSlide - 1));
+            
+            let autoPlayInterval = setInterval(() => moveToSlide(currentSlide + 1), 5000);
+            const heroSection = document.getElementById('home');
+            if (heroSection) {
+                heroSection.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                heroSection.addEventListener('mouseleave', () => autoPlayInterval = setInterval(() => moveToSlide(currentSlide + 1), 5000));
+            }
+        }
+    </script>
+</body>
+</html>
