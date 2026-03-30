@@ -138,8 +138,8 @@
         <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
     </div>
 
-    <!-- ================= HERO SECTION (NEW IMAGE) ================= -->
-    <section class="relative pt-24 md:pt-32 pb-32 md:pb-40 text-center overflow-hidden flex flex-col justify-center min-h-[70vh] lg:min-h-[85vh]">
+    <!-- ================= HERO SECTION (NEW IMAGE & MOBILE FIX) ================= -->
+    <section class="relative pt-20 md:pt-32 pb-28 md:pb-40 text-center overflow-hidden flex flex-col justify-center min-h-[60vh] md:min-h-[70vh] lg:min-h-[85vh]">
         <div class="absolute inset-0 z-0">
             <img src="https://lh3.googleusercontent.com/d/19CUR_HAyXp_4_y3Cj0iTyLSsVEct5NF6" 
                  alt="Hero Background" 
@@ -152,24 +152,34 @@
             <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
             <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#0ea5e9] rounded-full filter blur-[120px] opacity-20"></div>
         </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight leading-tight drop-shadow-2xl">
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10 w-full">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-5 tracking-tight leading-tight drop-shadow-2xl">
                 Spesialis AC di Jawa Tengah
             </h1>
-            <p class="font-saira text-xs sm:text-sm md:text-xl font-semibold text-slate-200 tracking-widest uppercase whitespace-nowrap mb-6 drop-shadow-md">
-                Air Conditioner Sales <span class="text-slate-300 px-2">&bull;</span> Projects <span class="text-slate-300 px-2">&bull;</span> Maintenance
-            </p>
-            <div class="w-20 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-6"></div>
-            <p class="font-sans text-sm md:text-lg text-blue-200 tracking-wide font-medium italic drop-shadow">
+            
+            <!-- FLEX WRAP untuk mencegah text menabrak sisi layar di HP -->
+            <div class="flex flex-wrap justify-center items-center gap-x-2 md:gap-x-3 gap-y-1 font-saira text-[10px] sm:text-xs md:text-sm lg:text-xl font-semibold text-slate-200 tracking-wider uppercase mb-6 drop-shadow-md">
+                <span>Air Conditioner Sales</span>
+                <span class="text-slate-300">&bull;</span>
+                <span>Projects</span>
+                <span class="text-slate-300 hidden sm:inline-block">&bull;</span>
+                <span class="text-slate-300 sm:hidden">|</span>
+                <span>Maintenance</span>
+            </div>
+            
+            <div class="w-16 md:w-20 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-5 md:mb-6"></div>
+            
+            <p class="font-sans text-xs sm:text-sm md:text-lg text-blue-200 tracking-wide font-medium italic drop-shadow px-2">
                 "Solusi pendingin ruang dan tata udara sejak 1992"
             </p>
         </div>
     </section>
 
     <!-- ================= FLOATING SEARCH ENGINE ================= -->
-    <div class="relative z-40 -mt-20 md:-mt-24 px-4 md:px-0 pb-12">
+    <div class="relative z-40 -mt-16 md:-mt-24 px-4 md:px-0 pb-12">
         <div class="container mx-auto max-w-5xl">
-            <div class="bg-white/80 backdrop-blur-2xl p-5 md:p-8 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border border-white/60 relative">
+            <div class="bg-white/80 backdrop-blur-2xl p-5 md:p-8 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border border-white/60 relative mx-auto">
                 <h3 class="text-xs md:text-sm font-bold text-brand-dark text-center uppercase tracking-widest mb-5 drop-shadow-sm">
                     Temukan Produk Impian Anda
                 </h3>
