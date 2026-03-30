@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth scroll-pt-24 md:scroll-pt-32">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV. Jala Mas Persada - Spesialis AC Semarang</title>
+    <meta name="description" content="Solusi Pendingin Udara Profesional Jawa Tengah. Sales, Projects, Maintenance sejak 1992.">
+    
+     <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="MASUKKAN_KODE_VERIFIKASI_GOOGLE_ANDA_DISINI" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
+
+    <!-- Google Fonts: Poppins (Professional), Orbitron (Digital), Saira (Tagline) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- PapaParse (Untuk membaca file CSV Artikel secara otomatis) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a3682',
+                            primary: '#2563eb',
+                            light: '#e0f2fe',
+                            accent: '#0ea5e9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        digital: ['Orbitron', 'sans-serif'],
+                        saira: ['Saira', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-slide { min-width: 100%; position: relative; }
+        
+        .reveal-on-scroll { opacity: 0; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-gray-800 bg-white pt-[90px] md:pt-[100px]">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
+                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
+                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
+                    <i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537
+                </a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-accent transition">Karir</a>
+                <span class="text-gray-400">|</span>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center">
+            <a href="index.html" class="flex items-center group shrink-0 mr-auto">
+                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transform group-hover:scale-105 transition-transform duration-500">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500 whitespace-nowrap">
+                <a href="index.html" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5 lg:py-2">Beranda</a>
+                <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
+                <a href="#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
+                <a href="projects.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
+                <a href="jmpedia.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">JMPedia</a>
+            </nav>
+
+            <div class="hidden md:flex shrink-0 ml-6 lg:ml-10">
+                <a href="#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transform hover:-translate-y-0.5">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-4">
+                <i class="ri-menu-4-line text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden transition-transform duration-300">
+        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="products.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
+        <a href="#services" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
+        <a href="projects.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
+        <a href="#about" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
+        <a href="jmpedia.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">JMPedia</a>
+        <a href="#contact" class="mobile-link text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
+    </div>
+
+    <!-- ================= HERO SECTION (NEW IMAGE) ================= -->
+    <section class="relative pt-12 md:pt-16 pb-16 md:pb-24 text-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://lh3.googleusercontent.com/d/19CUR_HAyXp_4_y3Cj0iTyLSsVEct5NF6" 
+                 alt="Hero Background" 
+                 class="w-full h-full object-cover" 
+                 style="object-position: center 37%;" />
+        </div>
+        <!-- Reduced Opacity Gradient -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#0a1128]/80 via-[#1a3682]/60 to-[#2563eb]/40"></div>
+        <div class="absolute inset-0 z-0 opacity-50 pointer-events-none mix-blend-screen">
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#0ea5e9] rounded-full filter blur-[120px] opacity-20"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 tracking-tight leading-tight drop-shadow-2xl">
+                Spesialis AC di Jawa Tengah
+            </h1>
+            <p class="font-saira text-xs sm:text-sm md:text-xl font-semibold text-slate-200 tracking-widest uppercase whitespace-nowrap mb-6 drop-shadow-md">
+                Air Conditioner Sales <span class="text-slate-300 px-2">&bull;</span> Projects <span class="text-slate-300 px-2">&bull;</span> Maintenance
+            </p>
+            <div class="w-20 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-6"></div>
+            <p class="font-sans text-sm md:text-lg text-blue-200 tracking-wide font-medium italic drop-shadow">
+                "Solusi pendingin ruang dan tata udara sejak 1992"
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= FLOATING SEARCH ENGINE ================= -->
+    <div class="relative z-40 -mt-20 px-4 md:px-0 pb-12">
+        <div class="container mx-auto max-w-5xl">
+            <div class="bg-white/95 backdrop-blur-xl p-5 md:p-8 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border border-white/60 relative">
+                <h3 class="text-xs md:text-sm font-bold text-brand-dark text-center uppercase tracking-widest mb-5 drop-shadow-sm">
+                    Temukan Produk Impian Anda
+                </h3>
+                <form class="flex flex-col md:flex-row gap-3 md:gap-4 items-center justify-between">
+                    <div class="w-full flex-1 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+                        <div class="relative group">
+                            <select id="home-pk" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                                <option value="">Pilih PK</option>
+                                <option value="0.5">1/2 PK</option>
+                                <option value="0.75">3/4 PK</option>
+                                <option value="1">1 PK</option>
+                                <option value="1.5">1.5 PK</option>
+                                <option value="2">2 PK</option>
+                                <option value="2.5">2.5 PK</option>
+                                <option value="3">3 PK</option>
+                                <option value="5">5 PK</option>
+                                <option value="6">6 PK</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <select id="home-klasifikasi" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                                <option value="">Jenis Produk</option>
+                                <option value="Cassette">AC Cassette</option>
+                                <option value="Floor">AC Floor Standing</option>
+                                <option value="Portable">AC Portabel</option>
+                                <option value="Split">AC Split</option>
+                                <option value="Standard">AC Standard</option>
+                                <option value="Air Purifier">Air Purifier</option>
+                                <option value="Inverter">Inverter (Hemat Listrik)</option>
+                                <option value="Low Voltage">Low Voltage</option>
+                                <option value="Low Watt">Low Watt</option>
+                                <option value="Pipa">Pipa Tembaga</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <select id="home-brand" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                                <option value="">Pilih Merk</option>
+                                <option value="bestlife">Bestlife</option>
+                                <option value="daikin">Daikin</option>
+                                <option value="flife">Flife</option>
+                                <option value="gree">Gree</option>
+                                <option value="hoda">Hoda</option>
+                                <option value="midea">Midea</option>
+                                <option value="panasonic">Panasonic</option>
+                                <option value="reiwa">Reiwa</option>
+                                <option value="sharp">Sharp</option>
+                                <option value="toshiba">Toshiba</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="search-btn-home" class="w-full md:w-auto px-8 py-3 bg-brand-dark text-white font-bold rounded-full hover:bg-brand-primary transition shadow-md hover:shadow-lg transform active:scale-95 flex items-center justify-center gap-1.5 shrink-0">
+                        CARI AC
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= BANNER CAROUSEL ================= -->
+    <section id="home-banner" class="relative w-full aspect-[12/5] overflow-hidden group bg-[#0a1128]">
+        <div class="carousel-track h-full" id="track">
+            <div class="carousel-slide h-full flex items-center justify-center">
+                <img src="https://lh3.googleusercontent.com/d/1r7oNYqm7sKDZFc7Tlavks8MTwbtUQcEj" alt="Banner 1" class="w-full h-full object-contain">
+            </div>
+            <div class="carousel-slide h-full flex items-center justify-center">
+                 <img src="https://lh3.googleusercontent.com/d/1Vmvf7vp8ltr5RsqhFn4nmQzjcgSQuVmT" onerror="this.src='https://placehold.co/2000x800/e2e8f0/475569?text=Banner+2'" loading="lazy" alt="Banner 2" class="w-full h-full object-contain"> 
+            </div>
+            <div class="carousel-slide h-full flex items-center justify-center">
+                <img src="https://lh3.googleusercontent.com/d/1HplpqufKQgUkYomD8wGjK5wSuhktr7iG" onerror="this.src='https://placehold.co/2000x800/e2e8f0/475569?text=Banner+3'" loading="lazy" alt="Banner 3" class="w-full h-full object-contain">
+            </div>
+            <div class="carousel-slide h-full flex items-center justify-center">
+                <img src="https://lh3.googleusercontent.com/d/11psk2uTA7T5ooaHrmZsXg4XMHq3AqV8n" onerror="this.src='https://placehold.co/2000x800/e2e8f0/475569?text=Banner+4'" loading="lazy" alt="Banner 4" class="w-full h-full object-contain">
+            </div>
+            <div class="carousel-slide h-full flex items-center justify-center">
+                <img src="https://lh3.googleusercontent.com/d/1yZw4jU7eYsin1J3hzaK1DsfGgByWcKVf" onerror="this.src='https://placehold.co/2000x800/e2e8f0/475569?text=Banner+5'" loading="lazy" alt="Banner 5" class="w-full h-full object-contain">
+            </div>
+        </div>
+        
+        <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-black/20 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-70 hover:opacity-100 transition z-20">
+            <i class="ri-arrow-left-s-line text-base"></i>
+        </button>
+        <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-black/20 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-70 hover:opacity-100 transition z-20">
+            <i class="ri-arrow-right-s-line text-base"></i>
+        </button>
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-20" id="indicators"></div>
+    </section>
+
+    <!-- ================= CALCULATOR CTA SECTION ================= -->
+    <section class="py-6 md:py-8 bg-white relative overflow-hidden reveal-on-scroll">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
+            <div class="bg-gradient-to-r from-[#0a1128] via-[#1a3682] to-[#2563eb] rounded-full py-4 px-6 md:px-8 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-4 border border-white/10 group">
+                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-24 bg-[#00b4d8] rounded-full mix-blend-screen filter blur-[40px] opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-5 text-center md:text-left">
+                    <div class="hidden md:flex w-10 h-10 bg-white/10 rounded-full items-center justify-center shrink-0 border border-white/20">
+                        <i class="ri-calculator-line text-xl text-[#00b4d8]"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-sm md:text-base font-extrabold text-white tracking-wide mb-0.5 drop-shadow-sm">Bingung Menentukan Ukuran PK AC?</h2>
+                        <p class="text-blue-100 text-[10px] md:text-[11px] font-light leading-snug m-0">Hitung kebutuhan PK AC ruangan Anda.</p>
+                    </div>
+                </div>
+                
+                <div class="relative z-10 shrink-0 mt-1 md:mt-0">
+                    <a href="calculator.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-brand-dark font-bold text-[10px] md:text-xs uppercase tracking-widest rounded-full hover:bg-gray-50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 transform hover:scale-105">
+                        Hitung Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRODUCT CATEGORIES ================= -->
+    <section id="products-display" class="py-10 bg-white border-t border-gray-100 reveal-on-scroll">
+        <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-9 gap-2.5 md:gap-4">
+                <a href="products.html?klasifikasi=Split" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1nqKaOnZNBHyFiz6NpF3j0G7iUycqVwW_" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=AC+Split'" alt="AC Split" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Split</h3>
+                </a>
+                <a href="products.html?klasifikasi=Portable" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1Xcjja-Jz2noWIIlduDWRmYTKerMfked2" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=AC+Portable'" alt="AC Portable" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Portabel</h3>
+                </a>
+                <a href="products.html?klasifikasi=Floor" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/19mrFeVwwwHcQokq9kU1QDiVN_SmBVHNb" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Standing'" alt="AC Floor" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Floor</h3>
+                </a>
+                <a href="products.html?klasifikasi=Cassette" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1lrM8bck9fzAMF84zir6WWbyazKHhcGsF" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Cassette'" alt="AC Cassette" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Cassette</h3>
+                </a>
+                <a href="products.html?klasifikasi=Inverter" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1VyVKYx7ncUAbMKTD4adUzEWh3T8pz8hD" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Inverter'" alt="AC Inverter" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Inverter</h3>
+                </a>
+                <a href="products.html?klasifikasi=Window" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1WuLuvtpNEJekWmAPIjNw9uPWs7iFv2P8" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=AC+Window'" alt="AC Window" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">AC Window</h3>
+                </a>
+                <a href="products.html?klasifikasi=Air Purifier" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1kn2DjU6tDxpw2hC87YbGFKe4AwlBeoLV" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Air+Purifier'" alt="Air Purifier" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">Air Purifier</h3>
+                </a>
+                <a href="products.html?klasifikasi=Air Cooler" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/1UZkHdjB0wslMbA9hwhIOPrLi4nVcVJnc" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Air+Cooler'" alt="Air Cooler" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">Air Cooler</h3>
+                </a>
+                <a href="products.html?klasifikasi=Air Curtain" class="group bg-white rounded-2xl shadow-sm border border-gray-100 p-2 md:p-3 flex flex-col items-center hover:shadow-xl hover:border-blue-100 transition-all duration-300 text-center">
+                    <div class="w-full aspect-square mb-1.5 md:mb-3 bg-gradient-to-b from-gray-50 to-white rounded-xl flex items-center justify-center p-2 overflow-hidden relative border border-gray-50">
+                        <img src="https://lh3.googleusercontent.com/d/195MiEkTubxxRPnl53b_r63gAAvhxIscG" onerror="this.src='https://placehold.co/400x400/f8fafc/94a3b8?text=Air+Curtain'" alt="Air Curtain" class="w-full h-full object-contain transform group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-[10px] md:text-xs group-hover:text-brand-primary transition leading-tight">Air Curtain</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BRAND PARTNERS ================= -->
+    <section class="py-8 md:py-10 bg-white border-t border-gray-50 reveal-on-scroll">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <p class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-6 md:mb-8">Official Dealer & Partners</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-14 md:gap-y-8">
+                <a href="products.html?brand=daikin" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1E8c8-P3aIGMpLUY4lNcjUDSGFXAFrsbd" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=DAIKIN'" alt="Daikin" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=midea" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1BKskUVpzYYU9JkS4rENi-so5ohPPmIlu" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=MIDEA'" alt="Midea" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=gree" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/16XTflM6znMQ0cN4mZCQkcF8YNhPNFNeN" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=GREE'" alt="Gree" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=panasonic" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1I_pF5wrNh-sHKtAVc13xCRNjp_F0NIny" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=PANASONIC'" alt="Panasonic" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=sharp" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/19lYjEFqzHLhE3tApVWd0SJsgjXjfmlDi" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=SHARP'" alt="Sharp" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=flife" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1ExjPgVjSQtv5jWR4oZSxtWzeEwPNaNbo" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=FLIFE'" alt="Flife" class="max-h-[70%] max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=bestlife" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/13oc8Cb0JIB7VPrfIDzFc8kFYHVXGh61O" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=BESTLIFE'" alt="Bestlife" class="max-h-[70%] max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=toshiba" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1FpkpAomWnO3Y5m6LhitUsAjefri9ijrh" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=TOSHIBA'" alt="Toshiba" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=reiwa" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1J0BeR-jzST724bMJn3ETjwNO2dg5LUkb" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=REIWA'" alt="Reiwa" class="max-h-[70%] max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+                <a href="products.html?brand=hoda" class="group flex justify-center items-center w-[70px] md:w-[100px] h-8 cursor-pointer">
+                    <img src="https://lh3.googleusercontent.com/d/1t-OYasipY3IWNHVyqYy0Y8VqqV6_Bknp" onerror="this.src='https://placehold.co/300x120/ffffff/a1a1aa?text=HODA'" alt="Hoda" class="max-h-[70%] max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MINIMALIST BRAND DIVIDER ================= -->
+    <div class="w-full bg-gradient-to-b from-white to-gray-50 py-6 flex justify-center">
+        <div class="w-32 flex items-center opacity-60">
+            <div class="h-[1px] flex-grow bg-gradient-to-r from-transparent to-brand-dark"></div>
+            <div class="w-2 h-2 mx-2 bg-gradient-to-br from-brand-accent to-brand-dark rounded-tl-full rounded-br-full -rotate-45"></div>
+            <div class="h-[1px] flex-grow bg-gradient-to-l from-transparent to-brand-dark"></div>
+        </div>
+    </div>
+
+    <!-- ================= JMPEDIA (OTOMATIS DARI CSV) ================= -->
+    <section id="jmpedia-home" class="pb-12 pt-4 bg-gray-50 reveal-on-scroll">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <!-- Loader -->
+            <div id="home-jmpedia-loading" class="text-center py-10">
+                <i class="ri-loader-4-line text-3xl text-brand-primary animate-spin inline-block"></i>
+                <p class="text-gray-400 text-sm mt-2">Menyelaraskan data JMPedia...</p>
+            </div>
+
+            <!-- Grid Artikel Otomatis -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 hidden" id="home-jmpedia-grid">
+                <!-- Data akan disuntikkan di sini oleh script -->
+            </div>
+
+            <div class="mt-8 flex justify-end">
+                <a href="jmpedia.html" class="text-brand-primary font-bold text-xs inline-flex items-center gap-1.5 hover:text-brand-dark transition bg-blue-50 px-5 py-2.5 rounded-full">
+                    Lihat Semua Artikel <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="py-12 md:py-16 bg-[#050a15] relative overflow-hidden reveal-on-scroll">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-widest uppercase mb-4">Solusi yang Kami Tawarkan</h2>
+                <div class="w-16 h-px bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
+                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                    <img src="https://lh3.googleusercontent.com/d/1uTRdRmx-Fhf1zfH6LiXxEYm4ufMZDuna" alt="Penjualan AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
+                            <i class="ri-shopping-bag-3-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
+                            <h3 class="text-lg font-bold text-white tracking-wide">Penjualan</h3>
+                        </div>
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                            <p class="text-gray-300 text-[11px] leading-relaxed font-light">Unit AC bergaransi resmi dengan harga kompetitif.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                    <img src="https://lh3.googleusercontent.com/d/13zUYUUocTdR6fLifx9kzgM1ZZPfAQo5F" alt="Instalasi AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
+                            <i class="ri-tools-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
+                            <h3 class="text-lg font-bold text-white tracking-wide">Instalasi</h3>
+                        </div>
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                            <p class="text-gray-300 text-[11px] leading-relaxed font-light">Pemasangan standar premium dengan material berkualitas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                    <img src="https://lh3.googleusercontent.com/d/1EhoVQnWl5ybiSyJikJ9EiIK-W8mc5QQe" alt="Proyek AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
+                            <i class="ri-building-4-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
+                            <h3 class="text-lg font-bold text-white tracking-wide">Proyek</h3>
+                        </div>
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                            <p class="text-gray-300 text-[11px] leading-relaxed font-light">Pengadaan skala besar untuk gedung, kantor, dan residensial.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                    <img src="https://lh3.googleusercontent.com/d/1dM_gvx5Lti_8wx3wCSxZ_wKXBn09bMsz" alt="Perawatan AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
+                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
+                            <i class="ri-settings-3-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
+                            <h3 class="text-lg font-bold text-white tracking-wide">Perawatan</h3>
+                        </div>
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                            <p class="text-gray-300 text-[11px] leading-relaxed font-light">Layanan cuci, pengisian freon, dan perbaikan terpercaya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SHOWROOM LOCATIONS (STATIC VERSION) ================= -->
+    <section id="contact" class="py-16 md:py-20 bg-gradient-to-br from-[#0a1128] via-[#1a3682] to-[#2563eb] relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white uppercase mt-2 mb-4">Showroom Kami</h2>
+                <!-- Separator Updated to Match Services Section Style -->
+                <div class="w-16 h-px bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <!-- Card 1 -->
+                <div class="bg-white p-5 rounded-2xl shadow-lg flex flex-col items-center text-center">
+                    <div class="w-full h-48 overflow-hidden rounded-xl mb-4">
+                        <img src="https://lh3.googleusercontent.com/d/1vULH7Fxyg7EXDSdmaVO3p4MMt7CXRARS" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Showroom+Cendrawasih'" alt="Showroom Cendrawasih" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark mb-1.5">Showroom Cendrawasih</h3>
+                    <p class="text-gray-600 text-sm mb-5">Jl. Cendrawasih Selatan Kav. 15<br>Semarang, Jawa Tengah</p>
+                    <a href="https://maps.app.goo.gl/FFNz4D3JDrmoQzBf8" target="_blank" class="px-8 py-2.5 bg-brand-primary text-white text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-5 rounded-2xl shadow-lg flex flex-col items-center text-center">
+                    <div class="w-full h-48 overflow-hidden rounded-xl mb-4">
+                        <img src="https://lh3.googleusercontent.com/d/1VX4pvWjPrf0uHSnF6M6s7cuPxHxP8ue2" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Showroom+Anjasmoro'" alt="Showroom Anjasmoro" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-dark mb-1.5">Showroom Puri Anjasmoro</h3>
+                    <p class="text-gray-600 text-sm mb-5">Jl. Puri Anjasmoro Blok B1 No. 1<br>Semarang, Jawa Tengah</p>
+                    <a href="https://maps.app.goo.gl/GuFxDqVnwjMHq5N57" target="_blank" class="px-8 py-2.5 bg-brand-primary text-white text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="py-20 bg-white text-center reveal-on-scroll">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Tentang <span class="text-brand-dark">CV. Jala Mas Persada</span></h2>
+            <p class="text-gray-600 leading-relaxed text-lg mb-8">Pusat solusi tata udara terpercaya di Jawa Tengah sejak 1992. Kami mengedepankan kualitas unit dan ketepatan instalasi untuk kenyamanan jangka panjang Anda.</p>
+            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+                <div><h4 class="text-3xl font-bold text-brand-primary">30+</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Tahun Pengalaman</p></div>
+                <div><h4 class="text-3xl font-bold text-brand-primary">100%</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Teknisi Ahli</p></div>
+                <div><h4 class="text-3xl font-bold text-brand-primary">24/7</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Layanan Prima</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
+                    <p class="max-w-sm">Solusi pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4 justify-center md:justify-end">
+                    <a href="#" class="text-2xl hover:text-white transition"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="text-2xl hover:text-white transition"><i class="ri-facebook-circle-fill"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+                <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+    <a href="https://wa.me/6281215000537" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="absolute -inset-2 bg-green-500/20 rounded-full blur group-hover:bg-green-500/30 transition duration-500"></div>
+        <div class="relative bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 active:scale-95">
+            <i class="ri-whatsapp-fill text-3xl text-white"></i>
+        </div>
+    </a>
+
+    <!-- ================= TOAST NOTIFICATION ================= -->
+    <div id="toast-warning" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[110] bg-white text-gray-800 px-5 py-3 rounded-full shadow-2xl border border-red-100 flex items-center gap-3 transition-all duration-500 opacity-0 pointer-events-none -translate-y-4">
+        <div class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-red-500">
+            <i class="ri-error-warning-fill text-sm"></i>
+        </div>
+        <span class="font-medium text-[11px] md:text-sm">Silakan pilih minimal 1 kategori pencarian</span>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        const fallbackArticles = [
+            { kat_id: "2", post_num: "01", month: "MAR", year: "26", judul: "Mengenal Teknologi AC Inverter: Hemat Listrik & Nyaman", image_link: "https://images.unsplash.com/photo-1610425027871-334d7cb27aeb?q=80&w=600" },
+            { kat_id: "3", post_num: "01", month: "MAR", year: "26", judul: "Panduan Mudah Menghitung Kebutuhan PK AC Ruangan", image_link: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=600" },
+            { kat_id: "4", post_num: "01", month: "MAR", year: "26", judul: "Waspada! 5 Tanda Utama AC Anda Sudah Sangat Kotor", image_link: "https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?q=80&w=600" }
+        ];
+
+        const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
+
+        const menuBtn = document.getElementById('menu-btn'), closeMenu = document.getElementById('close-menu'), mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn) menuBtn.onclick = () => mobileMenu.classList.remove('translate-x-full');
+        if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.add('translate-x-full');
+        document.querySelectorAll('.mobile-link').forEach(link => { link.onclick = () => mobileMenu.classList.add('translate-x-full'); });
+
+        const track = document.getElementById('track');
+        if (track) {
+            const slides = Array.from(track.children), nextBtn = document.getElementById('nextBtn'), prevBtn = document.getElementById('prevBtn'), dotsContainer = document.getElementById('indicators');
+            let currentSlide = 0; 
+            slides.forEach((_, i) => {
+                const d = document.createElement('button'); d.className = `w-1.5 h-1.5 rounded-full transition-all ${i===0?'bg-brand-primary ring-2 ring-white/50 w-4':'bg-white/40'}`;
+                d.onclick = () => moveToSlide(i); dotsContainer.appendChild(d);
+            });
+            const dots = Array.from(dotsContainer.children);
+            function moveToSlide(i) {
+                if (i < 0) currentSlide = slides.length - 1; else if (i >= slides.length) currentSlide = 0; else currentSlide = i;
+                track.style.transform = `translateX(${-100 * currentSlide}%)`;
+                dots.forEach((d, idx) => d.className = `w-1.5 h-1.5 rounded-full transition-all ${idx===currentSlide?'bg-brand-primary ring-2 ring-white/50 w-4':'bg-white/40'}`);
+            }
+            if(nextBtn) nextBtn.onclick = () => moveToSlide(currentSlide + 1);
+            if(prevBtn) prevBtn.onclick = () => moveToSlide(currentSlide - 1);
+            setInterval(() => moveToSlide(currentSlide + 1), 6000);
+        }
+
+        function getCatConfig(catId) {
+            const id = String(catId).trim();
+            if(id === '1') return { name: 'Berita', color: 'bg-red-500 text-white' };
+            if(id === '2') return { name: 'Produk', color: 'bg-amber-500 text-white' };
+            if(id === '3') return { name: 'Edukasi', color: 'bg-brand-primary text-white' };
+            if(id === '4') return { name: 'Tips', color: 'bg-green-500 text-white' };
+            return { name: 'Artikel', color: 'bg-gray-600 text-white' };
+        }
+
+        function generateId(art) {
+            if(art.kat_id && art.post_num && art.month && art.year) {
+                let pNum = String(art.post_num).trim();
+                if(pNum.length === 1) pNum = '0' + pNum;
+                return String(art.kat_id).trim() + pNum + String(art.month).trim().toUpperCase() + String(art.year).trim();
+            }
+            return "";
+        }
+
+        function renderJMPedia(articles) {
+            const grid = document.getElementById('home-jmpedia-grid'), loading = document.getElementById('home-jmpedia-loading');
+            if(!grid) return;
+            loading.classList.add('hidden');
+            grid.classList.remove('hidden');
+            grid.innerHTML = '';
+            articles.slice(0, 3).forEach(art => {
+                const articleId = generateId(art);
+                const cat = getCatConfig(art.kat_id);
+                grid.innerHTML += `<a href="jmpedia.html?id=${articleId}" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"><div class="relative h-32 overflow-hidden shrink-0"><img src="${art.image_link}" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute top-2 left-2 ${cat.color} px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest">${cat.name}</div></div><div class="p-4 flex flex-col flex-grow"><h3 class="text-sm font-bold text-gray-900 mb-1.5 group-hover:text-brand-primary transition leading-tight line-clamp-2">${art.judul}</h3><div class="mt-auto flex items-center justify-between pt-3 border-t border-gray-100 text-brand-primary font-bold text-[11px] uppercase tracking-wider"><span>Baca Artikel</span><i class="ri-arrow-right-line transform group-hover:translate-x-1.5 transition-transform"></i></div></div></a>`;
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const isPreviewEnv = window.location.protocol === 'file:' || window.location.protocol === 'blob:' || window.location.hostname.includes('usercontent.goog');
+            if (isPreviewEnv) { renderJMPedia(fallbackArticles); } 
+            else {
+                Papa.parse(JMPEDIA_CSV_URL, {
+                    download: true, header: true, skipEmptyLines: true,
+                    complete: function(results) { if (results.data && results.data.length > 0) renderJMPedia(results.data); else renderJMPedia(fallbackArticles); },
+                    error: function() { renderJMPedia(fallbackArticles); }
+                });
+            }
+
+            const searchBtnHome = document.getElementById('search-btn-home'), toast = document.getElementById('toast-warning');
+            if (searchBtnHome) {
+                searchBtnHome.onclick = () => {
+                    const pk = document.getElementById('home-pk').value;
+                    const klasifikasi = document.getElementById('home-klasifikasi').value;
+                    const brand = document.getElementById('home-brand').value;
+                    
+                    if (!pk && !klasifikasi && !brand) {
+                        toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4'); toast.classList.add('opacity-100', 'translate-y-0');
+                        setTimeout(() => { toast.classList.remove('opacity-100', 'translate-y-0'); toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4'); }, 3000);
+                        return;
+                    }
+                    const params = new URLSearchParams();
+                    if(pk) params.append('pk', pk); 
+                    if(klasifikasi) params.append('klasifikasi', klasifikasi); 
+                    if(brand) params.append('brand', brand);
+                    window.location.href = `products.html?${params.toString()}`;
+                };
+            }
+
+            const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-fade-in-up'); e.target.style.opacity = 1; } }); }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
+        });
+    </script>
+</body>
+</html>

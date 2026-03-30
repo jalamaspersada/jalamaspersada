@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator PK AC - CV. Jala Mas Persada</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
+
+    <!-- Google Fonts: Poppins (Professional), Orbitron (Digital) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a3682',
+                            primary: '#2563eb',
+                            light: '#e0f2fe',
+                            accent: '#0ea5e9',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        digital: ['Orbitron', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: 0, transform: 'translateY(20px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        select { appearance: none; }
+        .reveal-on-scroll { opacity: 0; }
+        
+        /* Hide default spin buttons */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50 pt-[90px] md:pt-[100px]">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
+                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
+                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
+                    <i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537
+                </a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-accent transition">Karir</a>
+                <span class="text-gray-400">|</span>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center">
+            <a href="index.html" class="flex items-center group shrink-0 mr-auto">
+                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transition-all duration-500">
+            </a>
+
+            <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500 whitespace-nowrap">
+                <a href="index.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Beranda</a>
+                <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
+                <a href="index.html#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
+                <a href="projects.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="index.html#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
+                <a href="jmpedia.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">JMPedia</a>
+            </nav>
+
+            <div class="hidden md:flex shrink-0 ml-6 lg:ml-10">
+                <a href="index.html#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transform hover:-translate-y-0.5">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-4">
+                <i class="ri-menu-4-line text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden transition-transform duration-300">
+        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="products.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
+        <a href="#services" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
+        <a href="projects.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
+        <a href="#about" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
+        <a href="jmpedia.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">JMPedia</a>
+        <a href="#contact" class="mobile-link text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-16 md:pt-24 pb-20 md:pb-32 text-center overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/d/1SbLK8SyoNclHiB9yNoUaHshONK8iJ1wk" 
+             alt="Background" 
+             class="absolute inset-0 w-full h-full object-cover z-0"
+             style="object-position: center 37%;">
+        
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0a1128]/80 via-[#1a3682]/60 to-[#2563eb]/40 z-10"></div>
+        <div class="absolute inset-0 z-10 opacity-50 pointer-events-none mix-blend-screen">
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#0ea5e9] rounded-full filter blur-[120px] opacity-20"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-20">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-widest uppercase drop-shadow-lg">Kalkulator PK AC</h1>
+            <div class="w-16 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-3"></div>
+            <p class="text-blue-50 text-sm md:text-base font-light tracking-wide max-w-xl mx-auto drop-shadow-md italic">"Hitung kapasitas ideal untuk kenyamanan maksimal Anda."</p>
+        </div>
+    </section>
+
+    <!-- ================= CALCULATOR ENGINE ================= -->
+    <section class="relative z-40 -mt-8 md:-mt-12 pb-20 px-4">
+        <div class="container mx-auto max-w-xl">
+            <!-- Form Card -->
+            <div class="bg-white rounded-[32px] shadow-[0_25px_60px_-12px_rgba(0,0,0,0.15)] border border-white overflow-hidden p-6 md:p-10 animate-fade-in-up">
+                <div class="space-y-6">
+                    <div id="calc-error" class="hidden bg-red-50 text-red-500 p-4 rounded-xl text-xs font-bold text-center border border-red-100 transition-all">
+                        Harap masukkan dimensi ruangan yang valid.
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Input Panjang -->
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-bold text-brand-dark uppercase tracking-widest ml-1">Panjang (Meter)</label>
+                            <div class="relative flex items-center">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                    <i class="ri-ruler-line text-lg"></i>
+                                </div>
+                                <input type="number" id="length" step="0.1" placeholder="0.0" class="w-full pl-11 pr-16 py-4 bg-gray-50 border border-gray-500 rounded-2xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all font-semibold text-gray-800">
+                                <!-- Stepper & Unit -->
+                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center gap-1.5">
+                                    <div class="flex flex-col text-gray-600">
+                                        <button onclick="stepUp('length')" class="hover:text-brand-primary transition-colors leading-none"><i class="ri-arrow-up-s-fill text-sm"></i></button>
+                                        <button onclick="stepDown('length')" class="hover:text-brand-primary transition-colors leading-none"><i class="ri-arrow-down-s-fill text-sm"></i></button>
+                                    </div>
+                                    <span class="text-gray-700 text-xs font-bold">m</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Input Lebar -->
+                        <div class="space-y-2">
+                            <label class="block text-[10px] font-bold text-brand-dark uppercase tracking-widest ml-1">Lebar (Meter)</label>
+                            <div class="relative flex items-center">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
+                                    <i class="ri-ruler-2-line text-lg"></i>
+                                </div>
+                                <input type="number" id="width" step="0.1" placeholder="0.0" class="w-full pl-11 pr-16 py-4 bg-gray-50 border border-gray-500 rounded-2xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all font-semibold text-gray-800">
+                                <!-- Stepper & Unit -->
+                                <div class="absolute inset-y-0 right-0 pr-4 flex items-center gap-1.5">
+                                    <div class="flex flex-col text-gray-600">
+                                        <button onclick="stepUp('width')" class="hover:text-brand-primary transition-colors leading-none"><i class="ri-arrow-up-s-fill text-sm"></i></button>
+                                        <button onclick="stepDown('width')" class="hover:text-brand-primary transition-colors leading-none"><i class="ri-arrow-down-s-fill text-sm"></i></button>
+                                    </div>
+                                    <span class="text-gray-700 text-xs font-bold">m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-[10px] font-bold text-brand-dark uppercase tracking-widest ml-1">Jenis Ruangan</label>
+                        <div class="relative">
+                            <select id="roomType" class="w-full px-5 py-4 bg-gray-50 border border-gray-500 rounded-2xl focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary outline-none transition-all font-medium text-gray-700 cursor-pointer">
+                                <option value="500">Kamar Tidur</option>
+                                <option value="600">Ruang Keluarga / Ruang Tamu</option>
+                                <option value="700">Ruang Rapat</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 pr-5 flex items-center pointer-events-none text-brand-primary text-xl">
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="calculatePK()" class="w-full py-5 bg-brand-dark hover:bg-brand-primary text-white font-extrabold uppercase tracking-widest text-xs md:text-sm rounded-2xl shadow-xl shadow-blue-900/20 transition-all transform active:scale-95 flex items-center justify-center gap-2">
+                        Hitung PK AC
+                    </button>
+                </div>
+
+                <div id="resultContainer" class="hidden mt-10 border-t border-gray-50 pt-8 animate-fade-in-up text-center">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Estimasi Kebutuhan</p>
+                    <div class="bg-gradient-to-br from-[#0a1128] via-[#1a3682] to-[#0a1128] rounded-[24px] p-8 shadow-2xl relative overflow-hidden group border border-white/10">
+                        <div class="absolute -right-10 -top-10 w-32 h-32 bg-[#00b4d8] rounded-full mix-blend-screen filter blur-[50px] opacity-20"></div>
+                        <div id="resultValue" class="font-digital font-bold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white to-[#00b4d8] tracking-wider relative z-10">0.00 PK</div>
+                        <div class="text-[#00b4d8] text-[9px] mt-4 font-mono tracking-[0.4em] uppercase opacity-70">Result Capacity</div>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 my-7 opacity-60">
+                        <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-brand-dark"></div>
+                        <div class="w-1.5 h-1.5 bg-gradient-to-br from-brand-accent to-brand-dark rotate-45"></div>
+                        <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-brand-dark"></div>
+                    </div>
+                    <p class="text-center text-[11px] text-gray-500 leading-relaxed max-w-sm mx-auto mb-8 font-medium">
+                        *Untuk perhitungan ideal dan kebutuhan unit yang akurat diperlukan <strong class="text-brand-dark">survei lokasi</strong>. Jadwalkan dan konsultasikan dengan kami.
+                    </p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                        <a id="catalogLink" href="products.html" class="px-8 py-3.5 bg-white border-2 border-brand-dark text-brand-dark font-bold text-[10px] uppercase tracking-widest rounded-xl hover:bg-brand-dark hover:text-white transition-all flex items-center justify-center text-center">Lihat Katalog</a>
+                        <a id="waLink" href="#" target="_blank" class="px-8 py-3.5 bg-[#25D366] text-white font-bold text-[10px] uppercase tracking-widest rounded-xl hover:bg-[#1da851] transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20">
+                            <i class="ri-whatsapp-line text-lg"></i> Konsultasi Produk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INFO SECTION ================= -->
+    <section class="py-12 bg-white reveal-on-scroll">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-8 uppercase tracking-widest">Pentingnya Memilih PK yang Tepat</h3>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                    <div class="shrink-0 w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center shadow-inner"><i class="ri-error-warning-line text-2xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm mb-1 uppercase">PK Kurang</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">AC sulit mendinginkan ruang, kompresor dipaksa bekerja maksimal terus-menerus tanpa jeda, menyebabkan tagihan listrik melonjak tajam.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                    <div class="shrink-0 w-12 h-12 bg-amber-50 text-amber-500 rounded-full flex items-center justify-center shadow-inner"><i class="ri-alert-line text-2xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm mb-1 uppercase">PK Berlebih</h4>
+                        <p class="text-gray-500 text-xs leading-relaxed">Ruangan cepat dingin namun kompresor akan terlalu sering mati-nyala. Hal ini merusak keawetan mesin dalam jangka panjang.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+                <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
+                    <p class="max-w-sm text-gray-500">Spesialis pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4 justify-center md:justify-end items-start">
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-instagram-line text-lg"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-facebook-circle-fill text-lg"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs opacity-60">
+                <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn'), closeMenu = document.getElementById('close-menu'), mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn) menuBtn.onclick = () => mobileMenu.classList.remove('translate-x-full');
+        if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.add('translate-x-full');
+
+        // Manual Step Functions
+        function stepUp(id) {
+            const input = document.getElementById(id);
+            let val = parseFloat(input.value) || 0;
+            input.value = (val + 0.1).toFixed(1);
+        }
+
+        function stepDown(id) {
+            const input = document.getElementById(id);
+            let val = parseFloat(input.value) || 0;
+            if (val > 0) input.value = Math.max(0, val - 0.1).toFixed(1);
+        }
+
+        function calculatePK() {
+            const length = parseFloat(document.getElementById('length').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const roomSelect = document.getElementById('roomType');
+            const factor = parseInt(roomSelect.value);
+            const roomName = roomSelect.options[roomSelect.selectedIndex].text;
+            const errorMsg = document.getElementById('calc-error');
+
+            if (!length || !width || length <= 0 || width <= 0) {
+                errorMsg.classList.remove('hidden');
+                setTimeout(() => errorMsg.classList.add('hidden'), 3000);
+                return;
+            } else {
+                errorMsg.classList.add('hidden');
+            }
+
+            const area = length * width;
+            const totalBTU = area * factor;
+            const pkResult = totalBTU / 9000;
+            const displayArea = parseFloat(area.toFixed(2));
+            const container = document.getElementById('resultContainer');
+            const resultDisplay = document.getElementById('resultValue');
+            const waBtn = document.getElementById('waLink');
+            const catalogBtn = document.getElementById('catalogLink');
+
+            container.classList.remove('hidden');
+
+            let redirectParam = "";
+            if (totalBTU <= 5500) { redirectParam = "0.5"; }
+            else if (totalBTU <= 7500) { redirectParam = "0.75"; }
+            else if (totalBTU <= 10000) { redirectParam = "1"; }
+            else if (totalBTU <= 13000) { redirectParam = "1.5"; }
+            else if (totalBTU <= 19000) { redirectParam = "2"; }
+            else if (totalBTU <= 26000) { redirectParam = "2.5"; }
+            else { redirectParam = "3"; }
+
+            if (resultDisplay) { resultDisplay.innerText = pkResult.toFixed(2) + " PK"; }
+            if (catalogBtn) { catalogBtn.href = `products.html?pk=${redirectParam}`; }
+
+            const waMsg = encodeURIComponent(`Halo JMP, saya sudah menghitung kebutuhan AC untuk ruangan "${roomName}" dengan ukuran ${length} x ${width} m sebesar ${displayArea}m2. Boleh minta saran unit yang terbaik?`);
+            if (waBtn) { waBtn.href = `https://wa.me/6281215000537?text=${waMsg}`; }
+            
+            setTimeout(() => { window.scrollTo({ top: container.offsetTop + 100, behavior: 'smooth' }); }, 100);
+        }
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { 
+                if (e.isIntersecting) { 
+                    e.target.classList.add('animate-fade-in-up'); 
+                    e.target.style.opacity = 1; 
+                } 
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => obs.observe(el));
+    </script>
+</body>
+</html>
