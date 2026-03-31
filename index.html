@@ -77,7 +77,7 @@
         .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="text-gray-800 bg-white pt-[90px] md:pt-[100px]">
+<body class="text-gray-800 bg-white pt-[64px] md:pt-[100px]">
 
     <!-- ================= TOP BAR ================= -->
     <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
@@ -120,7 +120,7 @@
                 </a>
             </div>
 
-            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-4">
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-2">
                 <i class="ri-menu-4-line text-2xl"></i>
             </button>
         </div>
@@ -138,8 +138,8 @@
         <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
     </div>
 
-    <!-- ================= HERO SECTION (FIXED 680PX HEIGHT) ================= -->
-    <section class="relative pt-20 md:pt-24 text-center overflow-hidden flex flex-col justify-center w-full h-[500px] md:h-[680px]">
+    <!-- ================= HERO SECTION (FIXED DESKTOP, ADAPTIVE MOBILE) ================= -->
+    <section class="relative pt-12 md:pt-24 text-center overflow-hidden flex flex-col justify-center w-full h-[450px] md:h-[680px]">
         <div class="absolute inset-0 z-0">
             <img src="https://lh3.googleusercontent.com/d/19CUR_HAyXp_4_y3Cj0iTyLSsVEct5NF6" 
                  alt="Hero Background" 
@@ -149,44 +149,43 @@
         <!-- Reduced Opacity Gradient -->
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-[#0a1128]/80 via-[#1a3682]/60 to-[#2563eb]/40"></div>
         <div class="absolute inset-0 z-0 opacity-50 pointer-events-none mix-blend-screen">
-            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
-            <div class="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#0ea5e9] rounded-full filter blur-[120px] opacity-20"></div>
+            <div class="absolute -top-32 -left-32 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#00b4d8] rounded-full filter blur-[100px] md:blur-[150px] opacity-30"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#0ea5e9] rounded-full filter blur-[80px] md:blur-[120px] opacity-20"></div>
         </div>
         
         <div class="container mx-auto px-4 md:px-6 relative z-10 w-full mb-10 md:mb-16">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 md:mb-5 tracking-tight leading-tight drop-shadow-2xl">
-                Spesialis AC di Jawa Tengah
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 md:mb-5 tracking-tight leading-tight drop-shadow-2xl px-2">
+                Spesialis AC <br class="sm:hidden"> di Jawa Tengah
             </h1>
             
-            <!-- FLEX WRAP untuk mencegah text menabrak sisi layar di HP -->
-            <div class="flex flex-wrap justify-center items-center gap-x-2 md:gap-x-3 gap-y-1 font-saira text-[10px] sm:text-xs md:text-sm lg:text-xl font-semibold text-slate-200 tracking-wider uppercase mb-6 drop-shadow-md">
-                <span>Air Conditioner Sales</span>
-                <span class="text-slate-300">&bull;</span>
-                <span>Projects</span>
+            <!-- FLEX WRAP Diperbarui: Lebih stabil untuk Mobile -->
+            <div class="flex flex-wrap justify-center items-center gap-x-2 md:gap-x-3 gap-y-1.5 font-saira text-[10px] sm:text-xs md:text-sm lg:text-xl font-semibold text-slate-200 tracking-widest uppercase mb-5 md:mb-6 drop-shadow-md px-2">
+                <span class="whitespace-nowrap">Air Conditioner Sales</span>
                 <span class="text-slate-300 hidden sm:inline-block">&bull;</span>
-                <span class="text-slate-300 sm:hidden">|</span>
-                <span>Maintenance</span>
+                <span class="whitespace-nowrap">Projects</span>
+                <span class="text-slate-300 hidden sm:inline-block">&bull;</span>
+                <span class="whitespace-nowrap w-full sm:w-auto mt-0.5 sm:mt-0">Maintenance</span>
             </div>
             
-            <div class="w-16 md:w-20 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-5 md:mb-6"></div>
+            <div class="w-16 md:w-20 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-4 md:mb-6"></div>
             
-            <p class="font-sans text-xs sm:text-sm md:text-lg text-blue-200 tracking-wide font-medium italic drop-shadow px-2">
+            <p class="font-sans text-[11px] sm:text-sm md:text-lg text-blue-200 tracking-wide font-medium italic drop-shadow px-4">
                 "Solusi pendingin ruang dan tata udara sejak 1992"
             </p>
         </div>
     </section>
 
-    <!-- ================= FLOATING SEARCH ENGINE ================= -->
+    <!-- ================= FLOATING SEARCH ENGINE (MOBILE OPTIMIZED) ================= -->
     <div class="relative z-40 -mt-16 md:-mt-24 px-4 md:px-0 pb-12">
         <div class="container mx-auto max-w-5xl">
-            <div class="bg-white/80 backdrop-blur-2xl p-5 md:p-8 rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.3)] border border-white/60 relative mx-auto">
-                <h3 class="text-xs md:text-sm font-bold text-brand-dark text-center uppercase tracking-widest mb-5 drop-shadow-sm">
+            <div class="bg-white/90 md:bg-white/80 backdrop-blur-2xl p-5 md:p-8 rounded-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.2)] border border-white/60 relative mx-auto">
+                <h3 class="text-xs md:text-sm font-bold text-brand-dark text-center uppercase tracking-widest mb-4 md:mb-5 drop-shadow-sm">
                     Temukan Produk Impian Anda
                 </h3>
                 <form class="flex flex-col md:flex-row gap-3 md:gap-4 items-center justify-between">
                     <div class="w-full flex-1 grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                         <div class="relative group">
-                            <select id="home-pk" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                            <select id="home-pk" class="w-full pl-4 pr-8 py-3.5 md:py-3 bg-gray-50/80 md:bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-xl md:rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
                                 <option value="">Pilih PK</option>
                                 <option value="0.5">1/2 PK</option>
                                 <option value="0.75">3/4 PK</option>
@@ -199,11 +198,11 @@
                                 <option value="6">6 PK</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
-                                <i class="ri-arrow-down-s-line"></i>
+                                <i class="ri-arrow-down-s-line text-lg md:text-base"></i>
                             </div>
                         </div>
                         <div class="relative group">
-                            <select id="home-klasifikasi" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                            <select id="home-klasifikasi" class="w-full pl-4 pr-8 py-3.5 md:py-3 bg-gray-50/80 md:bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-xl md:rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
                                 <option value="">Jenis Produk</option>
                                 <option value="Cassette">AC Cassette</option>
                                 <option value="Floor">AC Floor Standing</option>
@@ -217,11 +216,11 @@
                                 <option value="Pipa">Pipa Tembaga</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
-                                <i class="ri-arrow-down-s-line"></i>
+                                <i class="ri-arrow-down-s-line text-lg md:text-base"></i>
                             </div>
                         </div>
                         <div class="relative group">
-                            <select id="home-brand" class="w-full pl-4 pr-8 py-3 bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
+                            <select id="home-brand" class="w-full pl-4 pr-8 py-3.5 md:py-3 bg-gray-50/80 md:bg-gray-50/50 hover:bg-gray-100/80 border border-gray-200/80 rounded-xl md:rounded-full focus:outline-none focus:ring-2 focus:ring-brand-primary/20 focus:border-brand-primary text-gray-700 text-xs md:text-sm font-medium appearance-none cursor-pointer transition-all">
                                 <option value="">Pilih Merk</option>
                                 <option value="bestlife">Bestlife</option>
                                 <option value="daikin">Daikin</option>
@@ -235,11 +234,11 @@
                                 <option value="toshiba">Toshiba</option>
                             </select>
                             <div class="absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none text-gray-400 group-hover:text-brand-primary transition-colors">
-                                <i class="ri-arrow-down-s-line"></i>
+                                <i class="ri-arrow-down-s-line text-lg md:text-base"></i>
                             </div>
                         </div>
                     </div>
-                    <button type="button" id="search-btn-home" class="w-full md:w-auto px-8 py-3 bg-brand-dark text-white font-bold rounded-full hover:bg-brand-primary transition shadow-md hover:shadow-lg transform active:scale-95 flex items-center justify-center gap-1.5 shrink-0">
+                    <button type="button" id="search-btn-home" class="w-full md:w-auto px-8 py-3.5 md:py-3 bg-brand-dark text-white font-bold rounded-xl md:rounded-full hover:bg-brand-primary transition shadow-md hover:shadow-lg transform active:scale-95 flex items-center justify-center gap-2 shrink-0">
                         CARI AC
                     </button>
                 </form>
@@ -248,7 +247,7 @@
     </div>
 
     <!-- ================= BANNER CAROUSEL (1920x500 MAX) ================= -->
-    <section id="home-banner" class="relative w-full max-w-[1920px] mx-auto h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden group bg-[#0a1128]">
+    <section id="home-banner" class="relative w-full max-w-[1920px] mx-auto h-[160px] sm:h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden group bg-[#0a1128]">
         <div class="carousel-track h-full" id="track">
             <div class="carousel-slide h-full flex items-center justify-center">
                 <img src="https://lh3.googleusercontent.com/d/1r7oNYqm7sKDZFc7Tlavks8MTwbtUQcEj" alt="Banner 1" class="w-full h-full object-cover object-center">
@@ -267,33 +266,33 @@
             </div>
         </div>
         
-        <button id="prevBtn" class="absolute top-1/2 left-3 transform -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-black/20 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-70 hover:opacity-100 transition z-20">
-            <i class="ri-arrow-left-s-line text-base"></i>
+        <button id="prevBtn" class="absolute top-1/2 left-2 md:left-3 transform -translate-y-1/2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-black/30 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-80 hover:opacity-100 transition z-20">
+            <i class="ri-arrow-left-s-line text-sm md:text-base"></i>
         </button>
-        <button id="nextBtn" class="absolute top-1/2 right-3 transform -translate-y-1/2 w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-black/20 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-70 hover:opacity-100 transition z-20">
-            <i class="ri-arrow-right-s-line text-base"></i>
+        <button id="nextBtn" class="absolute top-1/2 right-2 md:right-3 transform -translate-y-1/2 w-7 h-7 md:w-8 md:h-8 flex items-center justify-center bg-black/30 hover:bg-brand-primary text-white rounded-full backdrop-blur-md opacity-80 hover:opacity-100 transition z-20">
+            <i class="ri-arrow-right-s-line text-sm md:text-base"></i>
         </button>
-        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-20" id="indicators"></div>
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-1.5 z-20" id="indicators"></div>
     </section>
 
     <!-- ================= CALCULATOR CTA SECTION ================= -->
     <section class="py-6 md:py-8 bg-white relative overflow-hidden reveal-on-scroll">
         <div class="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
-            <div class="bg-gradient-to-r from-[#0a1128] via-[#1a3682] to-[#2563eb] rounded-full py-4 px-6 md:px-8 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-4 border border-white/10 group">
+            <div class="bg-gradient-to-r from-[#0a1128] via-[#1a3682] to-[#2563eb] rounded-[24px] md:rounded-full py-5 px-5 md:py-4 md:px-8 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-4 border border-white/10 group text-center md:text-left">
                 <div class="absolute right-0 top-1/2 -translate-y-1/2 w-48 h-24 bg-[#00b4d8] rounded-full mix-blend-screen filter blur-[40px] opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
                 
-                <div class="relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-5 text-center md:text-left">
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-3 md:gap-5">
                     <div class="hidden md:flex w-10 h-10 bg-white/10 rounded-full items-center justify-center shrink-0 border border-white/20">
                         <i class="ri-calculator-line text-xl text-[#00b4d8]"></i>
                     </div>
                     <div>
-                        <h2 class="text-sm md:text-base font-extrabold text-white tracking-wide mb-0.5 drop-shadow-sm">Bingung Menentukan Ukuran PK AC?</h2>
-                        <p class="text-blue-100 text-[10px] md:text-[11px] font-light leading-snug m-0">Hitung kebutuhan PK AC ruangan Anda.</p>
+                        <h2 class="text-[13px] md:text-base font-extrabold text-white tracking-wide mb-1 md:mb-0.5 drop-shadow-sm">Bingung Menentukan Ukuran PK AC?</h2>
+                        <p class="text-blue-100 text-[10px] md:text-[11px] font-light leading-snug m-0">Hitung kebutuhan PK AC ruangan Anda otomatis.</p>
                     </div>
                 </div>
                 
-                <div class="relative z-10 shrink-0 mt-1 md:mt-0">
-                    <a href="calculator.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-white text-brand-dark font-bold text-[10px] md:text-xs uppercase tracking-widest rounded-full hover:bg-gray-50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 transform hover:scale-105">
+                <div class="relative z-10 shrink-0 w-full md:w-auto mt-1 md:mt-0">
+                    <a href="calculator.html" class="flex md:inline-flex items-center justify-center gap-2 w-full px-6 py-3 md:py-2.5 bg-white text-brand-dark font-bold text-[11px] md:text-xs uppercase tracking-widest rounded-xl md:rounded-full hover:bg-gray-50 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 transform active:scale-95 md:hover:scale-105">
                         Hitung Sekarang
                     </a>
                 </div>
@@ -421,12 +420,12 @@
             </div>
 
             <!-- Grid Artikel Otomatis -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-5 hidden" id="home-jmpedia-grid">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 hidden" id="home-jmpedia-grid">
                 <!-- Data akan disuntikkan di sini oleh script -->
             </div>
 
-            <div class="mt-8 flex justify-end">
-                <a href="jmpedia.html" class="text-brand-primary font-bold text-xs inline-flex items-center gap-1.5 hover:text-brand-dark transition bg-blue-50 px-5 py-2.5 rounded-full">
+            <div class="mt-8 flex justify-center md:justify-end">
+                <a href="jmpedia.html" class="text-brand-primary font-bold text-[11px] md:text-xs inline-flex items-center gap-1.5 hover:text-brand-dark transition bg-blue-50 px-6 py-3 rounded-full">
                     Lihat Semua Artikel <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
@@ -436,60 +435,60 @@
     <!-- ================= SERVICES ================= -->
     <section id="services" class="py-12 md:py-16 bg-[#050a15] relative overflow-hidden reveal-on-scroll">
         <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none"></div>
-        <div class="container mx-auto px-6 relative z-10 max-w-7xl">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-widest uppercase mb-4">Solusi yang Kami Tawarkan</h2>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
+            <div class="text-center mb-8 md:mb-10">
+                <h2 class="text-xl md:text-3xl font-extrabold text-white tracking-widest uppercase mb-4">Solusi yang Kami Tawarkan</h2>
                 <div class="w-16 h-px bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent mx-auto"></div>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-5">
-                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                <div class="group relative h-[180px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
                     <img src="https://lh3.googleusercontent.com/d/1uTRdRmx-Fhf1zfH6LiXxEYm4ufMZDuna" alt="Penjualan AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
-                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
-                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
-                            <i class="ri-shopping-bag-3-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
-                            <h3 class="text-lg font-bold text-white tracking-wide">Penjualan</h3>
+                    <div class="absolute inset-0 p-4 md:p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-1 transition-transform duration-500">
+                            <i class="ri-shopping-bag-3-line text-xl md:text-2xl text-[#00b4d8] mb-1.5 inline-block"></i>
+                            <h3 class="text-sm md:text-lg font-bold text-white tracking-wide">Penjualan</h3>
                         </div>
-                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1 hidden md:block">
                             <p class="text-gray-300 text-[11px] leading-relaxed font-light">Unit AC bergaransi resmi dengan harga kompetitif.</p>
                         </div>
                     </div>
                 </div>
-                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                <div class="group relative h-[180px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
                     <img src="https://lh3.googleusercontent.com/d/13zUYUUocTdR6fLifx9kzgM1ZZPfAQo5F" alt="Instalasi AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
-                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
-                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
-                            <i class="ri-tools-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
-                            <h3 class="text-lg font-bold text-white tracking-wide">Instalasi</h3>
+                    <div class="absolute inset-0 p-4 md:p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-1 transition-transform duration-500">
+                            <i class="ri-tools-line text-xl md:text-2xl text-[#00b4d8] mb-1.5 inline-block"></i>
+                            <h3 class="text-sm md:text-lg font-bold text-white tracking-wide">Instalasi</h3>
                         </div>
-                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1 hidden md:block">
                             <p class="text-gray-300 text-[11px] leading-relaxed font-light">Pemasangan standar premium dengan material berkualitas.</p>
                         </div>
                     </div>
                 </div>
-                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                <div class="group relative h-[180px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
                     <img src="https://lh3.googleusercontent.com/d/1EhoVQnWl5ybiSyJikJ9EiIK-W8mc5QQe" alt="Proyek AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
-                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
-                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
-                            <i class="ri-building-4-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
-                            <h3 class="text-lg font-bold text-white tracking-wide">Proyek</h3>
+                    <div class="absolute inset-0 p-4 md:p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-1 transition-transform duration-500">
+                            <i class="ri-building-4-line text-xl md:text-2xl text-[#00b4d8] mb-1.5 inline-block"></i>
+                            <h3 class="text-sm md:text-lg font-bold text-white tracking-wide">Proyek</h3>
                         </div>
-                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1 hidden md:block">
                             <p class="text-gray-300 text-[11px] leading-relaxed font-light">Pengadaan skala besar untuk gedung, kantor, dan residensial.</p>
                         </div>
                     </div>
                 </div>
-                <div class="group relative h-[250px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
+                <div class="group relative h-[180px] md:h-[280px] rounded-2xl overflow-hidden shadow-2xl bg-[#0a1128] border border-white/5">
                     <img src="https://lh3.googleusercontent.com/d/1dM_gvx5Lti_8wx3wCSxZ_wKXBn09bMsz" alt="Perawatan AC" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000 opacity-80">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050a15] via-[#050a15]/70 to-transparent"></div>
-                    <div class="absolute inset-0 p-5 flex flex-col justify-end z-20">
-                        <div class="transform group-hover:-translate-y-2 transition-transform duration-500">
-                            <i class="ri-settings-3-line text-2xl text-[#00b4d8] mb-2 inline-block"></i>
-                            <h3 class="text-lg font-bold text-white tracking-wide">Perawatan</h3>
+                    <div class="absolute inset-0 p-4 md:p-5 flex flex-col justify-end z-20">
+                        <div class="transform group-hover:-translate-y-1 transition-transform duration-500">
+                            <i class="ri-settings-3-line text-xl md:text-2xl text-[#00b4d8] mb-1.5 inline-block"></i>
+                            <h3 class="text-sm md:text-lg font-bold text-white tracking-wide">Perawatan</h3>
                         </div>
-                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1">
+                        <div class="max-h-0 opacity-0 group-hover:max-h-[80px] group-hover:opacity-100 transition-all duration-700 overflow-hidden mt-1 hidden md:block">
                             <p class="text-gray-300 text-[11px] leading-relaxed font-light">Layanan cuci, pengisian freon, dan perbaikan terpercaya.</p>
                         </div>
                     </div>
@@ -498,60 +497,60 @@
         </div>
     </section>
 
-    <!-- ================= SHOWROOM LOCATIONS (STATIC VERSION) ================= -->
+    <!-- ================= SHOWROOM LOCATIONS ================= -->
     <section id="contact" class="py-16 md:py-20 bg-gradient-to-br from-[#0a1128] via-[#1a3682] to-[#2563eb] relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
             <div class="text-center mb-10">
                 <h2 class="text-2xl md:text-3xl font-extrabold text-white uppercase mt-2 mb-4">Showroom Kami</h2>
                 <div class="w-16 h-px bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent mx-auto"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-5 md:gap-6 max-w-4xl mx-auto">
                 <!-- Card 1 -->
                 <div class="bg-white p-5 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <div class="w-full h-48 overflow-hidden rounded-xl mb-4">
+                    <div class="w-full h-40 md:h-48 overflow-hidden rounded-xl mb-4">
                         <img src="https://lh3.googleusercontent.com/d/1vULH7Fxyg7EXDSdmaVO3p4MMt7CXRARS" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Showroom+Cendrawasih'" alt="Showroom Cendrawasih" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-1.5">Showroom Cendrawasih</h3>
-                    <p class="text-gray-600 text-sm mb-5">Jl. Cendrawasih Selatan Kav. 15<br>Semarang, Jawa Tengah</p>
-                    <a href="https://maps.app.goo.gl/FFNz4D3JDrmoQzBf8" target="_blank" class="px-8 py-2.5 bg-brand-primary text-white text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
+                    <h3 class="text-base md:text-lg font-bold text-brand-dark mb-1.5">Showroom Cendrawasih</h3>
+                    <p class="text-gray-600 text-xs md:text-sm mb-5 leading-relaxed">Jl. Cendrawasih Selatan Kav. 15<br>Semarang, Jawa Tengah</p>
+                    <a href="https://maps.app.goo.gl/FFNz4D3JDrmoQzBf8" target="_blank" class="px-8 py-3 bg-brand-primary text-white text-xs md:text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
                 </div>
                 <!-- Card 2 -->
                 <div class="bg-white p-5 rounded-2xl shadow-lg flex flex-col items-center text-center">
-                    <div class="w-full h-48 overflow-hidden rounded-xl mb-4">
+                    <div class="w-full h-40 md:h-48 overflow-hidden rounded-xl mb-4">
                         <img src="https://lh3.googleusercontent.com/d/1VX4pvWjPrf0uHSnF6M6s7cuPxHxP8ue2" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=Showroom+Anjasmoro'" alt="Showroom Anjasmoro" class="w-full h-full object-cover object-top">
                     </div>
-                    <h3 class="text-lg font-bold text-brand-dark mb-1.5">Showroom Puri Anjasmoro</h3>
-                    <p class="text-gray-600 text-sm mb-5">Jl. Puri Anjasmoro Blok B1 No. 1<br>Semarang, Jawa Tengah</p>
-                    <a href="https://maps.app.goo.gl/GuFxDqVnwjMHq5N57" target="_blank" class="px-8 py-2.5 bg-brand-primary text-white text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
+                    <h3 class="text-base md:text-lg font-bold text-brand-dark mb-1.5">Showroom Puri Anjasmoro</h3>
+                    <p class="text-gray-600 text-xs md:text-sm mb-5 leading-relaxed">Jl. Puri Anjasmoro Blok B1 No. 1<br>Semarang, Jawa Tengah</p>
+                    <a href="https://maps.app.goo.gl/GuFxDqVnwjMHq5N57" target="_blank" class="px-8 py-3 bg-brand-primary text-white text-xs md:text-sm font-bold rounded-xl hover:bg-brand-dark transition shadow-md w-full md:w-auto">Rute Lokasi</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ================= ABOUT ================= -->
-    <section id="about" class="py-20 bg-white text-center reveal-on-scroll">
+    <section id="about" class="py-16 md:py-20 bg-white text-center reveal-on-scroll">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6">Tentang <span class="text-brand-dark">CV. Jala Mas Persada</span></h2>
-            <p class="text-gray-600 leading-relaxed text-lg mb-8">Pusat solusi tata udara terpercaya di Jawa Tengah sejak 1992. Kami mengedepankan kualitas unit dan ketepatan instalasi untuk kenyamanan jangka panjang Anda.</p>
-            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-100">
-                <div><h4 class="text-3xl font-bold text-brand-primary">30+</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Tahun Pengalaman</p></div>
-                <div><h4 class="text-3xl font-bold text-brand-primary">100%</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Teknisi Ahli</p></div>
-                <div><h4 class="text-3xl font-bold text-brand-primary">24/7</h4><p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Layanan Prima</p></div>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">Tentang <span class="text-brand-dark">CV. Jala Mas Persada</span></h2>
+            <p class="text-gray-600 leading-relaxed text-sm md:text-lg mb-8">Pusat solusi tata udara terpercaya di Jawa Tengah sejak 1992. Kami mengedepankan kualitas unit dan ketepatan instalasi untuk kenyamanan jangka panjang Anda.</p>
+            <div class="grid grid-cols-3 gap-3 md:gap-6 pt-8 border-t border-gray-100">
+                <div><h4 class="text-2xl md:text-3xl font-bold text-brand-primary">30+</h4><p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Tahun Pengalaman</p></div>
+                <div><h4 class="text-2xl md:text-3xl font-bold text-brand-primary">100%</h4><p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Teknisi Ahli</p></div>
+                <div><h4 class="text-2xl md:text-3xl font-bold text-brand-primary">24/7</h4><p class="text-[9px] md:text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Layanan Prima</p></div>
             </div>
         </div>
     </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+    <footer class="bg-gray-900 text-gray-400 py-10 md:py-12 border-t border-gray-800 text-sm">
         <div class="container mx-auto px-6 text-center md:text-left">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
-                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
-                    <p class="max-w-sm">Solusi pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain mx-auto md:mx-0">
+                    <p class="max-w-sm mx-auto md:mx-0 text-xs md:text-sm">Solusi pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
-                    <ul class="space-y-2">
+                    <ul class="space-y-2 text-xs md:text-sm">
                         <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
                         <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
                         <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
@@ -562,7 +561,7 @@
                     <a href="#" class="text-2xl hover:text-white transition"><i class="ri-facebook-circle-fill"></i></a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-xs">
+            <div class="border-t border-gray-800 pt-6 md:pt-8 text-center text-[10px] md:text-xs">
                 <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
             </div>
         </div>
@@ -571,25 +570,25 @@
     <!-- ================= FLOATING WHATSAPP ================= -->
     <a href="https://wa.me/6281215000537" target="_blank" class="fixed bottom-6 right-6 z-50 group">
         <div class="absolute -inset-2 bg-green-500/20 rounded-full blur group-hover:bg-green-500/30 transition duration-500"></div>
-        <div class="relative bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 active:scale-95">
-            <i class="ri-whatsapp-fill text-3xl text-white"></i>
+        <div class="relative bg-green-500 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 active:scale-95">
+            <i class="ri-whatsapp-fill text-2xl md:text-3xl text-white"></i>
         </div>
     </a>
 
     <!-- ================= TOAST NOTIFICATION ================= -->
-    <div id="toast-warning" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[110] bg-white text-gray-800 px-5 py-3 rounded-full shadow-2xl border border-red-100 flex items-center gap-3 transition-all duration-500 opacity-0 pointer-events-none -translate-y-4">
-        <div class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-red-500">
+    <div id="toast-warning" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-[110] w-[90%] md:w-auto max-w-sm bg-white text-gray-800 px-5 py-3 rounded-full shadow-2xl border border-red-100 flex items-center justify-center gap-3 transition-all duration-500 opacity-0 pointer-events-none -translate-y-4">
+        <div class="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-red-500 shrink-0">
             <i class="ri-error-warning-fill text-sm"></i>
         </div>
-        <span class="font-medium text-[11px] md:text-sm">Silakan pilih minimal 1 kategori pencarian</span>
+        <span class="font-medium text-[10px] md:text-sm">Silakan pilih minimal 1 kategori pencarian</span>
     </div>
 
     <!-- ================= SCRIPTS ================= -->
     <script>
         const fallbackArticles = [
-            { kat_id: "2", post_num: "01", month: "MAR", year: "26", judul: "Mengenal Teknologi AC Inverter: Hemat Listrik & Nyaman", image_link: "https://images.unsplash.com/photo-1610425027871-334d7cb27aeb?q=80&w=600" },
-            { kat_id: "3", post_num: "01", month: "MAR", year: "26", judul: "Panduan Mudah Menghitung Kebutuhan PK AC Ruangan", image_link: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=600" },
-            { kat_id: "4", post_num: "01", month: "MAR", year: "26", judul: "Waspada! 5 Tanda Utama AC Anda Sudah Sangat Kotor", image_link: "https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?q=80&w=600" }
+            { kat_id: "2", post_num: "01", month: "MAR", year: "26", judul: "Mengenal Teknologi AC Inverter: Hemat Listrik", image_link: "https://images.unsplash.com/photo-1610425027871-334d7cb27aeb?q=80&w=600" },
+            { kat_id: "3", post_num: "01", month: "MAR", year: "26", judul: "Panduan Mudah Menghitung Kebutuhan PK AC", image_link: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=600" },
+            { kat_id: "4", post_num: "01", month: "MAR", year: "26", judul: "Waspada! 5 Tanda Utama AC Sangat Kotor", image_link: "https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?q=80&w=600" }
         ];
 
         const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
@@ -645,7 +644,7 @@
             articles.slice(0, 3).forEach(art => {
                 const articleId = generateId(art);
                 const cat = getCatConfig(art.kat_id);
-                grid.innerHTML += `<a href="jmpedia.html?id=${articleId}" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"><div class="relative h-32 overflow-hidden shrink-0"><img src="${art.image_link}" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute top-2 left-2 ${cat.color} px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest">${cat.name}</div></div><div class="p-4 flex flex-col flex-grow"><h3 class="text-sm font-bold text-gray-900 mb-1.5 group-hover:text-brand-primary transition leading-tight line-clamp-2">${art.judul}</h3><div class="mt-auto flex items-center justify-between pt-3 border-t border-gray-100 text-brand-primary font-bold text-[11px] uppercase tracking-wider"><span>Baca Artikel</span><i class="ri-arrow-right-line transform group-hover:translate-x-1.5 transition-transform"></i></div></div></a>`;
+                grid.innerHTML += `<a href="jmpedia.html?id=${articleId}" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"><div class="relative h-28 md:h-32 overflow-hidden shrink-0"><img src="${art.image_link}" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute top-2 left-2 ${cat.color} px-2 py-0.5 rounded text-[8px] md:text-[9px] font-bold uppercase tracking-widest">${cat.name}</div></div><div class="p-3 md:p-4 flex flex-col flex-grow"><h3 class="text-xs md:text-sm font-bold text-gray-900 mb-1.5 group-hover:text-brand-primary transition leading-tight line-clamp-2">${art.judul}</h3><div class="mt-auto flex items-center justify-between pt-2.5 md:pt-3 border-t border-gray-100 text-brand-primary font-bold text-[10px] md:text-[11px] uppercase tracking-wider"><span>Baca Artikel</span><i class="ri-arrow-right-line transform group-hover:translate-x-1.5 transition-transform"></i></div></div></a>`;
             });
         }
 
