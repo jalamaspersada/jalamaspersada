@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth scroll-pt-24 md:scroll-pt-32">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Kami - CV. Jala Mas Persada</title>
+    <meta name="description" content="Portofolio dan rekam jejak instalasi serta pengadaan AC oleh CV Jala Mas Persada di berbagai sektor komersial, residensial, dan industrial.">
+    <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS & Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { brand: { dark: '#1a3682', primary: '#2563eb', light: '#e0f2fe', accent: '#0ea5e9' } },
+                    fontFamily: { sans: ['Poppins', 'sans-serif'], digital: ['Orbitron', 'sans-serif'], saira: ['Saira', 'sans-serif'] },
+                    animation: { 'fade-in-up': 'fadeInUp 0.8s ease-out forwards', 'zoom-slow': 'zoomSlow 20s infinite alternate' },
+                    keyframes: {
+                        fadeInUp: { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+                        zoomSlow: { '0%': { transform: 'scale(1)' }, '100%': { transform: 'scale(1.1)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: #fafafa; }
+        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="text-gray-800 pt-[90px] md:pt-[100px]">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
+                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
+                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold"><i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537</a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-accent transition">Karir</a> <span class="text-gray-400">|</span>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center group shrink-0"><img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo" class="h-6 sm:h-7 md:h-8 w-auto transform group-hover:scale-105 transition-all duration-500"></a>
+            <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500">
+                <a href="index.html" class="hover:text-brand-primary transition-colors py-1.5 border-b-2 border-transparent">Beranda</a>
+                <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 border-b-2 border-transparent">Produk</a>
+                <a href="index.html#services" class="hover:text-brand-primary transition-colors py-1.5 border-b-2 border-transparent">Layanan</a>
+                <a href="projects.html" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5">Proyek Kami</a>
+                <a href="index.html#about" class="hover:text-brand-primary transition-colors py-1.5 border-b-2 border-transparent">Tentang Kami</a>
+                <a href="jmpedia.html" class="hover:text-brand-primary transition-colors py-1.5 border-b-2 border-transparent">JMPedia</a>
+            </nav>
+            <div class="hidden md:flex shrink-0"><a href="index.html#contact" class="px-6 py-2.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-md hover:-translate-y-0.5">Hubungi Kami</a></div>
+            <button id="menu-btn" class="md:hidden text-brand-dark p-2 ml-4"><i class="ri-menu-4-line text-2xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden transition-transform duration-300">
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
+        <a href="index.html" class="text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="products.html" class="text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
+        <a href="index.html#services" class="text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
+        <a href="projects.html" class="text-xl font-semibold border-b border-gray-100 pb-4 text-brand-primary">Proyek Kami</a>
+        <a href="index.html#about" class="text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
+        <a href="jmpedia.html" class="text-xl font-semibold border-b border-gray-100 pb-4">JMPedia</a>
+        <a href="index.html#contact" class="text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
+    </div>
+
+    <!-- ================= LUXURY HERO SECTION ================= -->
+    <section class="relative pt-20 md:pt-32 pb-24 md:pb-36 text-center overflow-hidden bg-[#050a15]">
+        <div class="absolute inset-0 z-0"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-30 mix-blend-luminosity animate-zoom-slow"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#0a1128]/90 via-[#0a1128]/70 to-[#fafafa] z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-screen">
+            <div class="absolute top-0 right-10 w-[500px] h-[500px] bg-[#2563eb] rounded-full blur-[150px] opacity-30"></div>
+            <div class="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#00b4d8] rounded-full blur-[150px] opacity-20"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10 animate-fade-in-up">
+            <span class="inline-block py-1.5 px-4 bg-white/10 border border-white/20 backdrop-blur-md rounded-full text-blue-200 text-[10px] uppercase tracking-[0.3em] font-bold mb-6">Portofolio</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight leading-tight drop-shadow-2xl">Jejak <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4d8] to-[#e0f2fe]">Karya</span></h1>
+            <div class="w-24 h-1 bg-gradient-to-r from-transparent via-[#00b4d8] to-transparent mx-auto rounded-full mb-6"></div>
+            <p class="font-sans text-sm md:text-lg text-blue-100/80 font-light max-w-2xl mx-auto leading-relaxed">Dedikasi lebih dari 3 dekade dalam menghadirkan solusi tata udara berstandar tinggi untuk berbagai sektor di seluruh Jawa Tengah.</p>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORY FILTER MENU ================= -->
+    <div class="sticky top-[64px] md:top-[112px] z-40 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm py-3 md:py-4">
+        <div class="container mx-auto px-0 md:px-4 max-w-6xl">
+            <div class="flex overflow-x-auto justify-start md:justify-center gap-2 md:gap-4 hide-scrollbar px-4 md:px-0 pb-1 md:pb-0" id="filter-buttons">
+                <button onclick="filterGallery('Semua', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-brand-primary text-white shadow-md">Semua</button>
+                <button onclick="filterGallery('Residensial', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Residensial</button>
+                <button onclick="filterGallery('Komersial', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Komersial</button>
+                <button onclick="filterGallery('Perkantoran', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Perkantoran</button>
+                <button onclick="filterGallery('Industrial', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Industrial</button>
+                <button onclick="filterGallery('FasilitasPublik', this)" class="filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200">Fasilitas Publik</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= CATEGORIZED GALLERY SHOWCASE ================= -->
+    <section class="py-16 md:py-24 bg-[#fafafa] min-h-[50vh]">
+        <div class="container mx-auto px-4 md:px-8 max-w-7xl" id="gallery-wrapper">
+            <!-- 01. KATEGORI RESIDENSIAL -->
+            <div class="category-section mb-20 md:mb-28 transition-all duration-500" data-category="Residensial">
+                <div class="flex items-center gap-6 mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark"><span class="text-gray-300 font-light mr-2">01</span> Residensial</h2><div class="h-px bg-gradient-to-r from-gray-300 to-transparent flex-grow hidden md:block"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="grid-Residensial"></div>
+            </div>
+            <!-- 02. KATEGORI KOMERSIAL -->
+            <div class="category-section mb-20 md:mb-28 transition-all duration-500" data-category="Komersial">
+                <div class="flex items-center gap-6 mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark"><span class="text-gray-300 font-light mr-2">02</span> Komersial</h2><div class="h-px bg-gradient-to-r from-gray-300 to-transparent flex-grow hidden md:block"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="grid-Komersial"></div>
+            </div>
+            <!-- 03. KATEGORI PERKANTORAN -->
+            <div class="category-section mb-20 md:mb-28 transition-all duration-500" data-category="Perkantoran">
+                <div class="flex items-center gap-6 mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark"><span class="text-gray-300 font-light mr-2">03</span> Perkantoran</h2><div class="h-px bg-gradient-to-r from-gray-300 to-transparent flex-grow hidden md:block"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="grid-Perkantoran"></div>
+            </div>
+            <!-- 04. KATEGORI INDUSTRIAL -->
+            <div class="category-section mb-20 md:mb-28 transition-all duration-500" data-category="Industrial">
+                <div class="flex items-center gap-6 mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark"><span class="text-gray-300 font-light mr-2">04</span> Industrial</h2><div class="h-px bg-gradient-to-r from-gray-300 to-transparent flex-grow hidden md:block"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="grid-Industrial"></div>
+            </div>
+            <!-- 05. KATEGORI FASILITAS PUBLIK -->
+            <div class="category-section mb-20 md:mb-28 transition-all duration-500" data-category="FasilitasPublik">
+                <div class="flex items-center gap-6 mb-10"><h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark"><span class="text-gray-300 font-light mr-2">05</span> Fasilitas Publik</h2><div class="h-px bg-gradient-to-r from-gray-300 to-transparent flex-grow hidden md:block"></div></div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6" id="grid-FasilitasPublik"></div>
+            </div>
+            <!-- Empty State -->
+            <div id="empty-gallery" class="hidden text-center py-20">
+                <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400"><i class="ri-image-line text-2xl"></i></div>
+                <h3 class="text-lg font-bold text-gray-700 mb-1">Belum ada portofolio</h3>
+                <p class="text-sm text-gray-500">Proyek untuk kategori ini akan segera diperbarui.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= LIGHTBOX MODAL (POPUP PERBESAR GAMBAR) ================= -->
+    <div id="gallery-lightbox" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm hidden flex-col items-center justify-center p-4 md:p-10 opacity-0 transition-opacity duration-300">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white hover:text-brand-dark transition-colors z-50"><i class="ri-close-line text-2xl"></i></button>
+        <button id="lb-prev" onclick="changeLightboxSlide(-1); event.stopPropagation();" class="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white text-white hover:text-brand-dark rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-all z-50 hidden"><i class="ri-arrow-left-s-line text-3xl"></i></button>
+        <button id="lb-next" onclick="changeLightboxSlide(1); event.stopPropagation();" class="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white text-white hover:text-brand-dark rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-md transition-all z-50 hidden"><i class="ri-arrow-right-s-line text-3xl"></i></button>
+        <div class="relative w-full h-full max-w-6xl max-h-[85vh] flex justify-center items-center" onclick="event.stopPropagation();">
+             <img id="lightbox-image" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl transform scale-95 opacity-0 transition-all duration-300 hidden">
+             <div id="lightbox-video-container" class="w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300 hidden">
+                 <iframe id="lightbox-video" class="w-full h-full border-0" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+             </div>
+        </div>
+    </div>
+
+    <!-- ================= CALL TO ACTION ================= -->
+    <section class="py-20 relative bg-brand-dark overflow-hidden">
+        <div class="absolute inset-0 z-0"><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-brand-primary rounded-[100%] blur-[100px] opacity-40 mix-blend-screen"></div></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-xl md:text-3xl lg:text-4xl font-extrabold text-white mb-4">Proyek Anda butuh sentuhan spesialis pendingin udara?</h2>
+            <p class="text-blue-100 mb-10 max-w-4xl mx-auto font-light text-sm md:text-base md:whitespace-nowrap">Tim teknisi kami siap melakukan survei lokasi dan memberikan solusi tata udara terbaik.</p>
+            <a href="https://wa.me/6281215000537" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-brand-dark font-extrabold uppercase tracking-widest rounded-full hover:bg-brand-primary hover:text-white transition-all shadow-lg hover:-translate-y-1"><i class="ri-whatsapp-line text-2xl"></i> Hubungi Kami</a>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
+                    <p class="max-w-sm">Spesialis pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4 justify-center md:justify-end items-start">
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-instagram-line text-lg"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-facebook-circle-fill text-lg"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-xs opacity-60"><p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+    <a href="https://wa.me/6281215000537" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="absolute -inset-2 bg-green-500/20 rounded-full blur group-hover:bg-green-500/30 transition duration-500"></div>
+        <div class="relative bg-green-500 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110 active:scale-95"><i class="ri-whatsapp-fill text-3xl text-white"></i></div>
+    </a>
+
+    <script>
+        // ======================================================================================
+        // DATABASE PROYEK
+        // ======================================================================================
+        const databaseProyek = {
+            "Residensial": [
+                "https://lh3.googleusercontent.com/d/1ftLOmo_wU5gtjAQc-vmodZVW_nRhH4Pl", 
+                "https://lh3.googleusercontent.com/d/1zbBj-m3PTDi2x6IpsIjJW5c3meQeLZnw"
+            ],
+            
+            "Komersial": [
+                "https://lh3.googleusercontent.com/d/13zUYUUocTdR6fLifx9kzgM1ZZPfAQo5F", 
+                "https://lh3.googleusercontent.com/d/1EhoVQnWl5ybiSyJikJ9EiIK-W8mc5QQe"
+            ],
+            
+            "Perkantoran": [
+                "https://lh3.googleusercontent.com/d/1yH11sVqgd3VG4vcIyVsBxssEEXbvzcsl", 
+                "https://lh3.googleusercontent.com/d/1b2v6ZcjCdANV-1tY-ohJ09MLs93vfWs_",
+                "https://lh3.googleusercontent.com/d/14OP3-6Sga4kDPe91uXqVJ5K-F6d6si-0",
+                "https://lh3.googleusercontent.com/d/1J3Yx2Vfe1pJnoao8ywxEnkBxXSgQhmDs",
+                "https://lh3.googleusercontent.com/d/1hSJ2S4K7QwfvDMfRloDEufJ7Z9xIgYjy",
+                "https://lh3.googleusercontent.com/d/1IbOACoVlX8Y_DXhzku955SrFwjotFc9d"
+            ],
+            
+            "Industrial": [
+                "https://lh3.googleusercontent.com/d/1r7oNYqm7sKDZFc7Tlavks8MTwbtUQcEj"
+            ],
+            
+            "FasilitasPublik": [
+                "https://lh3.googleusercontent.com/d/10xWbnIEfqJGMnM5iPxBXltMVt1oo_bH_",
+                "https://lh3.googleusercontent.com/d/1qZwo6MW_2HRzUJZCtLdklWEwU8bKDxOk",
+                "https://lh3.googleusercontent.com/d/1QdsvFSW_qC58t4UdqXhzaNwcShcV6NMz",
+                "https://lh3.googleusercontent.com/d/1yahwYCC34GR-LeHnzlhNZbhfhuzGNx9P",
+                "https://lh3.googleusercontent.com/d/1K1vUM1swTez9cOdXVVIrbIfL5Ozoy6gb",
+                "https://lh3.googleusercontent.com/d/1O_dVq72th0jyJK0h3dEAJ7zoV1y4BpO0"
+            ]
+        };
+
+        // Mobile Menu Logic
+        const toggleMenu = (show) => document.getElementById('mobile-menu').classList.toggle('translate-x-full', !show);
+        document.getElementById('menu-btn')?.addEventListener('click', () => toggleMenu(true));
+        document.getElementById('close-menu')?.addEventListener('click', () => toggleMenu(false));
+
+        // Gallery & Lightbox Logic
+        let lightboxItems = [], currentLightboxIndex = 0;
+        const lightbox = document.getElementById('gallery-lightbox'), lbImg = document.getElementById('lightbox-image'), lbVidCont = document.getElementById('lightbox-video-container'), lbVid = document.getElementById('lightbox-video');
+
+        function renderGallery() {
+            for (const cat in databaseProyek) {
+                const container = document.getElementById(`grid-${cat}`);
+                if (!container) continue;
+                if (databaseProyek[cat].length === 0) { container.closest('.category-section').classList.add('hidden'); continue; }
+                
+                let html = '';
+                databaseProyek[cat].forEach(src => {
+                    src = src.trim();
+                    let t='image', thmb=src, icn='ri-zoom-in-line text-xl', iBg='bg-white/20 border border-white/50 text-white', ovr='bg-brand-dark/0 group-hover:bg-brand-dark/40', imgCls='', iAni='opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 delay-75', wrap='bg-white';
+                    
+                    if (src.startsWith('youtube:')) { t='youtube'; thmb=`https://img.youtube.com/vi/${src.replace('youtube:','')}/hqdefault.jpg`; icn='ri-youtube-fill text-2xl ml-1'; iBg='bg-[#ff0000]/90 text-white shadow-[0_0_20px_rgba(255,0,0,0.5)]'; ovr='bg-black/20 group-hover:bg-black/40'; iAni='scale-100 group-hover:scale-110'; }
+                    else if (src.startsWith('tiktok:')) { t='tiktok'; thmb=`https://placehold.co/800x800/0a1128/ffffff?text=TikTok+Video`; icn='ri-tiktok-fill text-2xl'; iBg='bg-[#00f2fe]/90 text-black shadow-[0_0_20px_rgba(0,242,254,0.5)]'; ovr='bg-black/20 group-hover:bg-black/40'; imgCls='opacity-50'; iAni='scale-100 group-hover:scale-110'; wrap='bg-black'; }
+                    else if (src.startsWith('gdrive-video:')) { t='gdrive-video'; thmb=`https://placehold.co/800x800/e2e8f0/475569?text=G-Drive+Video`; icn='ri-play-circle-fill text-3xl'; iBg='bg-[#1fa463]/90 text-white shadow-[0_0_20px_rgba(31,164,99,0.5)]'; ovr='bg-black/10 group-hover:bg-black/30'; imgCls='opacity-60'; iAni='scale-100 group-hover:scale-110'; wrap='bg-gray-100'; }
+
+                    html += `<div class="gallery-item group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 ${wrap}" data-category="${cat}" data-src="${src}" data-type="${t}" onclick="openLightbox(this)">
+                        <div class="aspect-square w-full relative">
+                            <img alt="Proyek" loading="lazy" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ${imgCls}" src="${thmb}">
+                            <div class="absolute inset-0 ${ovr} transition-colors duration-500 flex items-center justify-center">
+                                <div class="w-12 h-12 md:w-14 md:h-14 rounded-full ${iBg} flex items-center justify-center transform transition-all duration-500 ${iAni}"><i class="${icn}"></i></div>
+                            </div>
+                        </div></div>`;
+                });
+                container.innerHTML = html;
+            }
+        }
+
+        function filterGallery(category, btnEl) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.className = "filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-gray-100 text-gray-600 hover:bg-gray-200");
+            btnEl.className = "filter-btn px-6 py-2.5 rounded-full text-[11px] md:text-xs font-bold transition-all bg-brand-primary text-white shadow-md";
+            
+            let visCnt = 0;
+            document.querySelectorAll('.category-section').forEach(sec => {
+                const sCat = sec.getAttribute('data-category');
+                if ((category === 'Semua' || sCat === category) && databaseProyek[sCat]?.length > 0) {
+                    sec.classList.remove('hidden', 'opacity-0', 'translate-y-4'); sec.classList.add('opacity-100', 'translate-y-0'); visCnt++;
+                } else {
+                    sec.classList.remove('opacity-100', 'translate-y-0'); sec.classList.add('opacity-0', 'translate-y-4');
+                    setTimeout(() => { if(sec.classList.contains('opacity-0')) sec.classList.add('hidden'); }, 400);
+                }
+            });
+            const empty = document.getElementById('empty-gallery');
+            if(visCnt === 0) setTimeout(() => empty.classList.remove('hidden'), 400); else empty.classList.add('hidden');
+        }
+
+        function openLightbox(el) {
+            lightboxItems = Array.from(document.querySelectorAll(`.gallery-item[data-category="${el.getAttribute('data-category')}"]`)).map(i => ({ src: i.getAttribute('data-src'), type: i.getAttribute('data-type') }));
+            currentLightboxIndex = lightboxItems.findIndex(i => i.src === el.getAttribute('data-src'));
+            document.getElementById('lb-prev').classList.toggle('hidden', lightboxItems.length <= 1);
+            document.getElementById('lb-next').classList.toggle('hidden', lightboxItems.length <= 1);
+            updateLightboxContent();
+            lightbox.classList.remove('hidden'); lightbox.classList.add('flex');
+            setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightboxContent() {
+            const itm = lightboxItems[currentLightboxIndex];
+            lbImg.classList.add('hidden', 'scale-95', 'opacity-0'); lbVidCont.classList.add('hidden', 'scale-95', 'opacity-0'); lbVid.src = '';
+            
+            let tgt = lbImg;
+            if (itm.type !== 'image') {
+                tgt = lbVidCont;
+                if (itm.type === 'youtube') { lbVid.src = `https://www.youtube.com/embed/${itm.src.replace('youtube:','')}?autoplay=1`; lbVidCont.className = "w-full max-w-5xl aspect-video rounded-xl overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300"; }
+                else if (itm.type === 'tiktok') { lbVid.src = `https://www.tiktok.com/embed/v2/${itm.src.replace('tiktok:','')}`; lbVidCont.className = "h-[80vh] max-w-full aspect-[9/16] rounded-xl overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-300"; }
+                else if (itm.type === 'gdrive-video') { lbVid.src = `https://drive.google.com/file/d/${itm.src.replace('gdrive-video:','')}/preview`; lbVidCont.className = "w-full max-w-5xl aspect-video rounded-xl overflow-hidden shadow-2xl bg-black transform scale-95 opacity-0 transition-all duration-300"; }
+            } else { lbImg.src = itm.src; }
+            tgt.classList.remove('hidden');
+            setTimeout(() => { tgt.classList.remove('scale-95', 'opacity-0'); tgt.classList.add('scale-100', 'opacity-100'); }, 50);
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0'); lbImg.classList.remove('scale-100', 'opacity-100'); lbImg.classList.add('scale-95', 'opacity-0');
+            lbVidCont.classList.remove('scale-100', 'opacity-100'); lbVidCont.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => { lightbox.classList.remove('flex'); lightbox.classList.add('hidden'); lbImg.src = ''; lbVid.src = ''; }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeLightboxSlide(dir) {
+            if (lightboxItems.length <= 1) return;
+            lbImg.classList.remove('scale-100', 'opacity-100'); lbImg.classList.add('scale-95', 'opacity-0');
+            lbVidCont.classList.remove('scale-100', 'opacity-100'); lbVidCont.classList.add('scale-95', 'opacity-0');
+            currentLightboxIndex = (currentLightboxIndex + dir + lightboxItems.length) % lightboxItems.length;
+            setTimeout(updateLightboxContent, 300);
+        }
+
+        lightbox.addEventListener('click', function(e) { if (e.target === this) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (!lightbox.classList.contains('hidden')) { if (e.key === "Escape") closeLightbox(); if (e.key === "ArrowLeft") changeLightboxSlide(-1); if (e.key === "ArrowRight") changeLightboxSlide(1); }});
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderGallery();
+            const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-fade-in-up'); e.target.style.opacity = 1; }}); }, { threshold: 0.1 });
+            document.querySelectorAll('.animate-fade-in-up').forEach(el => obs.observe(el));
+        });
+    </script>
+</body>
+</html>
