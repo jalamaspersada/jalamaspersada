@@ -74,52 +74,50 @@
         .carousel-slide { min-width: 100%; position: relative; }
         
         .reveal-on-scroll { opacity: 0; }
-        .hide-scrollbar::-webkit-scrol{
-  "@context": "https://schema.org",
-  "@type": "HVACCACBusiness",
-  "name": "CV. Jala Mas Persada - Niaga AC Semarang",
-  "image": "vercel.app",
-  "@id": "NIAGAAC",
-  "url": "https://jalamaspersada.vercel.app/",
-  "telephone": "+6281234567890",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jl. Cendrawasih No.Kav.15, Purwodinatan, Kec. Semarang Tengah",
-    "addressLocality": "Semarang",
-    "addressRegion": "Jawa Tengah",
-    "postalCode": "50137",
-    "addressCountry": "ID"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -6.9691234,
-    "longitude": 110.421234
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ],
-    "opens": "08:00",
-    "closes": "16:30"
-  },
-  "sameAs": [
-    "instagram.com"
-  ],
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Kota Semarang"
-  }
-}lbar { display: none; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 
-    
+    <!-- JSON-LD SEO SCHEMA (DIPERBAIKI) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HVACCACBusiness",
+      "name": "CV. Jala Mas Persada - Niaga AC Semarang",
+      "image": "https://jalamaspersada.vercel.app/NEW JMP FAV 1X.png",
+      "@id": "NIAGAAC",
+      "url": "https://jalamaspersada.vercel.app/",
+      "telephone": "+6281215000537",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Cendrawasih No.Kav.15, Purwodinatan, Kec. Semarang Tengah",
+        "addressLocality": "Semarang",
+        "addressRegion": "Jawa Tengah",
+        "postalCode": "50137",
+        "addressCountry": "ID"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -6.9691234,
+        "longitude": 110.421234
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "16:30"
+      },
+      "sameAs": [
+        "https://instagram.com"
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Kota Semarang"
+      }
+    }
+    </script>
 </head>
 <body class="text-gray-800 bg-white pt-[64px] md:pt-[100px]">
 
@@ -153,7 +151,7 @@
                 <a href="index.html" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5 lg:py-2">Beranda</a>
                 <a href="#products-display" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
                 <a href="#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
-                <a href="proyekkami.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="projects.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
                 <a href="#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
                 <a href="jmpedia.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">JMPedia</a>
             </nav>
@@ -172,10 +170,10 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden transition-transform duration-300">
-        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4 text-brand-primary">Beranda</a>
         <a href="#products-display" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
         <a href="#services" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
-        <a href="proyekkami.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
+        <a href="projects.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
         <a href="#about" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
         <a href="jmpedia.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">JMPedia</a>
         <a href="#contact" class="mobile-link text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
@@ -455,10 +453,10 @@
     </div>
 
     <!-- ================= JMPEDIA (OTOMATIS DARI CSV) ================= -->
-    <section id="jmpedia" class="pb-12 pt-4 bg-gray-50 reveal-on-scroll">
+    <section id="jmpedia-home" class="pb-12 pt-4 bg-gray-50 reveal-on-scroll">
         <div class="container mx-auto px-6 max-w-5xl">
             <!-- Loader -->
-            <div id="jmpedia" class="text-center py-10">
+            <div id="home-jmpedia-loading" class="text-center py-10">
                 <i class="ri-loader-4-line text-3xl text-brand-primary animate-spin inline-block"></i>
                 <p class="text-gray-400 text-sm mt-2">Menyelaraskan data JMPedia...</p>
             </div>
