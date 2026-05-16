@@ -628,9 +628,9 @@
     <!-- ================= SCRIPTS ================= -->
     <script>
         const fallbackArticles = [
-            { kat_id: "2", post_num: "01", month: "MAR", year: "26", judul: "Mengenal Teknologi AC Inverter: Hemat Listrik", image_link: "https://images.unsplash.com/photo-1610425027871-334d7cb27aeb?q=80&w=600" },
-            { kat_id: "3", post_num: "01", month: "MAR", year: "26", judul: "Panduan Mudah Menghitung Kebutuhan PK AC", image_link: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=600" },
-            { kat_id: "4", post_num: "01", month: "MAR", year: "26", judul: "Waspada! 5 Tanda Utama AC Sangat Kotor", image_link: "https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?q=80&w=600" }
+            { kat_id: "2", post_num: "01", month: "MAR", year: "26", tanggal: "16 Mar 2026", judul: "Mengenal Teknologi AC Inverter: Kenyamanan Maksimal & Hemat Listrik", image_link: "https://images.unsplash.com/photo-1610425027871-334d7cb27aeb?q=80&w=1200" },
+            { kat_id: "3", post_num: "01", month: "MAR", year: "26", tanggal: "15 Mar 2026", judul: "Panduan Mudah Menghitung Kebutuhan PK AC untuk Ruangan Anda", image_link: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1200" },
+            { kat_id: "4", post_num: "01", month: "MAR", year: "26", tanggal: "14 Mar 2026", judul: "Waspada! Inilah 5 Tanda Utama Bahwa AC Anda Sudah Sangat Kotor", image_link: "https://images.unsplash.com/photo-1516937941348-c09645f3a2eb?auto=format&fit=crop&q=80&w=1200" }
         ];
 
         const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
@@ -686,7 +686,8 @@
             articles.slice(0, 3).forEach(art => {
                 const articleId = generateId(art);
                 const cat = getCatConfig(art.kat_id);
-                grid.innerHTML += `<a href="jmpedia.html?id=${articleId}" class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"><div class="relative h-28 md:h-32 overflow-hidden shrink-0"><img src="${art.image_link}" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute top-2 left-2 ${cat.color} px-2 py-0.5 rounded text-[8px] md:text-[9px] font-bold uppercase tracking-widest">${cat.name}</div></div><div class="p-3 md:p-4 flex flex-col flex-grow"><h3 class="text-xs md:text-sm font-bold text-gray-900 mb-1.5 group-hover:text-brand-primary transition leading-tight line-clamp-2">${art.judul}</h3><div class="mt-auto flex items-center justify-between pt-2.5 md:pt-3 border-t border-gray-100 text-brand-primary font-bold text-[10px] md:text-[11px] uppercase tracking-wider"><span>Baca Artikel</span><i class="ri-arrow-right-line transform group-hover:translate-x-1.5 transition-transform"></i></div></div></a>`;
+                let dateHtml = art.tanggal ? `<span class="text-[9px] md:text-[10px] text-gray-400 font-medium mb-1.5 flex items-center gap-1"><i class="ri-calendar-line"></i> ${art.tanggal}</span>` : '';
+                grid.innerHTML += `<a href="jmpedia.html?id=${articleId}" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col border border-gray-100"><div class="relative h-32 md:h-40 overflow-hidden shrink-0"><img src="${art.image_link}" onerror="this.src='https://placehold.co/600x400/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute top-3 left-3 ${cat.color} px-2 py-0.5 rounded text-[8px] md:text-[9px] font-bold uppercase tracking-widest shadow-sm">${cat.name}</div></div><div class="p-4 md:p-5 flex flex-col flex-grow">${dateHtml}<h3 class="text-xs md:text-sm font-bold text-gray-900 mb-1.5 group-hover:text-brand-primary transition leading-snug line-clamp-2">${art.judul}</h3><div class="mt-auto flex items-center justify-between pt-3 border-t border-gray-100 text-brand-primary font-bold text-[10px] md:text-[11px] uppercase tracking-wider"><span>Baca Artikel</span><div class="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors"><i class="ri-arrow-right-line transform group-hover:translate-x-0.5 transition-transform"></i></div></div></div></a>`;
             });
         }
 
