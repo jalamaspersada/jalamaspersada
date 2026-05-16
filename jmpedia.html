@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMPedia - Edukasi & Tips Seputar AC | CV. Jala Mas Persada</title>
+    <title>JMPedia - Artikel & Informasi AC CV Jala Mas Persada</title>
+    <meta name="description" content="Baca artikel, berita, dan tips seputar AC dan tata udara dari CV Jala Mas Persada.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -19,19 +20,25 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- PapaParse (Untuk membaca file CSV) -->
+    <!-- PapaParse -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    
+
+    <!-- Custom Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: { dark: '#1a3682', primary: '#2563eb', light: '#e0f2fe', accent: '#0ea5e9' }
+                        brand: {
+                            dark: '#1a3682',
+                            primary: '#2563eb',
+                            light: '#e0f2fe',
+                            accent: '#0ea5e9',
+                        }
                     },
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
-                        saira: ['Saira', 'sans-serif'],
+                        digital: ['Orbitron', 'sans-serif'],
                     }
                 }
             }
@@ -40,15 +47,20 @@
 
     <style>
         body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
-        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
-        /* Modal Scrollbar Styling */
-        #article-modal-content::-webkit-scrollbar { width: 6px; }
-        #article-modal-content::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
-        #article-modal-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-        #article-modal-content::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
         
-        /* Typography fix for content */
-        .prose b, .prose strong { color: #1a3682; font-weight: 700; }
+        /* Custom Styling for Rich Text inside Article Detail */
+        .article-content b, .article-content strong { font-weight: 700; color: #1f2937; }
+        .article-content i, .article-content em { font-style: italic; color: #4b5563; }
+        .article-content a { color: #2563eb; text-decoration: underline; font-weight: 500; }
+        .article-content a:hover { color: #1d4ed8; }
+        .article-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+        .article-content ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1rem; }
+        .article-content li { margin-bottom: 0.5rem; }
     </style>
 </head>
 <body class="text-gray-800 bg-gray-50 pt-[90px] md:pt-[100px]">
@@ -76,21 +88,24 @@
     <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
         <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center">
             <a href="index.html" class="flex items-center group shrink-0 mr-auto">
-                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transform group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transition-all duration-500">
             </a>
+
             <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500 whitespace-nowrap">
                 <a href="index.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Beranda</a>
                 <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
                 <a href="index.html#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
                 <a href="projects.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
                 <a href="index.html#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
-                <a href="jmpedia.html" class="text-brand-dark font-bold py-1.5 lg:py-2 border-b-2 border-brand-dark">JMPedia</a>
+                <a href="jmpedia.html" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5 lg:py-2">JMPedia</a>
             </nav>
+
             <div class="hidden md:flex shrink-0 ml-6 lg:ml-10">
-                <a href="index.html#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)]">
+                <a href="index.html#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transform hover:-translate-y-0.5">
                     Hubungi Kami
                 </a>
             </div>
+
             <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-4">
                 <i class="ri-menu-4-line text-2xl"></i>
             </button>
@@ -109,127 +124,121 @@
         <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
     </div>
 
-    <!-- ================= JMPEDIA HERO ================= -->
-    <section class="relative pt-12 pb-16 bg-[#0a1128] overflow-hidden text-center">
-        <!-- Abstract Background -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#0a1128] via-transparent to-[#0a1128]"></div>
+    <!-- ================= PAGE TITLE / HERO ================= -->
+    <section id="jmpedia-hero" class="relative pt-16 md:pt-24 pb-12 md:pb-16 text-center overflow-hidden">
+        <img src="https://lh3.googleusercontent.com/d/[LINK GAMBAR DISINI]" alt="Background" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position: center 18%;">
+        <div class="absolute inset-0 bg-gradient-to-br from-[#0a1128]/80 via-[#1a3682]/60 to-[#2563eb]/40 z-10"></div>
+        <div class="absolute inset-0 z-10 opacity-50 pointer-events-none mix-blend-screen">
+            <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
         </div>
-        <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight uppercase">JMPedia</h1>
-            <p class="text-blue-200/80 max-w-2xl mx-auto text-sm md:text-base font-light">Pusat informasi, edukasi, dan tips jitu seputar dunia tata udara dan perawatan AC.</p>
-        </div>
-    </section>
-
-    <!-- ================= CATEGORY FILTER ================= -->
-    <div class="bg-white border-b border-gray-200 sticky top-[64px] md:top-[112px] z-40 shadow-sm">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="flex overflow-x-auto py-4 gap-2 md:justify-center hide-scrollbar" id="category-filters">
-                <button onclick="filterCategory('Semua')" class="filter-btn active px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-primary text-white shadow-md" data-cat="Semua">Semua</button>
-                <button onclick="filterCategory('Berita')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Berita">📰 Berita</button>
-                <button onclick="filterCategory('Produk')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Produk">⭐ Produk</button>
-                <button onclick="filterCategory('Edukasi')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Edukasi">📚 Edukasi</button>
-                <button onclick="filterCategory('Tips')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Tips">💡 Tips</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- ================= ARTICLE GRID ================= -->
-    <section class="py-12 min-h-[50vh]">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <!-- Loading Indicator -->
-            <div id="loading-state" class="text-center py-20 hidden">
-                <i class="ri-loader-4-line text-4xl text-brand-primary animate-spin inline-block mb-4"></i>
-                <p class="text-gray-500 font-medium">Memuat artikel JMPedia...</p>
-            </div>
-
-            <!-- Grid Container -->
-            <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Articles will be injected here by JS -->
-            </div>
-
-            <!-- Empty State -->
-            <div id="empty-state" class="text-center py-20 hidden">
-                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-4">
-                    <i class="ri-article-line text-3xl"></i>
-                </div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">Artikel Tidak Ditemukan</h3>
-                <p class="text-gray-500">Belum ada artikel untuk kategori ini.</p>
-            </div>
+        <div class="container mx-auto px-6 relative z-20">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-widest uppercase drop-shadow-lg" id="hero-title">JMPedia</h1>
+            <div class="w-16 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-4"></div>
+            <p class="text-blue-100 text-sm md:text-base font-light tracking-wide max-w-xl mx-auto drop-shadow-md" id="hero-subtitle">Ensiklopedia, berita, dan tips seputar dunia tata udara.</p>
         </div>
     </section>
 
-    <!-- ================= FULL ARTICLE MODAL (THE READER) ================= -->
-    <div id="article-modal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-end md:items-center justify-center p-0 md:p-6">
-        
-        <!-- Modal Content Container -->
-        <div class="bg-white w-full md:w-11/12 max-w-4xl h-[90vh] md:h-auto md:max-h-[90vh] md:rounded-3xl shadow-2xl flex flex-col transform translate-y-full md:translate-y-10 transition-transform duration-500" id="article-modal-box">
+    <!-- ================= MAIN CONTENT ================= -->
+    <section class="py-10 bg-gray-50 min-h-[500px]">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
             
-            <!-- Header Bar (Fixed) -->
-            <div class="flex justify-between items-center p-4 md:p-6 border-b border-gray-100 bg-white md:rounded-t-3xl shrink-0">
-                <div class="flex items-center gap-3">
-                    <img src="NEW JMP FAV 1X.png" class="h-6 w-auto" alt="JMP Icon" onerror="this.src='https://placehold.co/40x40/2563eb/ffffff?text=JMP'">
-                    <span class="font-bold text-gray-800 text-sm tracking-widest uppercase">JMPedia</span>
+            <!-- Loader -->
+            <div id="loading-state" class="text-center py-20 hidden">
+                <i class="ri-loader-4-line text-4xl text-brand-primary animate-spin inline-block"></i>
+                <p class="text-gray-500 font-medium mt-3">Memuat artikel JMPedia...</p>
+            </div>
+
+            <!-- VIEW 1: GRID ARTIKEL -->
+            <div id="article-list-view" class="hidden">
+                <div class="mb-8 flex justify-between items-center border-b border-gray-200 pb-4">
+                    <h2 class="text-xl font-bold text-gray-800">Artikel Terbaru</h2>
+                    <span id="article-count" class="text-sm font-medium text-gray-500">0 Artikel</span>
                 </div>
-                <button onclick="closeArticle()" class="w-10 h-10 bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 rounded-full flex items-center justify-center transition-colors">
-                    <i class="ri-close-line text-2xl"></i>
-                </button>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="jmpedia-grid">
+                    <!-- Cards injected here -->
+                </div>
             </div>
 
-            <!-- Scrollable Content -->
-            <div class="overflow-y-auto flex-grow p-5 md:p-10" id="article-modal-content">
-                <!-- Data will be injected here -->
+            <!-- VIEW 2: DETAIL ARTIKEL -->
+            <div id="article-detail-view" class="hidden bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden relative">
+                <div class="p-4 md:p-6 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+                    <button onclick="goBackToList()" class="flex items-center gap-2 text-brand-dark hover:text-brand-primary font-bold text-xs md:text-sm transition-colors group">
+                        <i class="ri-arrow-left-line transform group-hover:-translate-x-1 transition-transform"></i> Kembali ke Daftar
+                    </button>
+                    <div id="detail-category-badge" class="px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full text-white bg-brand-primary">Kategori</div>
+                </div>
+                
+                <div class="p-6 md:p-10 lg:px-16">
+                    <div class="mb-6 md:mb-8 text-center">
+                        <p id="detail-date" class="text-gray-400 text-xs font-medium mb-3 flex justify-center items-center gap-1.5"><i class="ri-calendar-line"></i> -</p>
+                        <h1 id="detail-title" class="text-2xl md:text-4xl font-extrabold text-gray-900 leading-tight mb-6">Judul Artikel</h1>
+                        <div class="w-20 h-1.5 bg-brand-primary mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="w-full aspect-[21/9] md:aspect-[21/9] overflow-hidden rounded-2xl mb-8 md:mb-10 shadow-lg border border-gray-100 relative">
+                        <img id="detail-image" src="" alt="Cover" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div id="detail-content" class="article-content text-gray-600 text-sm md:text-base leading-relaxed md:leading-loose">
+                        <!-- Content injected here -->
+                    </div>
+                    
+                    <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col items-center">
+                        <p class="text-sm text-gray-500 mb-4 font-medium">Bagikan artikel ini:</p>
+                        <div class="flex gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition shadow-sm"><i class="ri-whatsapp-fill text-lg"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition shadow-sm"><i class="ri-facebook-fill text-lg"></i></a>
+                            <button onclick="copyLink()" class="w-10 h-10 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center hover:scale-110 transition shadow-sm" title="Salin Tautan"><i class="ri-links-line text-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Footer Action (Fixed) -->
-            <div class="p-4 border-t border-gray-100 bg-gray-50 md:rounded-b-3xl shrink-0 flex justify-end items-center">
-                <button onclick="shareArticle()" class="w-full sm:w-auto px-8 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl font-bold text-xs flex items-center justify-center gap-2 hover:bg-gray-50 shadow-sm transition-all">
-                    <i class="ri-share-forward-line"></i> Bagikan Artikel
-                </button>
-            </div>
         </div>
-    </div>
+    </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+    <footer class="bg-gray-900 text-gray-400 py-10 md:py-12 border-t border-gray-800 text-sm">
         <div class="container mx-auto px-6 text-center md:text-left">
-            <div class="grid md:grid-cols-4 gap-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
                 <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
-                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" class="h-8 md:h-10 mb-4 object-contain" alt="Logo Footer">
-                    <p class="max-w-sm text-gray-500">Pusat solusi pendingin udara Jawa Tengah sejak 1992. Berkomitmen pada kualitas.</p>
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
+                    <p class="max-w-sm text-gray-500">Spesialis pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
-                        <li><a href="products.html" class="hover:text-white transition">Produk</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
                         <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
                     </ul>
                 </div>
                 <div class="flex gap-4 justify-center md:justify-end items-start">
-                    <a href="#" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="ri-instagram-line"></i></a>
-                    <a href="#" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-instagram-line text-lg"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-facebook-circle-fill text-lg"></i></a>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-xs text-center">
+            <div class="border-t border-gray-800 pt-8 text-center text-xs opacity-60">
                 <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- ================= SCRIPTS ================= -->
+    <!-- Scripts -->
     <script>
-        // Menu Toggle
-        const menuBtn = document.getElementById('menu-btn'), mobileMenu = document.getElementById('mobile-menu'), closeMenu = document.getElementById('close-menu');
-        if (menuBtn) menuBtn.onclick = () => mobileMenu.classList.remove('translate-x-full');
-        if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.add('translate-x-full');
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu && closeMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
+            closeMenu.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+        }
 
-        // Konfigurasi Database CSV JMPedia
         const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
         let masterArticles = [];
 
-        // Data Dummy Terbaru (Telah Ditambahkan Contoh Ukuran Gambar)
+        // Data cadangan identik
         const fallbackArticles = [
             {
                 kat_id: "4", post_num: "01", month: "MAY", year: "26", tanggal: "15 Mei 2026",
@@ -251,200 +260,174 @@
                 image_link: "https://lh3.googleusercontent.com/d/1bfjXbk2cKsGs8IJx_AQCczhxMpn_ESJw",
                 ringkasan: "Jangan bingung pilih AC! Kenali perbedaan AC Split, Cassette, Floor Standing, Window, dan Portabel agar sesuai dengan kebutuhan ruangan Anda.",
                 konten_lengkap: "Halo pelanggan setia CV. Jala Mas Persada! Memilih Air Conditioner (AC) yang tepat untuk ruangan terkadang membingungkan. Apakah cukup dengan AC Split biasa, atau ruangan komersial Anda justru membutuhkan AC Cassette? Mengetahui perbedaan karakteristik jenis AC—termasuk kelebihan dan kekurangannya—adalah langkah awal yang krusial untuk mendapatkan efisiensi pendinginan dan estetika yang maksimal.<br><br>Mari kita bahas 5 jenis AC yang paling umum beserta peruntukannya agar Anda tidak salah pilih:<br><br><b>1. AC Split (Wall Mounted)</b><br><br>Ini adalah jenis AC yang paling populer dan sering kita jumpai di area hunian. Terdiri dari dua unit terpisah: indoor (menempel di dinding dalam) dan outdoor (di luar ruangan).<br><br><b>Kelebihan:</b> Suara mesin sangat halus, perawatan cuci rutin yang mudah, dan variasi kapasitas PK yang sangat beragam (mulai dari 1/2 PK).<br><b>Pertimbangan:</b> Membutuhkan area kosong pada dinding interior dan ruang (balkon/teras luar) untuk memudahkan peletakkan dan service cuci maupun perbaikan pada unit outdoor.<br><b>Tipe Ruangan yang Cocok:</b> Sangat ideal untuk area residensial seperti kamar tidur utama, ruang keluarga, ruang kerja pribadi (home office), kamar kost, hingga ruang kantor skala kecil yang tertutup.<br><br><b>2. AC Cassette (Ceiling)</b><br><br>Berbeda dengan Split yang menempel di dinding, AC Cassette dipasang menyatu dengan plafon atau langit-langit ruangan.<br><br><b>Kelebihan:</b> Mampu menghembuskan udara dingin secara merata ke empat arah (360 derajat) dan tidak memakan ruang pada dinding, sehingga sangat mendukung desain interior dengan konsep modern tropical atau quiet luxury yang mengedepankan estetika minimalis.<br><b>Pertimbangan:</b> Membutuhkan plafon gantung (false ceiling) yang cukup dalam untuk menyembunyikan bodi mesin. Biaya awal unit dan instalasinya cenderung lebih tinggi dibandingkan AC Split biasa.<br><b>Tipe Ruangan yang Cocok:</b> Area komersial yang mengutamakan kenyamanan dan tampilan visual, seperti restoran mewah, kafe, lobi hotel, ruang meeting direksi perkantoran, dan minimarket.<br><br><b>3. AC Floor Standing</b><br><br>Seperti namanya, unit AC ini diletakkan berdiri secara vertikal di lantai. Bentuknya menyerupai lemari es dan memiliki kapasitas kompresor yang sangat besar.<br><br><b>Kelebihan:</b> Menghasilkan hembusan angin yang sangat kuat dan kapasitas pendinginan yang masif dalam waktu singkat. Mesin ini sangat tangguh untuk beban kerja berat (heavy-duty).<br><b>Pertimbangan:</b> Memakan area lantai ruangan. Karena ukurannya besar dan instalasinya bersifat permanen (terhubung dengan pemipaan khusus ke unit outdoor), dibutuhkan teknisi ahli jika sewaktu-waktu ingin dipindahkan. Selain itu, konsumsi daya listriknya (watt) tergolong besar.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan berkapasitas besar tanpa sekat, seperti aula pertemuan, gedung resepsi pernikahan, tempat ibadah (masjid/gereja), lobi fasilitas umum, hingga area produksi di pabrik.<br><br><b>4. AC Window</b><br><br>Ini adalah jenis AC klasik di mana seluruh komponen (kompresor, kondensor, dan evaporator) berada dalam satu bodi kotak yang sama.<br><br><b>Kelebihan:</b> Pemasangan relatif praktis karena tidak memerlukan instalasi pipa tembaga (freon) yang panjang antar unit.<br><b>Pertimbangan:</b> Tingkat kebisingan (suara mesin) lebih terdengar di dalam ruangan karena kompresor menyatu dengan unit indoor. Selain itu, mengharuskan pembobokan dinding yang ukurannya harus pas dengan bodi AC secara permanen.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan dengan keterbatasan area luar untuk meletakkan unit outdoor, seperti bilik pos keamanan (satpam), direksi keet atau kamar kontainer proyek, dan ruangan gudang kecil.<br><br><b>5. AC Portabel</b><br><br>Berbeda dengan tipe AC lainnya yang dipasang secara permanen, AC Portabel dirancang agar dapat bergerak bebas. Unit ini berdiri sendiri dengan roda di bagian bawah.<br><br><b>Kelebihan:</b> Sangat praktis, fleksibel, dan mudah dipindah-pindah antar ruangan. Tidak memerlukan instalasi teknis sama sekali—tanpa perlu membobok dinding atau memasang pipa tembaga.<br><b>Pertimbangan:</b> Kapasitas pendinginan terbatas, sehingga kurang maksimal untuk ruangan luas. Anda juga tetap harus mengarahkan selang pembuangan panas (exhaust) ke luar jendela atau celah pintu agar suhu ruangan benar-benar bisa turun.<br><b>Tipe Ruangan yang Cocok:</b> Kamar sewa atau apartemen yang pengelolanya tidak mengizinkan modifikasi/pembobokan dinding, ruangan kecil yang butuh pendinginan ekstra sementara, atau cocok untuk Anda yang sering berpindah tempat tinggal.<br><br><b>Percayakan Instalasi Pada Ahlinya</b><br><br>Jenis AC apa pun yang pada akhirnya Anda pilih, kunci utamanya tetap berada pada kualitas instalasi teknis. CV. Jala Mas Persada hadir sebagai mitra terpercaya Anda. Kami tidak hanya mengedepankan pelayanan pemasangan yang profesional dan rapi, tetapi juga dikenal menyediakan berbagai pilihan unit AC murah dengan jaminan kualitas tinggi di area Semarang dan sekitarnya.<br><br>Kami selalu berkomitmen memberikan solusi menyeluruh yang dirancang khusus untuk kebutuhan residensial, perkantoran, maupun fasilitas umum Anda. Dapatkan efisiensi dan tata udara yang maksimal untuk setiap ruangan dengan penentuan harga yang jelas di awal.<br><br>Butuh bantuan teknis untuk survei lokasi dan menentukan tipe AC yang paling tepat untuk proyek Anda? Jangan ragu untuk mengonsultasikan kebutuhan Anda bersama tim ahli kami melalui WhatsApp.<br><br><b>AC Murah Semarang ya Jala Mas Persada. AC murah Semarang ya JMP.</b><br><br>[TOMBOL: https://wa.me/6281215000537 | Konsultasi AC via WhatsApp Sekarang]"
-}
+            }
         ];
+
+        function generateId(art) {
+            if(art.kat_id && art.post_num && art.month && art.year) {
+                let pNum = String(art.post_num).trim();
+                if(pNum.length === 1) pNum = '0' + pNum;
+                return String(art.kat_id).trim() + pNum + String(art.month).trim().toUpperCase() + String(art.year).trim();
+            }
+            return "";
+        }
 
         function getCatConfig(catId) {
             const id = String(catId).trim();
-            if(id === '1') return { name: 'Berita', color: 'bg-red-500 text-white', icon: 'ri-newspaper-line' };
-            if(id === '2') return { name: 'Produk', color: 'bg-amber-500 text-white', icon: 'ri-star-smile-line' };
-            if(id === '3') return { name: 'Edukasi', color: 'bg-blue-500 text-white', icon: 'ri-book-open-line' };
-            if(id === '4') return { name: 'Tips', color: 'bg-green-500 text-white', icon: 'ri-lightbulb-line' };
-            return { name: 'Artikel', color: 'bg-gray-600 text-white', icon: 'ri-article-line' };
+            if(id === '1') return { name: 'Berita', color: 'bg-red-500 text-white' };
+            if(id === '2') return { name: 'Produk', color: 'bg-amber-500 text-white' };
+            if(id === '3') return { name: 'Edukasi', color: 'bg-brand-primary text-white' };
+            if(id === '4') return { name: 'Tips', color: 'bg-green-500 text-white' };
+            return { name: 'Artikel', color: 'bg-gray-600 text-white' };
+        }
+
+        function processData(raw) {
+            return raw.map(art => {
+                art.id = generateId(art);
+                return art;
+            }).filter(art => art.id !== "");
+        }
+
+        function loadFallbackData() {
+            masterArticles = processData(fallbackArticles);
+            renderArticleList(masterArticles);
+            checkUrlParams();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('loading-state').classList.remove('hidden');
+            
+            // METODE FETCH API + TRY CATCH YANG SAMA SEPERTI INDEX.HTML
+            try {
+                fetch(JMPEDIA_CSV_URL)
+                    .then(response => {
+                        if (!response.ok) throw new Error("CSV tidak ditemukan");
+                        return response.text();
+                    })
+                    .then(csvText => {
+                        Papa.parse(csvText, {
+                            header: true, skipEmptyLines: true,
+                            complete: function(results) {
+                                if (results.data && results.data.length > 0 && results.data[0].judul) {
+                                    masterArticles = processData(results.data);
+                                } else {
+                                    masterArticles = processData(fallbackArticles);
+                                }
+                                renderArticleList(masterArticles);
+                                checkUrlParams();
+                            }
+                        });
+                    })
+                    .catch(e => {
+                        console.log("Lingkungan pratinjau: Akses CSV diblokir, menggunakan data cadangan.");
+                        loadFallbackData();
+                    });
+            } catch(error) {
+                loadFallbackData();
+            }
+        });
+
+        function renderArticleList(articles) {
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('article-list-view').classList.remove('hidden');
+            document.getElementById('article-count').innerText = `${articles.length} Artikel`;
+            
+            const grid = document.getElementById('jmpedia-grid');
+            grid.innerHTML = '';
+            
+            if (articles.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-500">Belum ada artikel yang tersedia.</div>`;
+                return;
+            }
+
+            articles.forEach(art => {
+                const cat = getCatConfig(art.kat_id);
+                let dateHtml = art.tanggal ? `<span class="text-[10px] md:text-xs text-gray-400 font-medium mb-2 flex items-center gap-1.5"><i class="ri-calendar-line"></i> ${art.tanggal}</span>` : '';
+                let summaryHtml = art.ringkasan ? `<p class="text-xs md:text-sm text-gray-500 leading-relaxed line-clamp-3 mb-4">${art.ringkasan}</p>` : '';
+                
+                grid.innerHTML += `
+                    <a href="?id=${art.id}" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 group flex flex-col border border-gray-100 relative">
+                        <div class="relative h-48 md:h-56 overflow-hidden shrink-0 border-b border-gray-100">
+                            <img src="${art.image_link}" onerror="this.src='https://placehold.co/800x600/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                            <div class="absolute top-4 left-4 ${cat.color} px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-widest shadow-md backdrop-blur-sm">${cat.name}</div>
+                        </div>
+                        <div class="p-5 md:p-6 flex flex-col flex-grow">
+                            ${dateHtml}
+                            <h3 class="text-sm md:text-base font-bold text-gray-900 mb-2 group-hover:text-brand-primary transition leading-snug line-clamp-2">${art.judul}</h3>
+                            ${summaryHtml}
+                            <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 text-brand-primary font-bold text-[10px] md:text-[11px] uppercase tracking-wider">
+                                <span>Baca Selengkapnya</span>
+                                <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                                    <i class="ri-arrow-right-line transform group-hover:translate-x-0.5 transition-transform"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            });
+        }
+
+        function formatRichText(rawText) {
+            if(!rawText) return "";
+            let html = rawText.replace(/\[GAMBAR:\s*(https?:\/\/[^\]]+)\]/gi, '<div class="my-6 md:my-8 rounded-2xl overflow-hidden shadow-md border border-gray-100"><img src="$1" class="w-full h-auto object-cover max-h-[400px]" alt="Ilustrasi Artikel" onerror="this.style.display=\'none\'"></div>');
+            html = html.replace(/\[TOMBOL:\s*([^|\]]+)\s*\|\s*([^\]]+)\]/gi, '<div class="my-6 text-center"><a href="$1" class="inline-block px-6 py-3 md:px-8 md:py-3.5 bg-brand-dark hover:bg-brand-primary text-white font-bold text-xs md:text-sm uppercase tracking-widest rounded-xl transition-all shadow-md transform hover:-translate-y-0.5">$2</a></div>');
+            return html;
         }
 
         function checkUrlParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const articleId = urlParams.get('id');
             if (articleId) {
-                setTimeout(() => { openArticle(articleId); }, 300);
-            }
-        }
-
-        function processData(data) {
-            data.forEach(art => {
-                if(art.kat_id && art.post_num && art.month && art.year) {
-                    let pNum = String(art.post_num).trim();
-                    if(pNum.length === 1) pNum = '0' + pNum;
-                    art.id = String(art.kat_id).trim() + pNum + String(art.month).trim().toUpperCase() + String(art.year).trim();
-                }
-            });
-            return data;
-        }
-
-        function loadFallbackData() {
-            masterArticles = processData(fallbackArticles);
-            renderArticles(masterArticles);
-            checkUrlParams();
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            document.getElementById('loading-state').classList.remove('hidden');
-            try {
-                const isLocalEnv = window.location.protocol === 'file:' || window.location.protocol === 'blob:' || window.location.protocol === 'data:';
-                if (isLocalEnv) {
-                    loadFallbackData();
+                const article = masterArticles.find(a => a.id === articleId);
+                if (article) {
+                    showArticleDetail(article);
+                    return;
                 } else {
-                    Papa.parse(JMPEDIA_CSV_URL, {
-                        download: true, header: true, skipEmptyLines: true,
-                        complete: function(results) {
-                            if (results.data && results.data.length > 0) {
-                                masterArticles = processData(results.data);
-                            } else {
-                                masterArticles = processData(fallbackArticles);
-                            }
-                            renderArticles(masterArticles);
-                            checkUrlParams();
-                        },
-                        error: function() {
-                            loadFallbackData();
-                        }
-                    });
+                    // Jika ID tidak ditemukan, hapus param dan tampilkan list
+                    window.history.replaceState({}, '', 'jmpedia.html');
                 }
-            } catch (error) {
-                loadFallbackData();
             }
-        });
-
-        function renderArticles(articles) {
-            const grid = document.getElementById('article-grid');
-            const empty = document.getElementById('empty-state');
-            const loading = document.getElementById('loading-state');
-            loading.classList.add('hidden');
-            grid.innerHTML = '';
-            if (articles.length === 0) { empty.classList.remove('hidden'); return; }
-            empty.classList.add('hidden');
-            articles.forEach(art => {
-                if(!art.judul) return; 
-                const catConf = getCatConfig(art.kat_id);
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col border border-gray-50 cursor-pointer h-full";
-                card.onclick = () => openArticle(art.id);
-                card.innerHTML = `
-                    <div class="relative h-48 sm:h-56 overflow-hidden shrink-0">
-                        <img src="${art.image_link}" onerror="this.src='https://placehold.co/800x600/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 left-4 ${catConf.color} px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-lg">
-                            <i class="${catConf.icon}"></i> ${catConf.name}
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8 flex flex-col flex-grow">
-                        <span class="text-xs font-semibold text-brand-primary mb-2 flex items-center gap-1.5"><i class="ri-calendar-line"></i> ${art.tanggal}</span>
-                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-primary transition leading-snug line-clamp-2">${art.judul}</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-6">${art.ringkasan}</p>
-                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 text-brand-dark font-extrabold text-[11px] uppercase tracking-widest">
-                            <span>Baca Selengkapnya</span>
-                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors">
-                                <i class="ri-arrow-right-line transform group-hover:translate-x-0.5 transition-transform"></i>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+            document.getElementById('article-list-view').classList.remove('hidden');
         }
 
-        function filterCategory(catName) {
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if(btn.dataset.cat === catName) {
-                    btn.className = "filter-btn active px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-primary text-white shadow-md";
-                } else {
-                    btn.className = "filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all";
-                }
-            });
-            if(catName === 'Semua') {
-                renderArticles(masterArticles);
-            } else {
-                const filtered = masterArticles.filter(art => {
-                    const conf = getCatConfig(art.kat_id);
-                    return conf.name === catName;
-                });
-                renderArticles(filtered);
-            }
-        }
+        function showArticleDetail(article) {
+            document.getElementById('article-list-view').classList.add('hidden');
+            const detailView = document.getElementById('article-detail-view');
+            detailView.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
-        const modal = document.getElementById('article-modal');
-        const modalBox = document.getElementById('article-modal-box');
-        const modalContent = document.getElementById('article-modal-content');
+            const cat = getCatConfig(article.kat_id);
+            const badge = document.getElementById('detail-category-badge');
+            badge.className = `px-3 py-1 text-[10px] font-bold uppercase tracking-widest rounded-full shadow-sm ${cat.color}`;
+            badge.innerText = cat.name;
 
-        function openArticle(id) {
-            const article = masterArticles.find(a => a.id === id);
-            if(!article) return;
-            const catConf = getCatConfig(article.kat_id);
-            try {
-                if (window.history.pushState && window.location.protocol.startsWith('http')) {
-                    const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-                    window.history.pushState({path:newUrl},'',newUrl);
-                }
-            } catch (err) { console.warn("URL restricted."); }
-
-            let processedContent = article.konten_lengkap || "";
+            document.getElementById('detail-title').innerText = article.judul;
+            document.getElementById('detail-date').innerHTML = `<i class="ri-calendar-line"></i> Dipublikasikan pada: ${article.tanggal || '-'}`;
             
-            // =====================================================================
-            // UPDATE: LOGIKA SHORTCODE GAMBAR DENGAN PARAMETER UKURAN
-            // =====================================================================
-            processedContent = processedContent.replace(/\[GAMBAR:\s*(.*?)(?:\s*\|\s*(.*?))?\]/gi, function(match, url, size) {
-                let containerClass = "w-full"; // Default (Besar)
-                
-                if (size) {
-                    const s = size.trim().toLowerCase();
-                    if (s === 'kecil') containerClass = "max-w-xs mx-auto";
-                    else if (s === 'sedang') containerClass = "max-w-xl mx-auto";
-                }
+            const imgEl = document.getElementById('detail-image');
+            imgEl.src = article.image_link;
+            imgEl.onerror = () => { imgEl.src = 'https://placehold.co/1200x600/f8fafc/94a3b8?text=JMPedia'; };
 
-                return `
-                    <div class="${containerClass} my-8 md:my-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-md border border-gray-100">
-                        <img src="${url.trim()}" onerror="this.src='https://placehold.co/800x400/f8fafc/94a3b8?text=Gambar+Sisipan'" class="w-full h-auto object-contain">
-                    </div>
-                `;
-            });
+            const contentEl = document.getElementById('detail-content');
+            let richContent = formatRichText(article.konten_lengkap || article.ringkasan || "Konten belum tersedia.");
+            contentEl.innerHTML = richContent;
 
-            processedContent = processedContent.replace(/\[TOMBOL:\s*(.*?)\s*\|\s*(.*?)\]/gi, function(match, url, text) {
-                return `<div class="my-6"><a href="${url.trim()}" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-primary text-white font-bold text-sm rounded-xl hover:bg-brand-dark transition-all duration-300 transform active:scale-95">${text.trim()} <i class="ri-external-link-line"></i></a></div>`;
-            });
-
-            modalContent.innerHTML = `
-                <div class="max-w-3xl mx-auto">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="${catConf.color} px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">${catConf.name}</span>
-                        <span class="text-xs font-semibold text-gray-500"><i class="ri-calendar-line"></i> ${article.tanggal}</span>
-                    </div>
-                    <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">${article.judul}</h1>
-                    <div class="w-full h-64 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden mb-8 shadow-inner border border-gray-100">
-                        <img src="${article.image_link}" onerror="this.src='https://placehold.co/1200x600/f8fafc/94a3b8?text=Gambar+Utama'" class="w-full h-full object-cover">
-                    </div>
-                    <div class="prose prose-blue max-w-none text-gray-700 leading-loose text-sm md:text-base">
-                        ${processedContent}
-                    </div>
-                </div>
-            `;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modalBox.classList.remove('translate-y-full', 'md:translate-y-10');
-            modalBox.classList.add('translate-y-0');
-            document.body.style.overflow = 'hidden';
-            modalContent.scrollTop = 0;
+            // Sembunyikan Hero di mode detail agar fokus baca
+            document.getElementById('jmpedia-hero').classList.add('hidden');
         }
 
-        function closeArticle() {
-            modal.classList.add('opacity-0', 'pointer-events-none');
-            modalBox.classList.remove('translate-y-0');
-            modalBox.classList.add('translate-y-full', 'md:translate-y-10');
-            document.body.style.overflow = 'auto';
+        function goBackToList() {
+            window.history.replaceState({}, '', 'jmpedia.html');
+            document.getElementById('article-detail-view').classList.add('hidden');
+            document.getElementById('jmpedia-hero').classList.remove('hidden');
+            document.getElementById('article-list-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function shareArticle() {
-            if (navigator.share) {
-                navigator.share({ title: 'JMPedia - CV Jala Mas Persada', text: 'Baca artikel edukasi AC menarik.', url: window.location.href, }).catch(console.error);
-            } else { alert("Salin link ini: " + window.location.href); }
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert("Tautan artikel berhasil disalin!");
+            });
         }
     </script>
 </body>
