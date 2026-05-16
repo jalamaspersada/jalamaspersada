@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMPedia - Edukasi & Tips Seputar AC | CV. Jala Mas Persada</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600;700;800&family=Saira:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PapaParse (Untuk membaca file CSV) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { dark: '#1a3682', primary: '#2563eb', light: '#e0f2fe', accent: '#0ea5e9' }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        saira: ['Saira', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        .glass-nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        /* Modal Scrollbar Styling */
+        #article-modal-content::-webkit-scrollbar { width: 6px; }
+        #article-modal-content::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+        #article-modal-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        #article-modal-content::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Typography fix for content */
+        .prose b, .prose strong { color: #1a3682; font-weight: 700; }
+    </style>
+</head>
+<body class="text-gray-800 bg-gray-50 pt-[90px] md:pt-[100px]">
+
+    <!-- ================= TOP BAR ================= -->
+    <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
+                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
+                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
+                    <i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537
+                </a>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-brand-accent transition">Karir</a>
+                <span class="text-gray-400">|</span>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-instagram-line"></i></a>
+                <a href="#" class="hover:text-brand-accent transition"><i class="ri-facebook-circle-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= MAIN HEADER ================= -->
+    <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
+        <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center">
+            <a href="index.html" class="flex items-center group shrink-0 mr-auto">
+                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transform group-hover:scale-105 transition-transform duration-500">
+            </a>
+            <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500 whitespace-nowrap">
+                <a href="index.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Beranda</a>
+                <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
+                <a href="index.html#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
+                <a href="projects.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="index.html#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
+                <a href="jmpedia.html" class="text-brand-dark font-bold py-1.5 lg:py-2 border-b-2 border-brand-dark">JMPedia</a>
+            </nav>
+            <div class="hidden md:flex shrink-0 ml-6 lg:ml-10">
+                <a href="index.html#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)]">
+                    Hubungi Kami
+                </a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2 ml-4">
+                <i class="ri-menu-4-line text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full flex flex-col pt-24 px-6 gap-6 md:hidden transition-transform duration-300">
+        <a href="index.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Beranda</a>
+        <a href="products.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Produk</a>
+        <a href="index.html#services" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Layanan</a>
+        <a href="projects.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Proyek Kami</a>
+        <a href="index.html#about" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4">Tentang Kami</a>
+        <a href="jmpedia.html" class="mobile-link text-xl font-semibold border-b border-gray-100 pb-4 text-brand-primary">JMPedia</a>
+        <a href="index.html#contact" class="mobile-link text-xl font-semibold text-white bg-brand-primary p-4 rounded-lg text-center">Hubungi Kami</a>
+        <button id="close-menu" class="absolute top-6 right-6 text-gray-500"><i class="ri-close-line text-3xl"></i></button>
+    </div>
+
+    <!-- ================= JMPEDIA HERO ================= -->
+    <section class="relative pt-12 pb-16 bg-[#0a1128] overflow-hidden text-center">
+        <!-- Abstract Background -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1920" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0a1128] via-transparent to-[#0a1128]"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight uppercase">JMPedia</h1>
+            <p class="text-blue-200/80 max-w-2xl mx-auto text-sm md:text-base font-light">Pusat informasi, edukasi, dan tips jitu seputar dunia tata udara dan perawatan AC.</p>
+        </div>
+    </section>
+
+    <!-- ================= CATEGORY FILTER ================= -->
+    <div class="bg-white border-b border-gray-200 sticky top-[64px] md:top-[112px] z-40 shadow-sm">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex overflow-x-auto py-4 gap-2 md:justify-center hide-scrollbar" id="category-filters">
+                <button onclick="filterCategory('Semua')" class="filter-btn active px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-primary text-white shadow-md" data-cat="Semua">Semua</button>
+                <button onclick="filterCategory('Berita')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Berita">📰 Berita</button>
+                <button onclick="filterCategory('Produk')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Produk">⭐ Produk</button>
+                <button onclick="filterCategory('Edukasi')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Edukasi">📚 Edukasi</button>
+                <button onclick="filterCategory('Tips')" class="filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all" data-cat="Tips">💡 Tips</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ARTICLE GRID ================= -->
+    <section class="py-12 min-h-[50vh]">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <!-- Loading Indicator -->
+            <div id="loading-state" class="text-center py-20 hidden">
+                <i class="ri-loader-4-line text-4xl text-brand-primary animate-spin inline-block mb-4"></i>
+                <p class="text-gray-500 font-medium">Memuat artikel JMPedia...</p>
+            </div>
+
+            <!-- Grid Container -->
+            <div id="article-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Articles will be injected here by JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="text-center py-20 hidden">
+                <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-4">
+                    <i class="ri-article-line text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Artikel Tidak Ditemukan</h3>
+                <p class="text-gray-500">Belum ada artikel untuk kategori ini.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FULL ARTICLE MODAL (THE READER) ================= -->
+    <div id="article-modal" class="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 flex items-end md:items-center justify-center p-0 md:p-6">
+        
+        <!-- Modal Content Container -->
+        <div class="bg-white w-full md:w-11/12 max-w-4xl h-[90vh] md:h-auto md:max-h-[90vh] md:rounded-3xl shadow-2xl flex flex-col transform translate-y-full md:translate-y-10 transition-transform duration-500" id="article-modal-box">
+            
+            <!-- Header Bar (Fixed) -->
+            <div class="flex justify-between items-center p-4 md:p-6 border-b border-gray-100 bg-white md:rounded-t-3xl shrink-0">
+                <div class="flex items-center gap-3">
+                    <img src="NEW JMP FAV 1X.png" class="h-6 w-auto" alt="JMP Icon" onerror="this.src='https://placehold.co/40x40/2563eb/ffffff?text=JMP'">
+                    <span class="font-bold text-gray-800 text-sm tracking-widest uppercase">JMPedia</span>
+                </div>
+                <button onclick="closeArticle()" class="w-10 h-10 bg-gray-100 hover:bg-red-50 text-gray-500 hover:text-red-500 rounded-full flex items-center justify-center transition-colors">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="overflow-y-auto flex-grow p-5 md:p-10" id="article-modal-content">
+                <!-- Data will be injected here -->
+            </div>
+
+            <!-- Footer Action (Fixed) -->
+            <div class="p-4 border-t border-gray-100 bg-gray-50 md:rounded-b-3xl shrink-0 flex justify-end items-center">
+                <button onclick="shareArticle()" class="w-full sm:w-auto px-8 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-xl font-bold text-xs flex items-center justify-center gap-2 hover:bg-gray-50 shadow-sm transition-all">
+                    <i class="ri-share-forward-line"></i> Bagikan Artikel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 text-sm">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" class="h-8 md:h-10 mb-4 object-contain" alt="Logo Footer">
+                    <p class="max-w-sm text-gray-500">Pusat solusi pendingin udara Jawa Tengah sejak 1992. Berkomitmen pada kualitas.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Produk</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                    </ul>
+                </div>
+                <div class="flex gap-4 justify-center md:justify-end items-start">
+                    <a href="#" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="ri-instagram-line"></i></a>
+                    <a href="#" class="text-2xl text-gray-400 hover:text-white transition-colors"><i class="ri-facebook-circle-fill"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-xs text-center">
+                <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+        // Menu Toggle
+        const menuBtn = document.getElementById('menu-btn'), mobileMenu = document.getElementById('mobile-menu'), closeMenu = document.getElementById('close-menu');
+        if (menuBtn) menuBtn.onclick = () => mobileMenu.classList.remove('translate-x-full');
+        if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.add('translate-x-full');
+
+        // Konfigurasi Database CSV JMPedia
+        const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
+        let masterArticles = [];
+
+        // Data Dummy Terbaru (Telah Ditambahkan Contoh Ukuran Gambar)
+        const fallbackArticles = [
+            {
+                kat_id: "4", post_num: "01", month: "MAY", year: "26", tanggal: "15 Mei 2026",
+                judul: "Menghitung PK AC yang Sesuai Ruangan Anda",
+                image_link: "https://lh3.googleusercontent.com/d/1K5XkcaK6-aj7ncmDHnvhDiq3vyqJkRLR",
+                ringkasan: "Cuaca terik buat ruangan panas? Jangan salah pilih kapasitas AC! Ketahui cara tepat menghitung PK AC agar dingin maksimal dan hemat listrik.",
+                konten_lengkap: "Cuaca yang terik dan suhu udara yang tinggi seringkali membuat kenyamanan di dalam ruangan menjadi berkurang. Memasang Air Conditioner (AC) adalah solusi yang paling tepat. Namun, memilih AC tidak boleh sembarangan. Jika kapasitasnya tidak sesuai, AC justru akan bekerja terlalu keras, cepat rusak, dan membuat tagihan listrik membengkak.<br><br>Agar Anda mendapatkan pendinginan yang efisien, berikut adalah panduan dan tips cerdas memilih AC yang tepat untuk ruangan Anda:<br><br><b>1. Sesuaikan Kapasitas AC (PK) dengan Luas Ruangan</b><br>Langkah pertama dan paling krusial adalah menghitung luas ruangan. Kapasitas pendinginan AC diukur dalam satuan BTU/hr (British Thermal Unit) yang sering kita kenal dengan istilah PK. Rumus dasarnya adalah: <b>Panjang x Lebar x 500 BTU/h</b>.<br><br>• Ruangan 3x3 meter (9m²) cocok menggunakan AC 1/2 PK (± 5.000 BTU/h).<br>• Ruangan 4x4 meter (16m²) lebih ideal menggunakan AC 1 PK (± 9.000 BTU/h).<br><br>Memilih PK yang pas adalah solusi agar kompresor AC awet dan suhu dingin merata.<br><br><b>2. Pilih Jenis AC yang Tepat: Standard, Low Watt, atau Inverter?</b><br>Jika ruangan tersebut sering dibuka-tutup atau hanya digunakan beberapa jam saja, AC Standard bisa menjadi pilihan. Namun, jika AC menyala lebih dari 8 jam sehari (seperti di kamar tidur atau ruang kantor), AC tipe <i>Inverter</i> adalah solusi terbaik karena teknologi kompresornya dapat menyesuaikan putaran secara otomatis sehingga jauh lebih hemat daya.<br><br><b>3. Perhatikan Fitur Ekstra dan Filter Udara</b><br>Fungsi AC saat ini bukan sekadar mendinginkan. Carilah unit yang dilengkapi dengan filter anti-bakteri atau plasmacluster untuk menjaga kualitas sirkulasi udara di dalam ruangan agar tetap bersih, bebas debu, dan sehat untuk keluarga atau karyawan Anda.<br><br><b>4. Percayakan Pemasangan dan Pembelian pada Ahlinya</b><br>Membeli AC yang bagus harus dibarengi dengan instalasi yang tepat secara teknis. Untuk urusan ini, <b>CV. Jala Mas Persada</b> hadir memberikan solusi tata udara terbaik untuk Anda. Sebagai pusat AC Semarang termurah dan terpercaya, kami dikenal sebagai <b>toko AC spesialis</b> yang mengedepankan kualitas instalasi yang rapi dan profesional.<br><br>Anda tidak perlu khawatir soal anggaran, karena kami berkomitmen menyediakan unit berkualitas yang terjangkau dan <b>murah di Semarang</b>. Nikmati transparansi transaksi dengan jaminan <b>harga promo dan nett tiap hari</b>, memastikan Anda mendapatkan nilai dan efisiensi terbaik untuk setiap proyek residensial, perkantoran, maupun fasilitas umum.<br><br>Jika Anda bingung, Anda dapat menghitung kebutuhan PK AC Anda pada tautan berikut:<br><br>[TOMBOL: https://jalamaspersada.vercel.app/calculator.html | Hitung Kebutuhan PK AC Anda Di Sini]"
+            },
+            {
+                kat_id: "2", post_num: "02", month: "MAY", year: "26", tanggal: "15 Mei 2026",
+                judul: "Mengenal Teknologi AC Midea Celest Inverter: Solusi Dingin Cepat & Hemat Energi",
+                image_link: "https://lh3.googleusercontent.com/d/1m5-BuNDNzaodPLJgcZ0bWz2ZNpTYSX9B",
+                ringkasan: "Apa itu teknologi Celest pada AC Midea Inverter? Pelajari bagaimana fitur ini menjadi solusi cerdas untuk menghemat listrik tanpa mengorbankan kenyamanan pendinginan di ruangan Anda.",
+                konten_lengkap: "Perkembangan teknologi tata udara kini semakin maju, tidak lagi hanya sekadar mendinginkan ruangan, tetapi juga mengedepankan efisiensi dan kesehatan. Salah satu inovasi terbaru yang patut Anda ketahui adalah teknologi <b>Celest</b> yang tertanam pada seri AC Midea Inverter.<br><br>Jika Anda sedang mencari solusi pendingin ruangan yang tangguh untuk pemakaian jangka panjang, memahami teknologi ini adalah langkah yang sangat tepat.<br><br><b>Apa Itu Teknologi Midea Celest Inverter?</b><br>Seri Midea Celest dirancang dengan kompresor Inverter tingkat lanjut yang mampu beradaptasi dengan fluktuasi suhu secara sangat presisi. Saat AC baru dinyalakan, kompresor akan bekerja maksimal untuk mencapai suhu target dalam waktu singkat (Fast Cooling). Setelah suhu ideal tercapai, teknologi Celest akan menurunkan putaran kompresor dan mempertahankan suhu tersebut dengan penggunaan daya yang sangat minim.<br><br>[GAMBAR: https://lh3.googleusercontent.com/d/1rf9hjqcVCiRc_dXm9Gs6OdNfWybX58gG]<br><br><b>Keunggulan Utama Midea Celest:</b><br>1. <b>Efisiensi Listrik Maksimal:</b> Berkat teknologi Inverter yang stabil, lonjakan daya listrik dapat ditekan secara drastis, menjadikannya solusi cerdas untuk menghemat tagihan listrik bulanan.<br>2. <b>Operasional Sangat Senyap (Quiet Mode):</b> Desain kipas dan aliran udaranya dioptimalkan sedemikian rupa sehingga AC beroperasi dengan tingkat kebisingan yang sangat rendah, memberikan kenyamanan ekstra untuk ruang tidur atau ruang kerja.<br>3. <b>Penyaringan Udara Bersih:</b> Dilengkapi dengan sistem filter modern yang membantu menjaga kualitas udara di dalam ruangan tetap segar dan bebas dari partikel debu halus.<br><br><b>Dapatkan Solusi Tata Udara Terbaik di Semarang</b><br>Bagi Anda yang tertarik untuk mengadopsi teknologi canggih ini, <b>CV. Jala Mas Persada</b> hadir sebagai <b>toko AC</b> terpercaya untuk Anda. Kami merupakan <b>spesialis</b> yang secara resmi <b>menyediakan AC Midea dengan tipe inverter Celest ini</b>.<br><br>Dengan komitmen memberikan pelayanan prima dan instalasi yang rapi, kami juga dikenal karena <b>menjual AC murah di Semarang</b>. Anda bisa merencanakan anggaran proyek residensial maupun komersial Anda dengan tenang, karena kami selalu mengedepankan transparansi melalui jaminan <b>harga promo dan nett tiap hari</b>.<br><br>Jangan ragu untuk mengonsultasikan kebutuhan kapasitas PK ruangan Anda bersama tim teknis kami. Kami siap memberikan solusi, bukan sekadar janji.<br><br>[TOMBOL: https://wa.me/6281215000537 | Konsultasi AC Midea via WhatsApp Sekarang]"
+            },
+            {
+                kat_id: "3", post_num: "04", month: "MAY",  year: "26", tanggal: "15 Mei 2026",
+                judul: "Panduan Lengkap Memilih Jenis AC yang Tepat: Split, Cassette, Floor, Window, atau Portabel?",
+                image_link: "https://lh3.googleusercontent.com/d/1bfjXbk2cKsGs8IJx_AQCczhxMpn_ESJw",
+                ringkasan: "Jangan bingung pilih AC! Kenali perbedaan AC Split, Cassette, Floor Standing, Window, dan Portabel agar sesuai dengan kebutuhan ruangan Anda.",
+                konten_lengkap: "Halo pelanggan setia CV. Jala Mas Persada! Memilih Air Conditioner (AC) yang tepat untuk ruangan terkadang membingungkan. Apakah cukup dengan AC Split biasa, atau ruangan komersial Anda justru membutuhkan AC Cassette? Mengetahui perbedaan karakteristik jenis AC—termasuk kelebihan dan kekurangannya—adalah langkah awal yang krusial untuk mendapatkan efisiensi pendinginan dan estetika yang maksimal.<br><br>Mari kita bahas 5 jenis AC yang paling umum beserta peruntukannya agar Anda tidak salah pilih:<br><br><b>1. AC Split (Wall Mounted)</b><br><br>Ini adalah jenis AC yang paling populer dan sering kita jumpai di area hunian. Terdiri dari dua unit terpisah: indoor (menempel di dinding dalam) dan outdoor (di luar ruangan).<br><br><b>Kelebihan:</b> Suara mesin sangat halus, perawatan cuci rutin yang mudah, dan variasi kapasitas PK yang sangat beragam (mulai dari 1/2 PK).<br><b>Pertimbangan:</b> Membutuhkan area kosong pada dinding interior dan ruang (balkon/teras luar) untuk memudahkan peletakkan dan service cuci maupun perbaikan pada unit outdoor.<br><b>Tipe Ruangan yang Cocok:</b> Sangat ideal untuk area residensial seperti kamar tidur utama, ruang keluarga, ruang kerja pribadi (home office), kamar kost, hingga ruang kantor skala kecil yang tertutup.<br><br><b>2. AC Cassette (Ceiling)</b><br><br>Berbeda dengan Split yang menempel di dinding, AC Cassette dipasang menyatu dengan plafon atau langit-langit ruangan.<br><br><b>Kelebihan:</b> Mampu menghembuskan udara dingin secara merata ke empat arah (360 derajat) dan tidak memakan ruang pada dinding, sehingga sangat mendukung desain interior dengan konsep modern tropical atau quiet luxury yang mengedepankan estetika minimalis.<br><b>Pertimbangan:</b> Membutuhkan plafon gantung (false ceiling) yang cukup dalam untuk menyembunyikan bodi mesin. Biaya awal unit dan instalasinya cenderung lebih tinggi dibandingkan AC Split biasa.<br><b>Tipe Ruangan yang Cocok:</b> Area komersial yang mengutamakan kenyamanan dan tampilan visual, seperti restoran mewah, kafe, lobi hotel, ruang meeting direksi perkantoran, dan minimarket.<br><br><b>3. AC Floor Standing</b><br><br>Seperti namanya, unit AC ini diletakkan berdiri secara vertikal di lantai. Bentuknya menyerupai lemari es dan memiliki kapasitas kompresor yang sangat besar.<br><br><b>Kelebihan:</b> Menghasilkan hembusan angin yang sangat kuat dan kapasitas pendinginan yang masif dalam waktu singkat. Mesin ini sangat tangguh untuk beban kerja berat (heavy-duty).<br><b>Pertimbangan:</b> Memakan area lantai ruangan. Karena ukurannya besar dan instalasinya bersifat permanen (terhubung dengan pemipaan khusus ke unit outdoor), dibutuhkan teknisi ahli jika sewaktu-waktu ingin dipindahkan. Selain itu, konsumsi daya listriknya (watt) tergolong besar.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan berkapasitas besar tanpa sekat, seperti aula pertemuan, gedung resepsi pernikahan, tempat ibadah (masjid/gereja), lobi fasilitas umum, hingga area produksi di pabrik.<br><br><b>4. AC Window</b><br><br>Ini adalah jenis AC klasik di mana seluruh komponen (kompresor, kondensor, dan evaporator) berada dalam satu bodi kotak yang sama.<br><br><b>Kelebihan:</b> Pemasangan relatif praktis karena tidak memerlukan instalasi pipa tembaga (freon) yang panjang antar unit.<br><b>Pertimbangan:</b> Tingkat kebisingan (suara mesin) lebih terdengar di dalam ruangan karena kompresor menyatu dengan unit indoor. Selain itu, mengharuskan pembobokan dinding yang ukurannya harus pas dengan bodi AC secara permanen.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan dengan keterbatasan area luar untuk meletakkan unit outdoor, seperti bilik pos keamanan (satpam), direksi keet atau kamar kontainer proyek, dan ruangan gudang kecil.<br><br><b>5. AC Portabel</b><br><br>Berbeda dengan tipe AC lainnya yang dipasang secara permanen, AC Portabel dirancang agar dapat bergerak bebas. Unit ini berdiri sendiri dengan roda di bagian bawah.<br><br><b>Kelebihan:</b> Sangat praktis, fleksibel, dan mudah dipindah-pindah antar ruangan. Tidak memerlukan instalasi teknis sama sekali—tanpa perlu membobok dinding atau memasang pipa tembaga.<br><b>Pertimbangan:</b> Kapasitas pendinginan terbatas, sehingga kurang maksimal untuk ruangan luas. Anda juga tetap harus mengarahkan selang pembuangan panas (exhaust) ke luar jendela atau celah pintu agar suhu ruangan benar-benar bisa turun.<br><b>Tipe Ruangan yang Cocok:</b> Kamar sewa atau apartemen yang pengelolanya tidak mengizinkan modifikasi/pembobokan dinding, ruangan kecil yang butuh pendinginan ekstra sementara, atau cocok untuk Anda yang sering berpindah tempat tinggal.<br><br><b>Percayakan Instalasi Pada Ahlinya</b><br><br>Jenis AC apa pun yang pada akhirnya Anda pilih, kunci utamanya tetap berada pada kualitas instalasi teknis. CV. Jala Mas Persada hadir sebagai mitra terpercaya Anda. Kami tidak hanya mengedepankan pelayanan pemasangan yang profesional dan rapi, tetapi juga dikenal menyediakan berbagai pilihan unit AC murah dengan jaminan kualitas tinggi di area Semarang dan sekitarnya.<br><br>Kami selalu berkomitmen memberikan solusi menyeluruh yang dirancang khusus untuk kebutuhan residensial, perkantoran, maupun fasilitas umum Anda. Dapatkan efisiensi dan tata udara yang maksimal untuk setiap ruangan dengan penentuan harga yang jelas di awal.<br><br>Butuh bantuan teknis untuk survei lokasi dan menentukan tipe AC yang paling tepat untuk proyek Anda? Jangan ragu untuk mengonsultasikan kebutuhan Anda bersama tim ahli kami melalui WhatsApp.<br><br><b>AC Murah Semarang ya Jala Mas Persada. AC murah Semarang ya JMP.</b><br><br>[TOMBOL: https://wa.me/6281215000537 | Konsultasi AC via WhatsApp Sekarang]"
+}
+        ];
+
+        function getCatConfig(catId) {
+            const id = String(catId).trim();
+            if(id === '1') return { name: 'Berita', color: 'bg-red-500 text-white', icon: 'ri-newspaper-line' };
+            if(id === '2') return { name: 'Produk', color: 'bg-amber-500 text-white', icon: 'ri-star-smile-line' };
+            if(id === '3') return { name: 'Edukasi', color: 'bg-blue-500 text-white', icon: 'ri-book-open-line' };
+            if(id === '4') return { name: 'Tips', color: 'bg-green-500 text-white', icon: 'ri-lightbulb-line' };
+            return { name: 'Artikel', color: 'bg-gray-600 text-white', icon: 'ri-article-line' };
+        }
+
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+            if (articleId) {
+                setTimeout(() => { openArticle(articleId); }, 300);
+            }
+        }
+
+        function processData(data) {
+            data.forEach(art => {
+                if(art.kat_id && art.post_num && art.month && art.year) {
+                    let pNum = String(art.post_num).trim();
+                    if(pNum.length === 1) pNum = '0' + pNum;
+                    art.id = String(art.kat_id).trim() + pNum + String(art.month).trim().toUpperCase() + String(art.year).trim();
+                }
+            });
+            return data;
+        }
+
+        function loadFallbackData() {
+            masterArticles = processData(fallbackArticles);
+            renderArticles(masterArticles);
+            checkUrlParams();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById('loading-state').classList.remove('hidden');
+            try {
+                const isLocalEnv = window.location.protocol === 'file:' || window.location.protocol === 'blob:' || window.location.protocol === 'data:';
+                if (isLocalEnv) {
+                    loadFallbackData();
+                } else {
+                    Papa.parse(JMPEDIA_CSV_URL, {
+                        download: true, header: true, skipEmptyLines: true,
+                        complete: function(results) {
+                            if (results.data && results.data.length > 0) {
+                                masterArticles = processData(results.data);
+                            } else {
+                                masterArticles = processData(fallbackArticles);
+                            }
+                            renderArticles(masterArticles);
+                            checkUrlParams();
+                        },
+                        error: function() {
+                            loadFallbackData();
+                        }
+                    });
+                }
+            } catch (error) {
+                loadFallbackData();
+            }
+        });
+
+        function renderArticles(articles) {
+            const grid = document.getElementById('article-grid');
+            const empty = document.getElementById('empty-state');
+            const loading = document.getElementById('loading-state');
+            loading.classList.add('hidden');
+            grid.innerHTML = '';
+            if (articles.length === 0) { empty.classList.remove('hidden'); return; }
+            empty.classList.add('hidden');
+            articles.forEach(art => {
+                if(!art.judul) return; 
+                const catConf = getCatConfig(art.kat_id);
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col border border-gray-50 cursor-pointer h-full";
+                card.onclick = () => openArticle(art.id);
+                card.innerHTML = `
+                    <div class="relative h-48 sm:h-56 overflow-hidden shrink-0">
+                        <img src="${art.image_link}" onerror="this.src='https://placehold.co/800x600/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 left-4 ${catConf.color} px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest flex items-center gap-1.5 shadow-lg">
+                            <i class="${catConf.icon}"></i> ${catConf.name}
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 flex flex-col flex-grow">
+                        <span class="text-xs font-semibold text-brand-primary mb-2 flex items-center gap-1.5"><i class="ri-calendar-line"></i> ${art.tanggal}</span>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-primary transition leading-snug line-clamp-2">${art.judul}</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-6">${art.ringkasan}</p>
+                        <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-100 text-brand-dark font-extrabold text-[11px] uppercase tracking-widest">
+                            <span>Baca Selengkapnya</span>
+                            <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                                <i class="ri-arrow-right-line transform group-hover:translate-x-0.5 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterCategory(catName) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.cat === catName) {
+                    btn.className = "filter-btn active px-5 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all bg-brand-primary text-white shadow-md";
+                } else {
+                    btn.className = "filter-btn px-5 py-2 rounded-full text-xs font-bold text-gray-500 bg-gray-100 hover:bg-gray-200 whitespace-nowrap transition-all";
+                }
+            });
+            if(catName === 'Semua') {
+                renderArticles(masterArticles);
+            } else {
+                const filtered = masterArticles.filter(art => {
+                    const conf = getCatConfig(art.kat_id);
+                    return conf.name === catName;
+                });
+                renderArticles(filtered);
+            }
+        }
+
+        const modal = document.getElementById('article-modal');
+        const modalBox = document.getElementById('article-modal-box');
+        const modalContent = document.getElementById('article-modal-content');
+
+        function openArticle(id) {
+            const article = masterArticles.find(a => a.id === id);
+            if(!article) return;
+            const catConf = getCatConfig(article.kat_id);
+            try {
+                if (window.history.pushState && window.location.protocol.startsWith('http')) {
+                    const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+                    window.history.pushState({path:newUrl},'',newUrl);
+                }
+            } catch (err) { console.warn("URL restricted."); }
+
+            let processedContent = article.konten_lengkap || "";
+            
+            // =====================================================================
+            // UPDATE: LOGIKA SHORTCODE GAMBAR DENGAN PARAMETER UKURAN
+            // =====================================================================
+            processedContent = processedContent.replace(/\[GAMBAR:\s*(.*?)(?:\s*\|\s*(.*?))?\]/gi, function(match, url, size) {
+                let containerClass = "w-full"; // Default (Besar)
+                
+                if (size) {
+                    const s = size.trim().toLowerCase();
+                    if (s === 'kecil') containerClass = "max-w-xs mx-auto";
+                    else if (s === 'sedang') containerClass = "max-w-xl mx-auto";
+                }
+
+                return `
+                    <div class="${containerClass} my-8 md:my-10 rounded-2xl md:rounded-3xl overflow-hidden shadow-md border border-gray-100">
+                        <img src="${url.trim()}" onerror="this.src='https://placehold.co/800x400/f8fafc/94a3b8?text=Gambar+Sisipan'" class="w-full h-auto object-contain">
+                    </div>
+                `;
+            });
+
+            processedContent = processedContent.replace(/\[TOMBOL:\s*(.*?)\s*\|\s*(.*?)\]/gi, function(match, url, text) {
+                return `<div class="my-6"><a href="${url.trim()}" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-primary text-white font-bold text-sm rounded-xl hover:bg-brand-dark transition-all duration-300 transform active:scale-95">${text.trim()} <i class="ri-external-link-line"></i></a></div>`;
+            });
+
+            modalContent.innerHTML = `
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="${catConf.color} px-3 py-1 rounded text-[10px] font-bold uppercase tracking-widest">${catConf.name}</span>
+                        <span class="text-xs font-semibold text-gray-500"><i class="ri-calendar-line"></i> ${article.tanggal}</span>
+                    </div>
+                    <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">${article.judul}</h1>
+                    <div class="w-full h-64 md:h-96 rounded-2xl md:rounded-3xl overflow-hidden mb-8 shadow-inner border border-gray-100">
+                        <img src="${article.image_link}" onerror="this.src='https://placehold.co/1200x600/f8fafc/94a3b8?text=Gambar+Utama'" class="w-full h-full object-cover">
+                    </div>
+                    <div class="prose prose-blue max-w-none text-gray-700 leading-loose text-sm md:text-base">
+                        ${processedContent}
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalBox.classList.remove('translate-y-full', 'md:translate-y-10');
+            modalBox.classList.add('translate-y-0');
+            document.body.style.overflow = 'hidden';
+            modalContent.scrollTop = 0;
+        }
+
+        function closeArticle() {
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalBox.classList.remove('translate-y-0');
+            modalBox.classList.add('translate-y-full', 'md:translate-y-10');
+            document.body.style.overflow = 'auto';
+        }
+
+        function shareArticle() {
+            if (navigator.share) {
+                navigator.share({ title: 'JMPedia - CV Jala Mas Persada', text: 'Baca artikel edukasi AC menarik.', url: window.location.href, }).catch(console.error);
+            } else { alert("Salin link ini: " + window.location.href); }
+        }
+    </script>
+</body>
+</html>
