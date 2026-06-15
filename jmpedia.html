@@ -3,11 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JMPedia - Edukasi & Berita Seputar AC Semarang - CV Jala Mas Persada</title>
-    <meta name="description" content="Pusat informasi, tips, dan panduan AC dari CV Jala Mas Persada. Spesialis, kontraktor, dan distributor tata udara terpercaya di Semarang sejak 1992.">
+    <!-- SEO: Meta Title Premium B2B & Edukasi -->
+    <title>JMPedia - Edukasi, Berita & Tips Tata Udara - CV Jala Mas Persada</title>
+    <!-- SEO: Deskripsi dengan Kata Kunci "Niaga AC" dan "Grosir" -->
+    <meta name="description" content="Pusat informasi, tips perawatan, dan berita seputar AC. Dikelola oleh CV Jala Mas Persada (sebelumnya Niaga AC), pusat grosir & spesialis tata udara Semarang sejak 1992.">
     
-    <!-- Favicon -->
+    <link rel="canonical" href="https://jalamaspersada.vercel.app/jmpedia.html" />
     <link rel="icon" type="image/png" href="NEW JMP FAV 1X.png">
+
+    <!-- SEO: Open Graph untuk Social Media Share -->
+    <meta property="og:title" content="JMPedia - Portal Edukasi AC CV. Jala Mas Persada">
+    <meta property="og:description" content="Panduan memilih PK, tips perawatan AC, dan berita teknologi tata udara terbaru oleh pakar AC Semarang.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jalamaspersada.vercel.app/jmpedia.html">
+    <meta property="og:image" content="https://jalamaspersada.vercel.app/NEW JMP FAV 1X.png">
+
+    <!-- SEO: Schema Markup Khusus Halaman Blog/Edukasi Bisnis Lokal -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "JMPedia - Blog Tata Udara CV Jala Mas Persada",
+      "description": "Edukasi, tips instalasi, dan panduan perawatan Air Conditioner komersial dan residensial.",
+      "publisher": {
+        "@type": "HVACCACBusiness",
+        "name": "CV. Jala Mas Persada",
+        "alternateName": ["Niaga AC Semarang", "Pusat Grosir AC Semarang"],
+        "foundingDate": "1992"
+      }
+    }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,10 +94,11 @@
     <div class="fixed top-0 w-full z-[60] bg-brand-dark text-white text-xs py-2 hidden md:block">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex gap-6">
-                <span class="flex items-center gap-2"><i class="ri-map-pin-line"></i> Semarang, Jawa Tengah</span>
-                <span class="flex items-center gap-2"><i class="ri-mail-line"></i> jalamaspersada@gmail.com</span>
-                <a href="https://wa.me/6281215000537" target="_blank" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
-                    <i class="ri-whatsapp-fill text-blue-400 text-sm"></i> 0812-1500-0537
+                <!-- SEO: Merubah persepsi menjadi Head Office & Pengiriman Nasional -->
+                <span class="flex items-center gap-2"><i class="ri-building-line"></i> Head Office: Semarang</span>
+                <span class="flex items-center gap-2 text-brand-accent font-medium"><i class="ri-truck-line"></i> Melayani Proyek Nasional</span>
+                <a href="https://wa.me/6281215000537" target="_blank" title="Konsultasi Pengadaan Proyek AC" class="flex items-center gap-2 hover:text-brand-accent transition font-semibold">
+                    <i class="ri-whatsapp-fill text-green-400 text-sm"></i> 0812-1500-0537
                 </a>
             </div>
             <div class="flex gap-4">
@@ -87,21 +113,21 @@
     <!-- ================= MAIN HEADER ================= -->
     <header class="fixed top-0 md:top-[32px] w-full z-50 glass-nav transition-all duration-300 border-b border-gray-100" id="navbar">
         <div class="container mx-auto px-4 lg:px-8 max-w-[1400px] h-16 md:h-20 flex items-center">
-            <a href="index.html" class="flex items-center group shrink-0 mr-auto">
-                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo Header" class="h-6 sm:h-7 md:h-8 w-auto object-contain transition-all duration-500">
+            <a href="index.html" class="flex items-center group shrink-0 mr-auto" title="Beranda Pusat Grosir AC JMP">
+                <img src="https://lh3.googleusercontent.com/d/1hV8afjtz1L8gJcVpSI_FNDzJfVd_jxJ1" onerror="this.src='https://placehold.co/150x40?text=JMP+Logo'" alt="Logo CV Jala Mas Persada Monokrom" class="h-6 sm:h-7 md:h-8 w-auto object-contain transition-all duration-500">
             </a>
 
             <nav class="hidden md:flex items-center gap-4 lg:gap-8 font-medium text-[11px] lg:text-[13px] tracking-wide text-gray-500 whitespace-nowrap">
-                <a href="index.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Beranda</a>
-                <a href="products.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
-                <a href="index.html#services" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
-                <a href="proyekkami.html" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
-                <a href="index.html#about" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
-                <a href="jmpedia.html" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5 lg:py-2">JMPedia</a>
+                <a href="index.html" title="Beranda" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Beranda</a>
+                <a href="products.html" title="Katalog Produk Grosir AC" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Produk</a>
+                <a href="index.html#services" title="Layanan Teknisi In-House" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Layanan</a>
+                <a href="proyekkami.html" title="Galeri Portofolio Proyek AC" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Proyek Kami</a>
+                <a href="index.html#about" title="Tentang CV Jala Mas Persada" class="hover:text-brand-primary transition-colors py-1.5 lg:py-2 border-b-2 border-transparent hover:border-brand-primary">Tentang Kami</a>
+                <a href="jmpedia.html" title="Edukasi Solusi Tata Udara" class="text-brand-dark font-bold border-b-2 border-brand-dark py-1.5 lg:py-2">JMPedia</a>
             </nav>
 
             <div class="hidden md:flex shrink-0 ml-6 lg:ml-10">
-                <a href="index.html#contact" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transform hover:-translate-y-0.5">
+                <a href="index.html#contact" title="Hubungi Jala Mas Persada" class="px-6 lg:px-8 py-2.5 bg-brand-dark text-white text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-primary transition-all duration-300 shadow-[0_8px_20px_rgba(26,54,130,0.15)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.3)] transform hover:-translate-y-0.5">
                     Hubungi Kami
                 </a>
             </div>
@@ -126,7 +152,7 @@
 
     <!-- ================= PAGE TITLE / HERO ================= -->
     <section id="jmpedia-hero" class="relative pt-16 md:pt-24 pb-12 md:pb-16 text-center overflow-hidden">
-        <img src="https://lh3.googleusercontent.com/d/1AQnDDXP1dprFEUsUjvAFRpxKFeSn8QX9" alt="Background" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position: center 48%;">
+        <img src="https://lh3.googleusercontent.com/d/1AQnDDXP1dprFEUsUjvAFRpxKFeSn8QX9" alt="Edukasi AC Jala Mas Persada Semarang" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position: center 48%;">
         <div class="absolute inset-0 bg-gradient-to-br from-[#0a1128]/80 via-[#1a3682]/60 to-[#2563eb]/40 z-10"></div>
         <div class="absolute inset-0 z-10 opacity-50 pointer-events-none mix-blend-screen">
             <div class="absolute -top-32 -left-32 w-[600px] h-[600px] bg-[#00b4d8] rounded-full filter blur-[150px] opacity-30"></div>
@@ -134,7 +160,7 @@
         <div class="container mx-auto px-6 relative z-20">
             <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-widest uppercase drop-shadow-lg" id="hero-title">JMPedia</h1>
             <div class="w-16 h-1 bg-gradient-to-r from-[#00b4d8] to-white mx-auto rounded-full mb-4"></div>
-            <p class="text-blue-100 text-sm md:text-base font-light tracking-wide max-w-xl mx-auto drop-shadow-md" id="hero-subtitle">Ensiklopedia, berita, dan tips seputar dunia tata udara.</p>
+            <p class="text-blue-100 text-sm md:text-base font-light tracking-wide max-w-xl mx-auto drop-shadow-md" id="hero-subtitle">Ensiklopedia, berita, dan tips seputar solusi tata udara B2B & Residensial.</p>
         </div>
     </section>
 
@@ -177,7 +203,7 @@
                     </div>
                     
                     <div class="w-full aspect-[21/9] md:aspect-[21/9] overflow-hidden rounded-2xl mb-8 md:mb-10 shadow-lg border border-gray-100 relative">
-                        <img id="detail-image" src="" alt="Cover" class="w-full h-full object-cover">
+                        <img id="detail-image" src="" alt="Cover Artikel Jala Mas Persada" class="w-full h-full object-cover">
                     </div>
                     
                     <div id="detail-content" class="article-content text-gray-600 text-sm md:text-base leading-relaxed md:leading-loose">
@@ -187,8 +213,8 @@
                     <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col items-center">
                         <p class="text-sm text-gray-500 mb-4 font-medium">Bagikan artikel ini:</p>
                         <div class="flex gap-3">
-                            <a id="share-wa" href="#" target="_blank" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition shadow-sm"><i class="ri-whatsapp-fill text-lg"></i></a>
-                            <a id="share-fb" href="#" target="_blank" class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition shadow-sm"><i class="ri-facebook-fill text-lg"></i></a>
+                            <a id="share-wa" href="#" target="_blank" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition shadow-sm" title="Bagikan via WhatsApp"><i class="ri-whatsapp-fill text-lg"></i></a>
+                            <a id="share-fb" href="#" target="_blank" class="w-10 h-10 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition shadow-sm" title="Bagikan via Facebook"><i class="ri-facebook-fill text-lg"></i></a>
                             <button onclick="copyLink()" class="w-10 h-10 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center hover:scale-110 transition shadow-sm" title="Salin Tautan"><i class="ri-links-line text-lg"></i></button>
                         </div>
                     </div>
@@ -203,24 +229,24 @@
         <div class="container mx-auto px-6 text-center md:text-left">
             <div class="grid md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
                 <div class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start">
-                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer" class="h-8 md:h-10 mb-4 object-contain">
-                    <p class="max-w-sm text-gray-500">Spesialis pendingin udara terpercaya dengan layanan purna jual terbaik di Jawa Tengah sejak 1992.</p>
+                    <img src="https://lh3.googleusercontent.com/d/1flIQM1GK8clRoNm9tocmVijRFByHozwv" onerror="this.src='https://placehold.co/150x40/1f2937/ffffff?text=JMP+Logo'" alt="Logo Footer Jala Mas Persada" class="h-8 md:h-10 mb-4 object-contain">
+                    <p class="max-w-sm text-gray-500">Mitra pengadaan tata udara nasional. Solusi pendingin ruangan terpercaya untuk B2B dan residensial dengan jaminan teknisi in-house sejak 1992.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi</h4>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigasi Utama</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
-                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk</a></li>
-                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK</a></li>
+                        <li><a href="products.html" class="hover:text-white transition">Katalog Produk HVAC</a></li>
+                        <li><a href="calculator.html" class="hover:text-white transition">Kalkulator PK AC</a></li>
                     </ul>
                 </div>
                 <div class="flex gap-4 justify-center md:justify-end items-start">
-                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-instagram-line text-lg"></i></a>
-                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors"><i class="ri-facebook-circle-fill text-lg"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors" title="Instagram Jala Mas Persada"><i class="ri-instagram-line text-lg"></i></a>
+                    <a href="#" class="bg-gray-800 p-2.5 rounded-full hover:text-white transition-colors" title="Facebook Jala Mas Persada"><i class="ri-facebook-circle-fill text-lg"></i></a>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-xs opacity-60">
-                <p>&copy; 1992-2026 CV. Jala Mas Persada. All Rights Reserved.</p>
+                <p>&copy; 1992-2026 CV. Jala Mas Persada (Niaga AC). All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -238,7 +264,7 @@
         const JMPEDIA_CSV_URL = "Database_JMPedia.csv";
         let masterArticles = [];
 
-        // Data cadangan identik
+        // Data cadangan identik dengan yang terbaru
         const fallbackArticles = [
             {
                 kat_id: "4", post_num: "01", month: "MAY", year: "26", tanggal: "15 Mei 2026",
@@ -260,21 +286,21 @@
                 image_link: "https://lh3.googleusercontent.com/d/1bfjXbk2cKsGs8IJx_AQCczhxMpn_ESJw",
                 ringkasan: "Jangan bingung pilih AC! Kenali perbedaan AC Split, Cassette, Floor Standing, Window, dan Portabel agar sesuai dengan kebutuhan ruangan Anda.",
                 konten_lengkap: "Halo pelanggan setia CV. Jala Mas Persada! Memilih Air Conditioner (AC) yang tepat untuk ruangan terkadang membingungkan. Apakah cukup dengan AC Split biasa, atau ruangan komersial Anda justru membutuhkan AC Cassette? Mengetahui perbedaan karakteristik jenis AC—termasuk kelebihan dan kekurangannya—adalah langkah awal yang krusial untuk mendapatkan efisiensi pendinginan dan estetika yang maksimal.<br><br>Mari kita bahas 5 jenis AC yang paling umum beserta peruntukannya agar Anda tidak salah pilih:<br><br><b>1. AC Split (Wall Mounted)</b><br><br>Ini adalah jenis AC yang paling populer dan sering kita jumpai di area hunian. Terdiri dari dua unit terpisah: indoor (menempel di dinding dalam) dan outdoor (di luar ruangan).<br><br><b>Kelebihan:</b> Suara mesin sangat halus, perawatan cuci rutin yang mudah, dan variasi kapasitas PK yang sangat beragam (mulai dari 1/2 PK).<br><b>Pertimbangan:</b> Membutuhkan area kosong pada dinding interior dan ruang (balkon/teras luar) untuk memudahkan peletakkan dan service cuci maupun perbaikan pada unit outdoor.<br><b>Tipe Ruangan yang Cocok:</b> Sangat ideal untuk area residensial seperti kamar tidur utama, ruang keluarga, ruang kerja pribadi (home office), kamar kost, hingga ruang kantor skala kecil yang tertutup.<br><br><b>2. AC Cassette (Ceiling)</b><br><br>Berbeda dengan Split yang menempel di dinding, AC Cassette dipasang menyatu dengan plafon atau langit-langit ruangan.<br><br><b>Kelebihan:</b> Mampu menghembuskan udara dingin secara merata ke empat arah (360 derajat) dan tidak memakan ruang pada dinding, sehingga sangat mendukung desain interior dengan konsep modern tropical atau quiet luxury yang mengedepankan estetika minimalis.<br><b>Pertimbangan:</b> Membutuhkan plafon gantung (false ceiling) yang cukup dalam untuk menyembunyikan bodi mesin. Biaya awal unit dan instalasinya cenderung lebih tinggi dibandingkan AC Split biasa.<br><b>Tipe Ruangan yang Cocok:</b> Area komersial yang mengutamakan kenyamanan dan tampilan visual, seperti restoran mewah, kafe, lobi hotel, ruang meeting direksi perkantoran, dan minimarket.<br><br><b>3. AC Floor Standing</b><br><br>Seperti namanya, unit AC ini diletakkan berdiri secara vertikal di lantai. Bentuknya menyerupai lemari es dan memiliki kapasitas kompresor yang sangat besar.<br><br><b>Kelebihan:</b> Menghasilkan hembusan angin yang sangat kuat dan kapasitas pendinginan yang masif dalam waktu singkat. Mesin ini sangat tangguh untuk beban kerja berat (heavy-duty).<br><b>Pertimbangan:</b> Memakan area lantai ruangan. Karena ukurannya besar dan instalasinya bersifat permanen (terhubung dengan pemipaan khusus ke unit outdoor), dibutuhkan teknisi ahli jika sewaktu-waktu ingin dipindahkan. Selain itu, konsumsi daya listriknya (watt) tergolong besar.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan berkapasitas besar tanpa sekat, seperti aula pertemuan, gedung resepsi pernikahan, tempat ibadah (masjid/gereja), lobi fasilitas umum, hingga area produksi di pabrik.<br><br><b>4. AC Window</b><br><br>Ini adalah jenis AC klasik di mana seluruh komponen (kompresor, kondensor, dan evaporator) berada dalam satu bodi kotak yang sama.<br><br><b>Kelebihan:</b> Pemasangan relatif praktis karena tidak memerlukan instalasi pipa tembaga (freon) yang panjang antar unit.<br><b>Pertimbangan:</b> Tingkat kebisingan (suara mesin) lebih terdengar di dalam ruangan karena kompresor menyatu dengan unit indoor. Selain itu, mengharuskan pembobokan dinding yang ukurannya harus pas dengan bodi AC secara permanen.<br><b>Tipe Ruangan yang Cocok:</b> Ruangan dengan keterbatasan area luar untuk meletakkan unit outdoor, seperti bilik pos keamanan (satpam), direksi keet atau kamar kontainer proyek, dan ruangan gudang kecil.<br><br><b>5. AC Portabel</b><br><br>Berbeda dengan tipe AC lainnya yang dipasang secara permanen, AC Portabel dirancang agar dapat bergerak bebas. Unit ini berdiri sendiri dengan roda di bagian bawah.<br><br><b>Kelebihan:</b> Sangat praktis, fleksibel, dan mudah dipindah-pindah antar ruangan. Tidak memerlukan instalasi teknis sama sekali—tanpa perlu membobok dinding atau memasang pipa tembaga.<br><b>Pertimbangan:</b> Kapasitas pendinginan terbatas, sehingga kurang maksimal untuk ruangan luas. Anda juga tetap harus mengarahkan selang pembuangan panas (exhaust) ke luar jendela atau celah pintu agar suhu ruangan benar-benar bisa turun.<br><b>Tipe Ruangan yang Cocok:</b> Kamar sewa atau apartemen yang pengelolanya tidak mengizinkan modifikasi/pembobokan dinding, ruangan kecil yang butuh pendinginan ekstra sementara, atau cocok untuk Anda yang sering berpindah tempat tinggal.<br><br><b>Percayakan Instalasi Pada Ahlinya</b><br><br>Jenis AC apa pun yang pada akhirnya Anda pilih, kunci utamanya tetap berada pada kualitas instalasi teknis. CV. Jala Mas Persada hadir sebagai mitra terpercaya Anda. Kami tidak hanya mengedepankan pelayanan pemasangan yang profesional dan rapi, tetapi juga dikenal menyediakan berbagai pilihan unit AC dengan jaminan kualitas tinggi di area Semarang dan sekitarnya semenjak tahun 1992.<br><br>Kami selalu berkomitmen memberikan solusi menyeluruh yang dirancang khusus untuk kebutuhan residensial, perkantoran, maupun fasilitas umum Anda. Dapatkan efisiensi dan tata udara yang maksimal untuk setiap ruangan dengan penentuan harga distributor yang jelas di awal.<br><br>Butuh bantuan teknis untuk survei lokasi dan menentukan tipe AC yang paling tepat untuk proyek Anda? Jangan ragu untuk mengonsultasikan kebutuhan Anda bersama tim ahli kami melalui WhatsApp.<br><br><b>Pusat Grosir AC Terpercaya Semarang ya Jala Mas Persada.</b><br><br>[TOMBOL: https://wa.me/6281215000537 | Konsultasi AC via WhatsApp Sekarang]"
-            }3
+            },
             {
                 kat_id: "2", post_num: "04", month: "MAY", year: "26", tanggal: "18 Mei 2026",
                 judul: "Membedah Kecerdasan Buatan (AI) pada AC Midea Celest dan Gree Airy, Apa Keuntungannya?",
                 image_link: "https://lh3.googleusercontent.com/d/1ZP4luPuhCPH5TDvN-JCOSseSwpz9YYdj",
                 ringkasan: "Apa beda teknologi Ai pada AC Midea dan Gree yang dipasarkan di Indonesia tahun 2026 ini? Apa saja keuntungannya? Bagaimana cara kerjanya?",
                 konten_lengkap: "Halo para pelanggan setia Jala Mas Persada. Di tahun 2026 ini, teknologi Artificial Intelligence (Kecerdasan Buatan) atau AI tidak hanya ada di ponsel pintar, tapi sudah hadir menjadi \"otak\" di dalam AC rumah Anda. Dua merek besar yang memimpin inovasi ini di Indonesia adalah Midea dengan seri Celest Inverter dan Gree dengan seri Airy.<br><br>Fokus yang akan dibahas kali ini yaitu membedah secara mendalam bagaimana cara kerja teknologi AI di kedua AC ini, perbedaannya, serta apa manfaat nyata yang bisa keluarga Anda rasakan di rumah!<br><br><b>1. Bagaimana Cara Kerja AI pada AC Midea dan Gree?</b><br>Meskipun sama-sama mengusung label AC pintar, Midea dan Gree memiliki pendekatan sistem yang sangat berbeda dalam memantau dan mendinginkan ruangan Anda:<br><br>• <b>Midea Celest (AI ECOMASTER):</b> Sistem AI dari Midea bekerja seperti analis data yang sangat cepat dan teliti. Teknologi ini menggunakan algoritma yang dilatih dengan mahadata berskala besar untuk memindai berbagai kondisi secara real-time, mulai dari suhu ruangan hingga prediksi cuaca di luar. Hebatnya, AI ini memprediksi dan merumuskan ulang strategi pendinginan ruangan Anda setiap 30 detik. Setelah membaca data, AI ECOMASTER akan menyinkronkan kecepatan kompresor dengan kipas motor DC yang ada di dalam (indoor) dan luar ruangan (outdoor) secara presisi agar pendinginan berjalan sempurna.<br><br>• <b>Gree Airy (AI G-Learning):</b> Jika Midea fokus pada analisis hitungan detik, Gree Airy bertindak seperti asisten pribadi yang mengamati kebiasaan Anda sehari-hari. Gree menanamkan cip AI khusus yang menjalankan algoritma G-Learning dengan menggabungkan teori sistem pakar dan Deep Q-Learning. Sistem ini secara aktif mempelajari parameter lingkungan ruangan (misalnya jam berapa saja ruangan Anda terkena paparan sinar matahari terpanas) dan merekam kebiasaan Anda mengatur remote. Karena berbasis self-learning (belajar mandiri), semakin lama dan sering Anda menggunakan AC ini, maka AI-nya akan semakin pintar mengenali kebutuhan ruangan Anda.<br><br><b>2. Apa Saja Keuntungan dan Manfaat Menggunakan AI Midea & Gree?</b><br>Hadirnya AI di AC bukan sekadar fitur pelengkap. Ada manfaat kenyamanan fisik dan efisiensi listrik yang sangat terasa perbedaannya dibandingkan AC inverter biasa:<br><br><b>Keuntungan Menggunakan AI Midea Celest (Fokus pada Kestabilan Suhu & Penghematan Ekstra)</b><br>• <b>Suhu Super Stabil Anti Gerah:</b> Berkat penyesuaian otomatis setiap 30 detik, Midea Celest mampu mengontrol suhu ruangan dengan tingkat presisi yang luar biasa, dengan batas fluktuasi hanya ±0,3°C. Ini membuat suhu kamar tidak akan pernah terasa naik-turun atau berubah-ubah secara drastis.<br>• <b>Tidur Malam Jauh Lebih Nyenyak:</b> Pada malam hari, AI ini secara pintar akan menurunkan intensitas kompresor. Anda akan mendapatkan tingkat kesejukan yang konsisten sehingga tidak perlu terbangun tengah malam karena kedinginan.<br>• <b>Hemat Listrik Tanpa Mengurangi Dingin:</b> Karena kompresor dan kipas bekerja secara harmonis sesuai kebutuhan nyata ruangan, Midea Celest tidak pernah membuang daya listrik secara sia-sia. Hal ini memberikan ekstra penghematan energi hingga lebih dari 30% dibanding saat menggunakan mode inverter standar.<br><br><b>Keuntungan Menggunakan AI Gree Airy (Fokus pada Adaptasi Proaktif & Kenyamanan Personal)</b><br>• <b>Pendinginan Proaktif (Mencegah Panas Masuk):</b> Karena AI Gree sudah menghafal siklus termal ruangan Anda, AC ini tidak menunggu sampai ruangan terasa panas untuk bekerja keras. Mesin akan menyesuaikan frekuensi pendinginan sebelum suhu ruangan sempat naik. Hasilnya, suhu nyaman akan selalu menyambut Anda tanpa perlu jeda waktu tunggu.<br>• <b>Bebas Repot Atur Remote:</b> Berkat teknologi self-learning, AI secara otomatis mengambil alih dan menerapkan pengaturan yang paling sesuai dengan preferensi kenyamanan Anda. Anda cukup menghidupkan AC, dan algoritma cerdasnya akan bekerja sendiri mencari titik nyaman Anda.<br>• <b>Efisiensi Jangka Panjang:</b> Dengan mencegah kerja kompresor yang naik-turun secara agresif saat suhu tiba-tiba memanas, pengaturan proaktif dari Gree Airy mampu memangkas konsumsi energi tahunan hingga 20% lebih rendah dibanding AC inverter pada umumnya.<br><br><b>Kesimpulan</b><br>Baik AI ECOMASTER dari Midea maupun AI G-Learning dari Gree sama-sama mendefinisikan ulang makna kenyamanan di rumah pintar masa depan.<br><br>Jika Anda adalah tipe pengguna yang mengutamakan suhu kamar yang sangat stabil untuk tidur malam (tanpa fluktuasi) dan menginginkan penghematan listrik secara agresif, maka sistem AI sinkronisasi dari Midea Celest adalah jawabannya.<br><br>Namun, jika Anda mendambakan AC yang bisa \"mengenali\" keseharian Anda, bekerja proaktif mencegah suhu panas masuk, dan sepenuhnya beradaptasi dengan kondisi rumah, maka asisten cerdas yang tertanam di dalam Gree Airy akan sangat memanjakan gaya hidup Anda.<br><br><b>Percayakan Kebutuhan AC Pintar Anda pada Ahlinya</b><br>Tertarik untuk meng-upgrade sistem pendingin udara Anda dengan teknologi cerdas ini? <b>CV. Jala Mas Persada</b> hadir sebagai solusi tepat untuk Anda. Sebagai pusat grosir dan agen AC terpercaya di Semarang sejak 1992, kami merupakan diler resmi yang menyediakan AC pintar Inverter, termasuk seri <b>Midea Celest</b> dan <b>Gree Airy</b> dengan jaminan kualitas terbaik. Dapatkan penawaran harga distributor untuk setiap proyek rumah, kantor, atau komersial Anda.<br><br><b>Pusat Grosir AC Terpercaya Semarang ya CV Jala Mas Persada.</b><br><br>[TOMBOL: https://wa.me/6281215000537 | Konsultasi AC Pintar via WhatsApp]"
+            },
+            {
+                kat_id: "3", post_num: "05", month: "JUNE", year: "26", tanggal: "16 Juni 2026",
+                judul: "Daftar Biaya Pasang & Perawatan AC Profesional di Semarang (Update Juni 2026)",
+                image_link: "https://lh3.googleusercontent.com/d/1Dobvm7DBYVo0kyeNd-0PQ1Ki9f2UpXfV",
+                ringkasan: "Jangan tergiur biaya pasang AC murah! Pelajari standar instalasi profesional, pentingnya kabel Supreme, pipa tebal, dan proses vakum agar AC Anda awet, garansi terjaga, dan tidak boros listrik.",
+                konten_lengkap: "SEMARANG – Cuaca di Kota Semarang belakangan ini memang cukup menantang. Bagi warga Semarang, AC bukan lagi sekadar barang mewah, melainkan kebutuhan pokok untuk menjaga produktivitas dan kualitas istirahat di rumah. Namun, ada satu kesalahan fatal yang sering dilakukan konsumen saat membeli AC baru: terjebak pada narasi <b>\"biaya pasang AC murah\"</b>.<br><br>Banyak konsumen mengira harga jasa pasang adalah variabel yang bisa ditekan. Padahal, dalam dunia tata udara (air conditioning), harga yang dibayarkan di awal bukanlah sekadar ongkos tenaga kerja, melainkan nilai investasi untuk keamanan, efisiensi, dan umur panjang unit AC Anda.<br><br>Berikut adalah standar teknis yang wajib Anda perhatikan saat mencari jasa pasang AC di Semarang:<br><br><b>1. Keamanan Listrik: Kabel Adalah Fondasi</b><br>Seringkali, jasa pasang AC \"murah\" menggunakan kabel yang tipis dan tidak melakukan instalasi kabel grounding dan kabel yang digunakan tidak memiliki spesifikasi yang memadai sesuai PK AC yang dipasang. Ini adalah bom waktu. Instalasi yang benar wajib menggunakan kabel tembaga tunggal yang tebal dengan 3 (tiga) jalur kabel lengkap dengan menghubungkan kabel grounding. <i>Grounding</i> bukan sekadar pelengkap, melainkan fitur keselamatan krusial untuk mencegah kebocoran arus listrik yang membahayakan penghuni rumah. Apabila penggunaan kabel tidak sesuai dengan beban listrik, akan berpotensi menyebabkan kabel menjadi panas dan dapat terbakar. Kami di JMP menggunakan kabel merek Supreme yang sudah teruji kualitasnya, serta menggunakan kabel dengan diameter ketebalan yang tepat sesuai standarisasi pabrik.<br><br><b>2. Ketebalan Pipa</b><br>Pipa tembaga adalah nadi dari AC Anda. Pipa yang tipis berisiko mengalami kebocoran freon dalam jangka waktu singkat. Standar pabrik menuntut penggunaan pipa tembaga dengan ketebalan minimal 0,6 mm. Pipa yang tebal mampu menahan tekanan kerja freon yang tinggi, menjaga performa pendinginan tetap optimal tanpa harus membebani kompresor. Kami di JMP menggunakan ketebalan pipa tembaga di atas 0,6 mm karena kami paham bahwa freon AC saat ini memiliki tekanan besar.<br><br><b>3. Aturan Main Panjang Pipa (Minimal 2 Meter)</b><br>Banyak pemasang AC \"nakal\" memotong dan menggunakan instalasi pipa tembaga yang sangat pendek, bahkan hanya 1 (satu) meter saja untuk mempromosikan biaya jasa pasangnya \"lebih murah\" dibandingkan toko spesialis AC Semarang. Faktanya, instalasi pipa tembaga minimal harus sepanjang 2 (dua) meter. Jika kurang dari itu, getaran kompresor akan merambat langsung ke unit <i>indoor</i> dan berpotensi merusak sistem kompresi AC Anda.<br><br><b>4. Proses Vakum: Prosedur Wajib, Bukan Pilihan</b><br>Masih banyak instalasi yang mengabaikan proses vakum pipa. Padahal, vakum adalah prosedur wajib untuk mengeluarkan udara dan uap air dari dalam pipa. Jika udara terjebak di dalam sistem, ia akan bercampur dengan oli kompresor, menyebabkan oksidasi, dan dalam jangka panjang akan merusak komponen vital AC.<br><br><b>5. Keahlian di Balik Teknisi Profesional</b><br>Teknisi dari toko spesialis AC terlatih untuk melakukan survei lokasi, menghitung beban pendinginan ruangan, dan memastikan estetika pemasangan menyatu dengan desain interior rumah Anda. [TOMBOL: https://wa.me/6281215000537 | Klik di sini untuk konsultasi survei lokasi AC bersama tim JMP]<br><br><b>Mengapa Memilih Toko Spesialis AC di Semarang?</b><br>Banyak penyedia jasa pemasangan AC umum yang memangkas biaya dengan menggunakan material standar rendah. Di JMP, kami menekankan bahwa kualitas adalah prioritas. Membeli AC di toko spesialis berarti Anda mendapatkan jaminan instalasi yang benar, yang melindungi unit AC Anda dari kerusakan dini dan menjaga garansi resmi tetap berlaku. Toko spesialis AC seperti Jala Mas Persada (yang dahulu dikenal dengan NIAGA AC) memiliki tim instalasi sendiri dan fokus di bidang tata udara, dan sangat jarang menggunakan jasa teknisi <i>freelance</i> seperti toko elektronik umum.<br><br><b>Kesimpulan: Bijak Memilih adalah Investasi</b><br>Jangan tergiur dengan iming-iming biaya instalasi yang jauh di bawah standar pasar. Sering kali, harga murah menjadi jebakan biaya tak terduga di kemudian hari. Instalasi yang asal-asalan berisiko memicu kebocoran freon, kerusakan kompresor, hingga perbaikan berulang. Lebih fatal lagi, malpraktik instalasi ini dapat membuat garansi resmi pabrik hangus.<br><br>Ingat! AC adalah aset jangka panjang. Pastikan Anda mempercayakannya pada toko spesialis yang mengutamakan kualitas, bukan sekadar biaya jasa murah dan kecepatan pemasangan. Investasi kenyamanan Anda layak mendapatkan penanganan dari tangan ahli yang terpercaya.<br><br>Dengan memahami artikel ini Anda sudah dapat mencari informasi serta membuat pertimbangan mengenai harga dan menggunakan merek material kabel, pipa tembaga, dan stop kontak yang terjamin kualitasnya.<br><br>CV. Jala Mas Persada hadir memberikan solusi tata udara terbaik untuk Anda. Sebagai pusat grosir AC terpercaya di Semarang sejak 1992, kami dikenal sebagai mitra kontraktor AC spesialis yang mengedepankan kualitas instalasi yang rapi dan profesional.<br><br>Kami berkomitmen menyediakan unit dan instalasi berkualitas dengan harga kompetitif tiap hari, memastikan Anda mendapatkan nilai dan efisiensi terbaik untuk setiap proyek residensial, perkantoran, maupun fasilitas umum."
             }
-			{
-				kat_id: "3", post_num: "05", month: "JUNE", year: "26", tanggal: "16 Juni 2026",
-				judul: "Daftar Biaya Pasang & Perawatan AC Profesional di Semarang (Update Juni 2026)",
-				image_link: "https://lh3.googleusercontent.com/d/1Dobvm7DBYVo0kyeNd-0PQ1Ki9f2UpXfV",
-				ringkasan: "Jangan tergiur biaya pasang AC murah! Pelajari standar instalasi profesional, pentingnya kabel Supreme, pipa tebal, dan proses vakum agar AC Anda awet, garansi terjaga, dan tidak boros listrik.",
-				konten_lengkap: "SEMARANG – Cuaca di Kota Semarang belakangan ini memang cukup menantang. Bagi warga Semarang, AC bukan lagi sekadar barang mewah, melainkan kebutuhan pokok untuk menjaga produktivitas dan kualitas istirahat di rumah. Namun, ada satu kesalahan fatal yang sering dilakukan konsumen saat membeli AC baru: terjebak pada narasi <b>\"biaya pasang AC murah\"</b>.<br><br>Banyak konsumen mengira harga jasa pasang adalah variabel yang bisa ditekan. Padahal, dalam dunia tata udara (air conditioning), harga yang dibayarkan di awal bukanlah sekadar ongkos tenaga kerja, melainkan nilai investasi untuk keamanan, efisiensi, dan umur panjang unit AC Anda.<br><br>Berikut adalah standar teknis yang wajib Anda perhatikan saat mencari jasa pasang AC di Semarang:<br><br><b>1. Keamanan Listrik: Kabel Adalah Fondasi</b><br>Seringkali, jasa pasang AC \"murah\" menggunakan kabel yang tipis dan tidak melakukan instalasi kabel grounding dan kabel yang digunakan tidak memiliki spesifikasi yang memadai sesuai PK AC yang dipasang. Ini adalah bom waktu. Instalasi yang benar wajib menggunakan kabel tembaga tunggal yang tebal dengan 3 (tiga) jalur kabel lengkap dengan menghubungkan kabel grounding. <i>Grounding</i> bukan sekadar pelengkap, melainkan fitur keselamatan krusial untuk mencegah kebocoran arus listrik yang membahayakan penghuni rumah. Apabila penggunaan kabel tidak sesuai dengan beban listrik, akan berpotensi menyebabkan kabel menjadi panas dan dapat terbakar. Kami di JMP menggunakan kabel merek Supreme yang sudah teruji kualitasnya, serta menggunakan kabel dengan diameter ketebalan yang tepat sesuai standarisasi pabrik.<br><br><b>2. Ketebalan Pipa</b><br>Pipa tembaga adalah nadi dari AC Anda. Pipa yang tipis berisiko mengalami kebocoran freon dalam jangka waktu singkat. Standar pabrik menuntut penggunaan pipa tembaga dengan ketebalan minimal 0,6 mm. Pipa yang tebal mampu menahan tekanan kerja freon yang tinggi, menjaga performa pendinginan tetap optimal tanpa harus membebani kompresor. Kami di JMP menggunakan ketebalan pipa tembaga di atas 0,6 mm karena kami paham bahwa freon AC saat ini memiliki tekanan besar.<br><br><b>3. Aturan Main Panjang Pipa (Minimal 2 Meter)</b><br>Banyak pemasang AC \"nakal\" memotong dan menggunakan instalasi pipa tembaga yang sangat pendek, bahkan hanya 1 (satu) meter saja untuk mempromosikan biaya jasa pasangnya "lebih murah" dibandingkan toko spesialis AC Semarang. Faktanya, instalasi pipa tembaga minimal harus sepanjang 2 (dua) meter. Jika kurang dari itu, getaran kompresor akan merambat langsung ke unit <i>indoor</i> dan berpotensi merusak sistem kompresi AC Anda.<br><br><b>4. Proses Vakum: Prosedur Wajib, Bukan Pilihan</b><br>Masih banyak instalasi yang mengabaikan proses vakum pipa. Padahal, vakum adalah prosedur wajib untuk mengeluarkan udara dan uap air dari dalam pipa. Jika udara terjebak di dalam sistem, ia akan bercampur dengan oli kompresor, menyebabkan oksidasi, dan dalam jangka panjang akan merusak komponen vital AC.<br><br><b>5. Keahlian di Balik Teknisi Profesional</b><br>Teknisi dari toko spesialis AC terlatih untuk melakukan survei lokasi, menghitung beban pendinginan ruangan, dan memastikan estetika pemasangan menyatu dengan desain interior rumah Anda. [TOMBOL: https://wa.me/nomor_whatsapp_anda | Klik di sini untuk konsultasi survei lokasi AC bersama tim JMP]<br><br><b>Mengapa Memilih Toko Spesialis AC di Semarang?</b><br>Banyak penyedia jasa pemasangan AC umum yang memangkas biaya dengan menggunakan material standar rendah. Di JMP, kami menekankan bahwa kualitas adalah prioritas. Membeli AC di toko spesialis berarti Anda mendapatkan jaminan instalasi yang benar, yang melindungi unit AC Anda dari kerusakan dini dan menjaga garansi resmi tetap berlaku. Toko spesialis AC seperti Jala Mas Persada (yang dahulu dikenal dengan NIAGA AC) memiliki tim instalasi sendiri dan fokus di bidang tata udara, dan sangat jarang menggunakan jasa teknisi <i>freelance</i> seperti toko elektronik umum.<br><br><b>Kesimpulan: Bijak Memilih adalah Investasi</b><br>Jangan tergiur dengan iming-iming biaya instalasi yang jauh di bawah standar pasar. Sering kali, harga murah menjadi jebakan biaya tak terduga di kemudian hari. Instalasi yang asal-asalan berisiko memicu kebocoran freon, kerusakan kompresor, hingga perbaikan berulang. Lebih fatal lagi, malpraktik instalasi ini dapat membuat garansi resmi pabrik hangus.<br><br>Ingat! AC adalah aset jangka panjang. Pastikan Anda mempercayakannya pada toko spesialis yang mengutamakan kualitas, bukan sekadar biaya jasa murah dan kecepatan pemasangan. Investasi kenyamanan Anda layak mendapatkan penanganan dari tangan ahli yang terpercaya.<br><br>Dengan memahami artikel ini Anda sudah dapat mencari informasi serta membuat pertimbangan mengenai harga dan menggunakan merek material kabel, pipa tembaga, dan stop kontak yang terjamin kualitasnya.<br><br>CV. Jala Mas Persada hadir memberikan solusi tata udara terbaik untuk Anda. Sebagai pusat grosir AC terpercaya di Semarang sejak 1992, kami dikenal sebagai mitra kontraktor AC spesialis yang mengedepankan kualitas instalasi yang rapi dan profesional.<br><br>Kami berkomitmen menyediakan unit dan instalasi berkualitas dengan harga kompetitif tiap hari, memastikan Anda mendapatkan nilai dan efisiensi terbaik untuk setiap proyek residensial, perkantoran, maupun fasilitas umum."
-			}
         ];
 
         function generateId(art) {
@@ -303,7 +329,8 @@
         }
 
         function loadFallbackData() {
-            masterArticles = processData(fallbackArticles);
+            // Membalikkan array agar artikel terbaru (di bawah) tampil di atas
+            masterArticles = processData(fallbackArticles).reverse();
             renderArticleList(masterArticles);
             checkUrlParams();
         }
@@ -323,9 +350,9 @@
                             header: true, skipEmptyLines: true,
                             complete: function(results) {
                                 if (results.data && results.data.length > 0 && results.data[0].judul) {
-                                    masterArticles = processData(results.data);
+                                    masterArticles = processData(results.data).reverse();
                                 } else {
-                                    masterArticles = processData(fallbackArticles);
+                                    masterArticles = processData(fallbackArticles).reverse();
                                 }
                                 renderArticleList(masterArticles);
                                 checkUrlParams();
@@ -362,7 +389,7 @@
                 grid.innerHTML += `
                     <a href="?id=${art.id}" class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-300 group flex flex-col border border-gray-100 relative">
                         <div class="relative h-48 md:h-56 overflow-hidden shrink-0 border-b border-gray-100">
-                            <img src="${art.image_link}" onerror="this.src='https://placehold.co/800x600/f8fafc/94a3b8?text=JMPedia'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                            <img src="${art.image_link}" onerror="this.src='https://placehold.co/800x600/f8fafc/94a3b8?text=JMPedia'" alt="${art.judul}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                             <div class="absolute top-4 left-4 ${cat.color} px-3 py-1 rounded-full text-[9px] font-extrabold uppercase tracking-widest shadow-md backdrop-blur-sm">${cat.name}</div>
                         </div>
                         <div class="p-5 md:p-6 flex flex-col flex-grow">
@@ -383,7 +410,7 @@
 
         function formatRichText(rawText) {
             if(!rawText) return "";
-            let html = rawText.replace(/\[GAMBAR:\s*(https?:\/\/[^\]]+)\]/gi, '<div class="my-6 md:my-8 rounded-2xl overflow-hidden shadow-md border border-gray-100"><img src="$1" class="w-full h-auto object-cover max-h-[400px]" alt="Ilustrasi Artikel" onerror="this.style.display=\'none\'"></div>');
+            let html = rawText.replace(/\[GAMBAR:\s*(https?:\/\/[^\]]+)\]/gi, '<div class="my-6 md:my-8 rounded-2xl overflow-hidden shadow-md border border-gray-100"><img src="$1" class="w-full h-auto object-cover max-h-[400px]" alt="Ilustrasi Artikel JMPedia" onerror="this.style.display=\'none\'"></div>');
             html = html.replace(/\[TOMBOL:\s*([^|\]]+)\s*\|\s*([^\]]+)\]/gi, '<div class="my-6 text-center"><a href="$1" class="inline-block px-6 py-3 md:px-8 md:py-3.5 bg-brand-dark hover:bg-brand-primary !text-white font-bold text-xs md:text-sm uppercase tracking-widest rounded-xl transition-all shadow-md transform hover:-translate-y-0.5 !no-underline">$2</a></div>');
             return html;
         }
@@ -397,7 +424,6 @@
                     showArticleDetail(article);
                     return;
                 } else {
-                    // Jika ID tidak ditemukan, hapus param dan tampilkan list
                     window.history.replaceState({}, '', 'jmpedia.html');
                 }
             }
